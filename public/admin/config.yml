@@ -34,7 +34,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "GPS Coordinates", name: "gpsCoordinates", widget: "string" }
+      - {
+          label: "GPS Coordinates",
+          name: "gpsCoordinates",
+          widget: "string",
+          required: false,
+        }
       - {
           label: "Résumé (exerc)",
           name: "resume",
@@ -55,5 +60,10 @@ collections:
           required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Categories", name: "Categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Categories",
+          name: "Categories",
+          widget: "list",
+          required: false,
+        }
