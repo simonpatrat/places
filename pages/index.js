@@ -1,11 +1,13 @@
 import Head from "next/head";
 import { Component } from "react";
-import { attributes, react as HomeContent } from "../content/home.md";
-
+import content from "../content/home.md";
 export default class Home extends Component {
   render() {
-    let { title, cats } = attributes;
-    console.log(HomeContent);
+    const {
+      html,
+      attributes: { title, cats },
+    } = content;
+
     return (
       <>
         <Head>
@@ -13,7 +15,7 @@ export default class Home extends Component {
         </Head>
         <article>
           <h1>{title}</h1>
-          <HomeContent />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
           <ul>
             {cats.map((cat, k) => (
               <li key={k}>
