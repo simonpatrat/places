@@ -42,9 +42,6 @@ export default class Home extends Component {
                   <Link href="/posts/[slug]" as={`/posts/${slug}`}>
                     <a>{post.attributes.title}</a>
                   </Link>
-                  <Link href="/">
-                    <a>Home</a>
-                  </Link>
                 </li>
               );
             })}
