@@ -6,7 +6,6 @@ media_library:
   config:
     cloud_name: dmcl9xqto
     api_key: 843689612831313
-public_folder: img
 collections:
   - name: "pages"
     label: "Pages"
@@ -27,8 +26,9 @@ collections:
   - name: "post"
     label: "Post"
     folder: "content/posts"
+    preview_path: "posts/{{slug}}"
     create: true
-    slug: "posts/{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
