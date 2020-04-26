@@ -4,10 +4,11 @@ const Post = (props) => {
   }
   const {
     post: {
-      attributes: { title, thumbnail, rating, date, body },
+      attributes: { title, featuredImage, rating, date, resume },
       html,
     },
   } = props;
+  console.log(props);
 
   return (
     <>
@@ -15,9 +16,11 @@ const Post = (props) => {
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <div>{date}</div>
+        <div>{resume}</div>
         <div>{rating}</div>
-        <div>{body}</div>
-        <div>{thumbnail}</div>
+        <div>
+          <img src={featuredImage} alt={title} />
+        </div>
       </article>
     </>
   );
