@@ -28,8 +28,6 @@ Post.getInitialProps = async (ctx) => {
     query: { slug },
   } = ctx;
 
-  console.log({ slug });
-
   if (slug) {
     const post = await import(`../../content/posts/${slug}.md`);
     return { post };

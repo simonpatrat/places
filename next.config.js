@@ -16,7 +16,6 @@ module.exports = {
     const blogPostSlugs = blogPostFiles.map((file) =>
       file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim()
     );
-
     const createPathObject = (pathObject, slug) => {
       return {
         ...pathObject,
