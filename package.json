@@ -1,0 +1,19 @@
+{
+  "name": "places",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Simon",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "dependencies": {
+    "frontmatter-markdown-loader": "^3.4.0",
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
