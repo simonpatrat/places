@@ -9,7 +9,7 @@ module.exports = function (plop) {
         }],
         actions: [{
             type: 'add',
-            path: '../../public/admin/configs/{{name}}.yaml',
+            path: '../../public/admin/configs/collections/{{name}}.yml',
             templateFile: 'templates/admin-collection.hbs'
         }]
     });

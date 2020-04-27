@@ -8,7 +8,6 @@ const Post = (props) => {
       html,
     },
   } = props;
-  console.log(props);
 
   return (
     <>
