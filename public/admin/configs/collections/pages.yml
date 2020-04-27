@@ -1,7 +1,7 @@
   - name: "pages"
     label: "Pages"
     files:
-    - label: "Home"
+      - label: "Home"
         name: "home"
         file: "content/home.md"
         fields:
