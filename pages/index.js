@@ -59,10 +59,9 @@ export async function getStaticProps() {
   function importAll(r) {
     r.keys().forEach((key) => {
       const post = r(key);
-      const {
-        attributes: { slug },
-      } = post;
-      posts[slug] = post;
+      const postSlug = key.substring(2, key.length - 3);
+      post.attributes.slug = postSlug;
+      posts[postSlug] = post;
     });
   }
 
