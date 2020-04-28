@@ -8,6 +8,7 @@ media_library:
     api_key: 843689612831313
 collections:
   - name: "category"
+    identifier_field: name
     label: "Category"
     folder: "content/categories"
     preview_path: "categories/{{slug}}"

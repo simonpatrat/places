@@ -1,4 +1,5 @@
   - name: "category"
+    identifier_field: name
     label: "Category"
     folder: "content/categories"
     preview_path: "categories/{{slug}}"
