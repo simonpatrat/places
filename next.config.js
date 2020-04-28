@@ -1,12 +1,19 @@
 const glob = require("glob");
 
 module.exports = {
-  webpack: (cfg) => {
-    cfg.module.rules.push({
-      test: /\.md$/,
-      loader: "frontmatter-markdown-loader",
-    });
-    return cfg;
+  webpack: (config) => {
+    config.module.rules.push(
+      {
+        test: /\.md$/,
+        loader: "frontmatter-markdown-loader",
+      },
+      {
+        test: /\.ya?ml$/,
+        type: "json", // Required by Webpack v4
+        use: "yaml-loader",
+      }
+    );
+    return config;
   },
   exportPathMap: async function (defaultPathMap) {
     // get all .md files in the posts dir
