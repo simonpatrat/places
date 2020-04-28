@@ -7,6 +7,22 @@ media_library:
     cloud_name: dmcl9xqto
     api_key: 843689612831313
 collections:
+  - name: "category"
+    label: "Category"
+    folder: "content/categories"
+    preview_path: "categories/{{slug}}"
+    create: true
+    slug: "{{slug}}"
+    fields:
+    - { label: "Name", name: "name", widget: "string" }
+    - { label: "Description", name: "description", widget: "string", required: false }
+    - {
+        label: "Featured Image",
+        name: "featuredImage",
+        widget: "image",
+        required: false,
+        media_library: { config: { multiple: false } },
+      }
   - name: "pages"
     label: "Pages"
     files:
@@ -23,8 +39,8 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-  - name: "posts"
-    label: "Posts"
+  - name: "post"
+    label: "Post"
     folder: "content/posts"
     preview_path: "posts/{{slug}}"
     create: true
@@ -61,9 +77,12 @@ collections:
     - { label: "Body", name: "body", widget: "markdown" }
     - { label: "Tags", name: "tags", widget: "list", required: false }
     - {
-        label: "Categories",
-        name: "Categories",
-        widget: "list",
-        required: false,
-      }
+      label: "Categories",
+      name: "categories",
+      widget: "relation",
+      collection: "category",
+      searchFields: ["name"],
+      valueField: "name",
+      multiple: true,
+    }
 

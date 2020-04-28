@@ -1,5 +1,5 @@
-  - name: "posts"
-    label: "Posts"
+  - name: "post"
+    label: "Post"
     folder: "content/posts"
     preview_path: "posts/{{slug}}"
     create: true
@@ -36,9 +36,12 @@
     - { label: "Body", name: "body", widget: "markdown" }
     - { label: "Tags", name: "tags", widget: "list", required: false }
     - {
-        label: "Categories",
-        name: "Categories",
-        widget: "list",
-        required: false,
-      }
+      label: "Categories",
+      name: "categories",
+      widget: "relation",
+      collection: "category",
+      searchFields: ["name"],
+      valueField: "name",
+      multiple: true,
+    }
 

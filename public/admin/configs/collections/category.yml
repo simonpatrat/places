@@ -1,0 +1,16 @@
+  - name: "category"
+    label: "Category"
+    folder: "content/categories"
+    preview_path: "categories/{{slug}}"
+    create: true
+    slug: "{{slug}}"
+    fields:
+    - { label: "Name", name: "name", widget: "string" }
+    - { label: "Description", name: "description", widget: "string", required: false }
+    - {
+        label: "Featured Image",
+        name: "featuredImage",
+        widget: "image",
+        required: false,
+        media_library: { config: { multiple: false } },
+      }
