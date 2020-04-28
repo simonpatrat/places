@@ -1,3 +1,4 @@
+import Head from 'next/head';
 // import App, { AppContext } from "next/app"
 // import { AppType, AppContextType } from "next/dist/next-server/lib/utils"
 import NavMenu from "../components/NavMenu";
@@ -17,8 +18,15 @@ const MyApp = (props) => {
   // }
 
   const { Component, pageProps } = props;
+  const { post } = pageProps;
+  const pageTitle = `${post ? post.attributes.title + ' | ': ''}Places`;
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta property="og:title" content={pageTitle} key="title" />
+      </Head>
+
       <NavMenu />
       <Component {...pageProps} />
     </>
