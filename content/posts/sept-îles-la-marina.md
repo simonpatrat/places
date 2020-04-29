@@ -13,5 +13,6 @@ tags:
   - eau
 categories:
   - Canada
+  - Québec
 ---
 La marina, vue du vieux quai.
