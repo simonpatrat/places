@@ -4,10 +4,15 @@ import Link from "next/link";
 
 import content from "../content/home.md";
 export default class Home extends Component {
+  componentDidMount() {
+    document.documentElement.style.setProperty("--background-color", "white");
+    document.documentElement.style.setProperty("--text-color", "black");
+  }
+
   render() {
     const {
       html,
-      attributes: { title, cats },
+      attributes: { title },
     } = content;
 
     const { allPosts } = this.props;
@@ -21,14 +26,6 @@ export default class Home extends Component {
         <article>
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-          <ul>
-            {cats.map((cat, k) => (
-              <li key={k}>
-                <h2>{cat.name}</h2>
-                <p>{cat.description}</p>
-              </li>
-            ))}
-          </ul>
         </article>
         <ul className="post-list">
           {posts &&

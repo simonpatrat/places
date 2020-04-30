@@ -1,6 +1,12 @@
 import Link from "next/link";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import ColorThief from "colorthief";
+
+import { orderPostsByDate } from "../../lib/orderPostsByDate";
+import { lightOrDark } from "../../lib/color";
+
+import postStyles from "../../styles/modules/post.module.scss";
+import colorPaletteStyles from "../../styles/modules/color-palette.module.scss";
 
 const Post = (props) => {
   const [postImageColorPalette, setPostImageColorPalette] = useState(null);
@@ -19,26 +25,36 @@ const Post = (props) => {
     previousPost,
   } = props;
 
-  const postImage = useRef();
   useEffect(() => {
-    // code to run on component mount
     const colorThief = new ColorThief();
     let img = new Image();
     img.crossOrigin = "Anonymous";
 
     img.addEventListener("load", function () {
       const palette = colorThief.getPalette(img, 5);
+      const mainColor = colorThief.getColor(img);
+      const cssColor = `rgb(${mainColor.join(",")})`;
+      const colorBrightness = lightOrDark(cssColor);
+
+      document.documentElement.style.setProperty(
+        "--background-color",
+        cssColor
+      );
+      document.documentElement.style.setProperty(
+        "--text-color",
+        colorBrightness === "dark" ? "white" : "black"
+      );
       setPostImageColorPalette(palette);
       setPostImageLoaded(true);
     });
 
     img.crossOrigin = "Anonymous";
     img.src = featuredImage;
-  }, []);
+  }, [featuredImage]);
 
   return (
     <>
-      <article>
+      <article className={postStyles.post}>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <div>{date}</div>
@@ -48,12 +64,11 @@ const Post = (props) => {
           {!postImageLoaded && <div>Loading image...</div>}
 
           <img
-            ref={postImage}
+            key={featuredImage}
             src={featuredImage}
             alt={title}
             crossOrigin="anonymous"
             style={{
-              width: "600px",
               maxWidth: `100%`,
               height: `auto`,
               opacity: postImageLoaded ? 1 : 0,
@@ -61,21 +76,21 @@ const Post = (props) => {
             }}
           />
 
-          {!!postImageColorPalette &&
-            postImageLoaded &&
-            postImageColorPalette.map((color, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{
-                    width: "20px",
-                    height: "20px",
-                    padding: "10px",
-                    background: `rgba(${color.join(",")})`,
-                  }}
-                ></div>
-              );
-            })}
+          {!!postImageColorPalette && postImageLoaded && (
+            <div className={colorPaletteStyles.palette}>
+              {postImageColorPalette.map((color, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="color-palette__item"
+                    style={{
+                      background: `rgb(${color.join(",")})`,
+                    }}
+                  ></div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </article>
       {previousPost && (
@@ -95,10 +110,10 @@ const Post = (props) => {
   );
 };
 
-Post.getInitialProps = async (ctx) => {
+Post.getInitialProps = async (context) => {
   const {
     query: { slug },
-  } = ctx;
+  } = context;
 
   const posts = {};
 
@@ -113,19 +128,7 @@ Post.getInitialProps = async (ctx) => {
 
   importAll(require.context("../../content/posts", true, /\.md$/));
 
-  const orderedPostsByDate = Object.keys(posts)
-    .map((postKey, index) => {
-      const post = posts[postKey];
-      return post;
-    })
-    .sort((a, b) => {
-      return a.attributes.date < b.attributes.date
-        ? -1
-        : a.attributes.date > b.attributes.date
-        ? 1
-        : 0;
-    });
-
+  const orderedPostsByDate = orderPostsByDate(posts);
   if (slug) {
     const post = await import(`../../content/posts/${slug}.md`);
 
@@ -135,7 +138,12 @@ Post.getInitialProps = async (ctx) => {
     const nextPost = orderedPostsByDate[currentPostIndex + 1] || null;
     const previousPost = orderedPostsByDate[currentPostIndex - 1] || null;
 
-    return { post, nextPost, previousPost };
+    return {
+      post: post.default,
+      nextPost,
+      previousPost,
+      orderedPostsByDate,
+    };
   }
 
   return {};

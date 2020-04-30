@@ -1,8 +1,11 @@
-import Head from 'next/head';
+import Head from "next/head";
 // import App, { AppContext } from "next/app"
 // import { AppType, AppContextType } from "next/dist/next-server/lib/utils"
 import NavMenu from "../components/NavMenu";
 // import { AppContextType } from "next/dist/next-server/lib/utils"
+import "../styles/global.scss";
+
+import pageStyles from "../styles/modules/layout.module.scss";
 
 const MyApp = (props) => {
   // Only uncomment this method if you have blocking data requirements for
@@ -19,16 +22,22 @@ const MyApp = (props) => {
 
   const { Component, pageProps } = props;
   const { post } = pageProps;
-  const pageTitle = `${post ? post.attributes.title + ' | ': ''}Places`;
+  const pageTitle = `${post ? post.attributes.title + " | " : ""}Places`;
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} key="title" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <NavMenu />
-      <Component {...pageProps} />
+      <div className={pageStyles.page}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 };
