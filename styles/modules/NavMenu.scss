@@ -1,0 +1,37 @@
+.navmenu-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.navmenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  width: 95%;
+  max-width: 1680px;
+  margin: 0 auto;
+
+  @media (min-width: 1280px) {
+    padding: 0 32px;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__title {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}

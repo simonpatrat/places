@@ -2,15 +2,22 @@ import Link from "next/link";
 
 const NavMenu = (props) => {
   return (
-    <nav className="nav-menu">
-      <ul className="nav-menu__list">
-        <li className="nav-menu__list__item">
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <div className="navmenu-container">
+      <nav className="navmenu">
+        <Link href="/">
+          <a className="navmenu__title">
+            <h1>Places</h1>
+          </a>
+        </Link>
+        <ul className="navmenu__list">
+          <li className="navmenu__list__item">
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

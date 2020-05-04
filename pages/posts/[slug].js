@@ -5,9 +5,6 @@ import ColorThief from "colorthief";
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
 
-import postStyles from "../../styles/modules/post.module.scss";
-import colorPaletteStyles from "../../styles/modules/color-palette.module.scss";
-
 const Post = (props) => {
   const [postImageColorPalette, setPostImageColorPalette] = useState(null);
   const [postImageLoaded, setPostImageLoaded] = useState(false);
@@ -54,12 +51,7 @@ const Post = (props) => {
 
   return (
     <>
-      <article className={postStyles.post}>
-        <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <div>{date}</div>
-        <div>{resume}</div>
-        <div>{rating}</div>
+      <article className="post">
         <div>
           {!postImageLoaded && <div>Loading image...</div>}
 
@@ -77,7 +69,7 @@ const Post = (props) => {
           />
 
           {!!postImageColorPalette && postImageLoaded && (
-            <div className={colorPaletteStyles.palette}>
+            <div className="palette">
               {postImageColorPalette.map((color, index) => {
                 return (
                   <div
@@ -92,6 +84,11 @@ const Post = (props) => {
             </div>
           )}
         </div>
+        <h2>{title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div>{date}</div>
+        <div>{resume}</div>
+        <div>{rating}</div>
       </article>
       {previousPost && (
         <Link

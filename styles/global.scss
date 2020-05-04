@@ -15,3 +15,13 @@ body {
   background: var(--background-color);
   color: var(--text-color);
 }
+
+* {
+  box-sizing: border-box;
+}
+
+@import "./modules/layout";
+@import "./modules/color-palette";
+@import "./modules/NavMenu";
+@import "./modules/post";
+@import "./modules/PostsList";

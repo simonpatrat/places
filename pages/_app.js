@@ -5,8 +5,6 @@ import NavMenu from "../components/NavMenu";
 // import { AppContextType } from "next/dist/next-server/lib/utils"
 import "../styles/global.scss";
 
-import pageStyles from "../styles/modules/layout.module.scss";
-
 const MyApp = (props) => {
   // Only uncomment this method if you have blocking data requirements for
   // every single page in your application. This disables the ability to
@@ -35,7 +33,7 @@ const MyApp = (props) => {
       </Head>
 
       <NavMenu />
-      <div className={pageStyles.page}>
+      <div className="layout">
         <Component {...pageProps} />
       </div>
     </>
