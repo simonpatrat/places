@@ -25,7 +25,6 @@ const Post = (props) => {
   useEffect(() => {
     const colorThief = new ColorThief();
     let img = new Image();
-    img.crossOrigin = "Anonymous";
 
     img.addEventListener("load", function () {
       const palette = colorThief.getPalette(img, 5);
@@ -59,7 +58,7 @@ const Post = (props) => {
             key={featuredImage}
             src={featuredImage}
             alt={title}
-            crossOrigin="anonymous"
+            crossOrigin
             style={{
               maxWidth: `100%`,
               height: `auto`,

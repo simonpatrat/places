@@ -2,6 +2,7 @@
   list-style: none;
   padding: 0;
   margin: 32px auto;
+  transition: all 500ms ease;
 
   @media (min-width: 396px) {
     display: grid;
@@ -12,6 +13,11 @@
   @media (min-width: 1280px) {
     grid-template-columns: 2fr 1fr 2fr;
     gap: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 64px;
   }
 
   &__item {
@@ -28,28 +34,33 @@
       display: block;
     }
 
-    &__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 300ms ease;
-      opacity: 0;
-      background: rgba(#000, 0.1);
-    }
+    &__content {
+      position: relative;
+      display: block;
 
-    &:hover {
-      .posts-list__item__overlay {
-        opacity: 1;
+      &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 300ms ease;
+        opacity: 0;
+        background: rgba(#000, 0.1);
       }
-    }
 
-    &__text {
-      color: #fff;
-      text-decoration: none;
+      &:hover {
+        .posts-list__item__content__overlay {
+          opacity: 1;
+        }
+      }
+
+      &__text {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }

@@ -37,14 +37,14 @@ export default class Home extends Component {
               return (
                 <li className="posts-list__item" key={slug + "#" + index}>
                   <Link href="/posts/[slug]" as={`/posts/${slug}`}>
-                    <a>
+                    <a className="posts-list__item__content">
                       <img
-                        className="post-list__item__image"
+                        className="post-list__item__content__image"
                         src={featuredImage}
                         crossOrigin="anonymous"
                       />
-                      <div className="posts-list__item__overlay">
-                        <h3 className="posts-list__item__text">
+                      <div className="posts-list__item__content__overlay">
+                        <h3 className="posts-list__item__content__text">
                           {post.attributes.title}
                         </h3>
                       </div>
