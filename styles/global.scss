@@ -1,10 +1,21 @@
 :root {
-  --background-color: white;
-  --text-color: black;
+  --dark-blue: rgb(10, 1, 32);
+  --link-color: dodgerblue;
+  --background-gradient-second-color: #fff;
+  --background-color: #fff;
+  --text-color: var(--dark-blue);
+  --post-text-color: var(--dark-blue);
 }
 
 html {
   font-size: 16px;
+
+  &.dark-mode {
+    --background-gradient-second-color: var(--dark-blue);
+    --background-color: var(--dark-blue);
+    --text-color: #fff;
+    --post-text-color: #fff;
+  }
 }
 
 body {
@@ -12,7 +23,13 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 100;
-  background: var(--background-color);
+  background: linear-gradient(
+    180deg,
+    var(--background-color, #fff) 0%,
+    var(--background-color, #fff) 50%,
+    var(--background-gradient-second-color, #fff) 50%
+  );
+  background-repeat: no-repeat;
   color: var(--text-color);
 }
 
@@ -20,8 +37,15 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: var(--link-color, dodgerblue);
+}
+
 @import "./modules/layout";
 @import "./modules/color-palette";
 @import "./modules/NavMenu";
 @import "./modules/post";
 @import "./modules/PostsList";
+@import "./modules/button";
+@import "./modules/LoadingBar";
+@import "../components/Grid/styles/grid";

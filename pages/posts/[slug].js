@@ -1,13 +1,21 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ColorThief from "colorthief";
+
+import ThemeContext from "../../components/ThemeContext";
 
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
 
 const Post = (props) => {
+  const { theme } = useContext(ThemeContext);
   const [postImageColorPalette, setPostImageColorPalette] = useState(null);
   const [postImageLoaded, setPostImageLoaded] = useState(false);
+  const [postImageColorBrightness, setPostImageColorBrightness] = useState(
+    "light"
+  );
+  const [postImageColor, setPostImageColor] = useState(`rgb(0,0,0)`);
+  const [postBgSecondColor, setPostBgSecondColor] = useState("white");
 
   if (!props.post) {
     return <div>Loading...</div>;
@@ -23,50 +31,68 @@ const Post = (props) => {
   } = props;
 
   useEffect(() => {
+    document.documentElement.classList.add(`${theme}-mode`);
+
     const colorThief = new ColorThief();
     let img = new Image();
+    const cssStyles = window.getComputedStyle(document.documentElement);
+    const initialBgColor = cssStyles.getPropertyValue("--background-color");
+    const initialTextColor = cssStyles.getPropertyValue("--text-color");
 
     img.addEventListener("load", function () {
       const palette = colorThief.getPalette(img, 5);
       const mainColor = colorThief.getColor(img);
       const cssColor = `rgb(${mainColor.join(",")})`;
       const colorBrightness = lightOrDark(cssColor);
+      const bgSecondColor = theme === "dark" ? "rgb(10, 1, 32)" : "white";
 
+      setPostBgSecondColor(bgSecondColor);
+      setPostImageColor(cssColor);
+      setPostImageColorBrightness(colorBrightness);
+      setPostImageColorPalette(palette);
+      setPostImageLoaded(true);
       document.documentElement.style.setProperty(
         "--background-color",
         cssColor
       );
       document.documentElement.style.setProperty(
         "--text-color",
-        colorBrightness === "dark" ? "white" : "black"
+        colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
       );
-      setPostImageColorPalette(palette);
-      setPostImageLoaded(true);
     });
 
     img.crossOrigin = "Anonymous";
     img.src = featuredImage;
+
+    return () => {
+      document.documentElement.style.setProperty("--background-color", "");
+      document.documentElement.style.setProperty("--text-color", "");
+    };
   }, [featuredImage]);
+
+  const postDate = date;
 
   return (
     <>
       <article className="post">
-        <div>
-          {!postImageLoaded && <div>Loading image...</div>}
-
+        <div className="img-container">
+          {!postImageLoaded && <div className="loading">Loading image...</div>}
           <img
             key={featuredImage}
             src={featuredImage}
             alt={title}
-            crossOrigin
             style={{
               maxWidth: `100%`,
               height: `auto`,
               opacity: postImageLoaded ? 1 : 0,
               transition: "all 500ms ease",
+              display: "block",
+              maxHeight: "100%",
+              margin: "auto",
             }}
           />
-
+        </div>
+        <div className="img-information-container">
           {!!postImageColorPalette && postImageLoaded && (
             <div className="palette">
               {postImageColorPalette.map((color, index) => {
@@ -83,11 +109,16 @@ const Post = (props) => {
             </div>
           )}
         </div>
-        <h2>{title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <div>{date}</div>
-        <div>{resume}</div>
-        <div>{rating}</div>
+        <div className="post__body">
+          <h2 className="post__title">{title}</h2>
+          <div
+            className="post__content-html"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          <div className="post__date">{postDate}</div>
+          <div className="post__resume">{resume}</div>
+          <div className="post__rating">{rating}</div>
+        </div>
       </article>
       {previousPost && (
         <Link

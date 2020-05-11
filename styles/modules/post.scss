@@ -1,2 +1,21 @@
 .post {
+  min-height: 100vh;
+  color: var(--post-text-color, black);
+
+  .img-container {
+    height: calc(100vh - (76px * 2));
+  }
+
+  &__body {
+    max-width: 1280px;
+    margin: 32px auto;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .img-information-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

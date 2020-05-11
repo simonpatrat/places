@@ -1,0 +1,119 @@
+.grid-controls {
+  padding: 32px 10%;
+  * + * {
+    margin-top: 16px;
+  }
+}
+
+.grid-wrapper {
+  margin: 0 -6%;
+  width: 112%;
+  padding: 0 6%;
+}
+
+.grid {
+  --item-hover-right-pos: -25px;
+  --body-background: var(--background-color, #fff);
+  --body-color: var(--text-color, #000);
+  list-style: none;
+  padding: 0;
+  min-height: 100vh;
+
+  .item {
+    padding: 12% 12% 12% 0;
+    // padding: 12%;
+    transition: all 700ms ease;
+    position: relative;
+    // overflow: hidden;
+
+    .content {
+      padding: 16px;
+    }
+
+    &:nth-of-type(2n) {
+      padding: 12% 0 12% 12%;
+    }
+  }
+
+  .img-container {
+    position: relative;
+    z-index: 1;
+    transition: all 700ms ease;
+
+    .img-container__bg {
+      display: block;
+      z-index: -1;
+      width: calc(100% + 5%);
+      height: calc(100% + 5%);
+      position: absolute;
+      top: -10%;
+      right: -8%;
+      transition: all 700ms ease;
+      transform: scaleY(0.1);
+      transition-delay: 0ms !important;
+      overflow: hidden;
+    }
+
+    &__inner {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  .item {
+    &:nth-of-type(2n) {
+      .img-container {
+        .img-container__bg {
+          right: auto;
+          left: -8%;
+          top: auto;
+          bottom: -10%;
+        }
+      }
+    }
+  }
+
+  &.images-loaded {
+    .item {
+      // overflow: hidden;
+      .img-container {
+        .img-container__bg {
+          transform: scaleY(1);
+          transition-delay: 700ms;
+        }
+      }
+    }
+  }
+
+  .item__overlay {
+    position: absolute;
+    z-index: 2;
+    background: var(--body-background);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 700ms ease;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .item:hover {
+    .img-container {
+      transform: scale(1.05) translate(10px, -10px);
+      .img-container__bg {
+        transform: scale(0.9)
+          translate(
+            var(--item-hover-right-pos, 25px),
+            var(--item-hover-right-pos, 25px)
+          );
+      }
+    }
+  }
+}

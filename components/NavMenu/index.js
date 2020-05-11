@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavMenu = (props) => {
+const NavMenu = ({ theme, setTheme }) => {
   return (
     <div className="navmenu-container">
       <nav className="navmenu">
@@ -11,9 +11,14 @@ const NavMenu = (props) => {
         </Link>
         <ul className="navmenu__list">
           <li className="navmenu__list__item">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
+            <button
+              type="button"
+              className="button navmenu__button navmenu__button--change-theme"
+              onClick={(event) => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label={`${theme === "dark" ? "Light" : "Dark"} mode`}
+            >
+              <span className="las la-adjust icon" />
+            </button>
           </li>
         </ul>
       </nav>

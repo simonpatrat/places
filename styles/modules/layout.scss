@@ -1,9 +1,14 @@
-.layout {
+.page {
   width: 95%;
   max-width: 1680px;
   margin: 0 auto;
-  padding: 96px 16px 16px 16px;
+  padding: 76px 16px 16px 16px;
+
+  /*   &__content {
+    padding: 0 6%;
+  } */
+
   @media (min-width: 1280px) {
-    padding: 96px 32px 32px 32px;
+    padding: 76px 32px 32px 32px;
   }
 }

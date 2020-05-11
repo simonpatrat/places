@@ -1,15 +1,11 @@
 import Head from "next/head";
 import { Component } from "react";
-import Link from "next/link";
 
+import Grid from "../components/Grid";
 import content from "../content/home.md";
 
 export default class Home extends Component {
-  componentDidMount() {
-    document.documentElement.style.setProperty("--background-color", "white");
-    document.documentElement.style.setProperty("--text-color", "black");
-  }
-
+  componentDidMount() {}
   render() {
     const {
       html,
@@ -18,42 +14,37 @@ export default class Home extends Component {
 
     const { allPosts } = this.props;
     const posts = Object.keys(allPosts).map((key) => allPosts[key]);
-
+    const shouldDisplayPostsList = posts && posts.length > 0;
     return (
       <>
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
+
         <article>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            className="page__content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+
+          {shouldDisplayPostsList && (
+            <Grid
+              list={posts}
+              useImagesLoaded={true}
+              withColorPalette
+              cols={{
+                480: 1,
+                768: 1,
+                1024: 2,
+                1366: 2,
+                1920: 2,
+                99999: 4,
+              }}
+              gap={40}
+              debuggModeInCards={false}
+            ></Grid>
+          )}
         </article>
-        <ul className="posts-list">
-          {posts &&
-            posts.length > 0 &&
-            posts.map((post, index) => {
-              const {
-                attributes: { slug, featuredImage },
-              } = post;
-              return (
-                <li className="posts-list__item" key={slug + "#" + index}>
-                  <Link href="/posts/[slug]" as={`/posts/${slug}`}>
-                    <a className="posts-list__item__content">
-                      <img
-                        className="post-list__item__content__image"
-                        src={featuredImage}
-                        crossOrigin="anonymous"
-                      />
-                      <div className="posts-list__item__content__overlay">
-                        <h3 className="posts-list__item__content__text">
-                          {post.attributes.title}
-                        </h3>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-              );
-            })}
-        </ul>
       </>
     );
   }
