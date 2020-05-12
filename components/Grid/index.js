@@ -10,7 +10,7 @@ class Grid extends React.Component {
     super(props);
     this.state = {
       nbItems: 0,
-      cols: 4,
+      cols: 3,
       enteringItemFrom: "left",
       imagesColors: {},
       imagesLoaded: false,
@@ -113,7 +113,7 @@ class Grid extends React.Component {
               padding: withPadding ? `${gap}px` : 0,
               width: "100%",
               maxWidth: "1920px",
-              margin: "32px auto",
+              margin: "64px auto 32px auto",
             }}
           >
             {list.map((item, index) => {

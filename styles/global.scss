@@ -1,5 +1,5 @@
 :root {
-  --dark-blue: rgb(10, 1, 32);
+  --dark-blue: #1e272e;
   --link-color: dodgerblue;
   --background-gradient-second-color: #fff;
   --background-color: #fff;
@@ -23,11 +23,13 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 100;
+  overflow-x: hidden;
+  min-height: 100vh;
   background: linear-gradient(
     180deg,
     var(--background-color, #fff) 0%,
     var(--background-color, #fff) 50%,
-    var(--background-gradient-second-color, #fff) 50%
+    var(--background-gradient-second-color, #fff) calc(50% - 76px)
   );
   background-repeat: no-repeat;
   color: var(--text-color);

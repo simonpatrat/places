@@ -27,8 +27,9 @@ const GridItem = ({
               background: `${
                 !!imageColorsInfos && !!imageColorsInfos.color
                   ? "rgb(" + imageColorsInfos.color.join(",") + ")"
-                  : "blue"
+                  : "#f7f8f9"
               }`,
+              transitionDelay: `${index * 100}ms`,
             }}
           >
             <div
@@ -48,6 +49,7 @@ const GridItem = ({
             })}
             src={featuredImage}
             alt={title}
+            className={imagesLoaded ? "loaded" : ""}
             // onLoad={(event) => this.handleImageLoad(event, index)}
           />
           <div
@@ -58,6 +60,9 @@ const GridItem = ({
               transitionDelay: `${index * 100}ms`,
             }}
           />
+        </div>
+        <div className="item__information">
+          <h3 className="item__title">{title}</h3>
         </div>
       </div>
     </>
@@ -70,19 +75,15 @@ const GridItem = ({
       style={{
         gridColumnStart: `${columnStart}`,
         gridColumnEnd: `${columnEnd}`,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
       }}
       onMouseEnter={(event) => onMouseEnter(event, index)}
     >
       {url || slug ? (
         <Link href="/posts/[slug]" as={`/posts/${slug}`}>
-          <a className="item__link">{itemContent}</a>
+          <a className="item__link item__inner">{itemContent}</a>
         </Link>
       ) : (
-        { itemContent }
+        <div className="item__inner">{itemContent}</div>
       )}
 
       {debuggModeInCards && (

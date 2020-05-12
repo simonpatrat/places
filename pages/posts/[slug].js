@@ -16,6 +16,7 @@ const Post = (props) => {
   );
   const [postImageColor, setPostImageColor] = useState(`rgb(0,0,0)`);
   const [postBgSecondColor, setPostBgSecondColor] = useState("white");
+  const [postDate, setPostDate] = useState(null);
 
   if (!props.post) {
     return <div>Loading...</div>;
@@ -44,7 +45,7 @@ const Post = (props) => {
       const mainColor = colorThief.getColor(img);
       const cssColor = `rgb(${mainColor.join(",")})`;
       const colorBrightness = lightOrDark(cssColor);
-      const bgSecondColor = theme === "dark" ? "rgb(10, 1, 32)" : "white";
+      const bgSecondColor = theme === "dark" ? "#1e272e" : "white";
 
       setPostBgSecondColor(bgSecondColor);
       setPostImageColor(cssColor);
@@ -64,17 +65,44 @@ const Post = (props) => {
     img.crossOrigin = "Anonymous";
     img.src = featuredImage;
 
+    const body = document.querySelector("body");
+    /*     body.style.backgroundImage = `url(${featuredImage})`;
+    body.style.backgroundSize = "cover";
+    body.style.backgroundRepeat = "no-repeat"; */
+
     return () => {
       document.documentElement.style.setProperty("--background-color", "");
       document.documentElement.style.setProperty("--text-color", "");
+      /*       body.style.backgroundImage = ``;
+      body.style.backgroundSize = "";
+      body.style.backgroundRepeat = ""; */
     };
   }, [featuredImage]);
 
-  const postDate = date;
+  useEffect(() => {
+    const theDate = new Date(date).toLocaleDateString();
+    setPostDate(theDate);
+  }, [date]);
 
   return (
     <>
       <article className="post">
+        <div
+          className="post__header-bg"
+          style={{
+            /*             backgroundImage: `url(${featuredImage})`,
+            backgroundSize: "cover", */
+            backgroundRepeat: "no-repeat",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            // height: "calc(50vh - 76px)",
+            zIndex: 0,
+            backgroundColor: postImageColor,
+          }}
+        ></div>
+        {/* <div className="post__content-pusher"></div> */}
         <div className="img-container">
           {!postImageLoaded && <div className="loading">Loading image...</div>}
           <img
@@ -89,12 +117,19 @@ const Post = (props) => {
               display: "block",
               maxHeight: "100%",
               margin: "auto",
+              position: "relative",
+              zIndex: 1,
             }}
           />
         </div>
         <div className="img-information-container">
           {!!postImageColorPalette && postImageLoaded && (
-            <div className="palette">
+            <div
+              className="palette"
+              style={{
+                zIndex: 1,
+              }}
+            >
               {postImageColorPalette.map((color, index) => {
                 return (
                   <div
@@ -111,6 +146,7 @@ const Post = (props) => {
         </div>
         <div className="post__body">
           <h2 className="post__title">{title}</h2>
+
           <div
             className="post__content-html"
             dangerouslySetInnerHTML={{ __html: html }}

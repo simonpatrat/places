@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Component } from "react";
+import orderBy from "lodash/orderBy";
 
 import Grid from "../components/Grid";
 import content from "../content/home.md";
@@ -13,7 +14,12 @@ export default class Home extends Component {
     } = content;
 
     const { allPosts } = this.props;
-    const posts = Object.keys(allPosts).map((key) => allPosts[key]);
+    const posts = orderBy(
+      Object.keys(allPosts).map((key) => allPosts[key]),
+      ["attributes.date"],
+      ["desc"]
+    );
+
     const shouldDisplayPostsList = posts && posts.length > 0;
     return (
       <>
@@ -37,10 +43,10 @@ export default class Home extends Component {
                 768: 1,
                 1024: 2,
                 1366: 2,
-                1920: 2,
+                1920: 3,
                 99999: 4,
               }}
-              gap={40}
+              gap={100}
               debuggModeInCards={false}
             ></Grid>
           )}

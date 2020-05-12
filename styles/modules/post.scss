@@ -2,8 +2,15 @@
   min-height: 100vh;
   color: var(--post-text-color, black);
 
+  .post__content-pusher,
   .img-container {
-    height: calc(100vh - (76px * 2));
+    height: calc(100vh - (78px * 2));
+  }
+
+  .img-container {
+    img {
+      box-shadow: 0 0 200px 0 rgba(#000, 0.3);
+    }
   }
 
   &__body {
@@ -17,5 +24,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__header-bg {
+    background-blend-mode: overlay;
   }
 }
