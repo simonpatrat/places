@@ -16,6 +16,12 @@ html {
     --text-color: #fff;
     --post-text-color: #fff;
   }
+
+  &.black-and-white {
+    img {
+      filter: grayscale(1);
+    }
+  }
 }
 
 body {
