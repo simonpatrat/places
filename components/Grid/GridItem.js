@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import classnames from 'classnames';
+import { getImageColorInfo } from "./lib/helpers/imagesColors";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
 const GridItem = ({
   index,
-  columnStart,
-  columnEnd,
-  itemClassnames,
   slug,
   featuredImage,
   title,
-  imageColorsInfos,
   withColorPalette,
   imagesLoaded,
   debuggModeInCards,
   onMouseEnter,
   url,
 }) => {
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageColors, setImageColors] = useState(null);
+
+  useEffect(() => {
+
+  }, []);
+
+  const onImageLoad = useCallback(async (event) => {
+    const imageColorsInfo = await getImageColorInfo(event.target);
+    setImageColors(imageColorsInfo);
+    setTimeout(() => {
+      setImageLoaded(true);
+    }, 700);
+  }, []);
+
+  const itemClassnames = classnames('item', {
+    ['all-images-loaded']: imagesLoaded,
+    ['image-loaded']: imageLoaded,
+  })
+
   const itemContent = (
     <>
       <div className="img-container">
@@ -25,21 +44,13 @@ const GridItem = ({
             className="img-container__bg"
             style={{
               background: `${
-                !!imageColorsInfos && !!imageColorsInfos.color
-                  ? "rgb(" + imageColorsInfos.color.join(",") + ")"
+                !!imageColors && !!imageColors.color
+                  ? "rgb(" + imageColors.color.join(",") + ")"
                   : "#f7f8f9"
               }`,
-              transitionDelay: `${index * 100}ms`,
             }}
           >
-            <div
-              className="item__overlay"
-              style={{
-                transform: imagesLoaded ? `translateY(-110%)` : "none",
-                // opacity: imagesLoaded ? 0 : 1,
-                transitionDelay: `${index * 100}ms`,
-              }}
-            />
+
           </div>
         )}
         <div className="img-container__inner">
@@ -49,17 +60,11 @@ const GridItem = ({
             })}
             src={featuredImage}
             alt={title}
-            className={imagesLoaded ? "loaded" : ""}
-            // onLoad={(event) => this.handleImageLoad(event, index)}
+            className={imageLoaded ? "loaded" : ""}
+            onLoad={onImageLoad}
+
           />
-          <div
-            className="item__overlay"
-            style={{
-              transform: imagesLoaded ? `translateY(-110%)` : "none",
-              // opacity: imagesLoaded ? 0 : 1,
-              transitionDelay: `${index * 100}ms`,
-            }}
-          />
+
         </div>
         <div className="item__information">
           <h3 className="item__title">{title}</h3>
@@ -72,10 +77,6 @@ const GridItem = ({
     <li
       className={itemClassnames}
       data-index={index}
-      style={{
-        gridColumnStart: `${columnStart}`,
-        gridColumnEnd: `${columnEnd}`,
-      }}
       onMouseEnter={(event) => onMouseEnter(event, index)}
     >
       {url || slug ? (
@@ -99,13 +100,9 @@ const GridItem = ({
 
 GridItem.propTypes = {
   index: PropTypes.number.isRequired,
-  columnStart: PropTypes.number.isRequired,
-  columnEnd: PropTypes.number.isRequired,
-  itemClassnames: PropTypes.string.isRequired,
   featuredImage: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
-  imageColorsInfos: PropTypes.object,
   withColorPalette: PropTypes.bool,
   imagesLoaded: PropTypes.bool,
   debuggModeInCards: PropTypes.bool,

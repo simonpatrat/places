@@ -15,6 +15,7 @@
     "create-cms-config": "node scripts/pre-build"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "colorthief": "^2.3.0",
     "frontmatter-markdown-loader": "^3.4.0",
     "glob": "^7.1.6",

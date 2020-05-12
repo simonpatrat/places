@@ -90,57 +90,44 @@ class Grid extends React.Component {
   render() {
     const {
       list,
-      gap,
       debuggModeInCards,
       withColorPalette,
-      withPadding,
     } = this.props;
-    const { cols, imagesColors, imagesLoaded } = this.state;
+    const { imagesLoaded } = this.state;
 
     const gridClassnames = `grid ${imagesLoaded ? "images-loaded" : ""}`;
 
     return (
       <>
-        <div className="grid-config"></div>
+        {/* <div className="grid-config">
+            <div className="loading-info">
+              {imagesLoaded ? (
+                <span>Images Loaded!</span>
+              ) : (
+                <span>Loading images ...</span>
+              )}
+            </div>
+        </div> */}
         <div className="grid-wrapper">
           <ul
             className={gridClassnames}
             ref={this.gridRef}
             style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${cols}, 1fr)`,
-              gap: `${gap}px`,
-              padding: withPadding ? `${gap}px` : 0,
-              width: "100%",
-              maxWidth: "1920px",
-              margin: "64px auto 32px auto",
+
             }}
           >
             {list.map((item, index) => {
-              const columnStart =
-                (index + 1) % cols === 0 ? cols : (index + 1) % cols;
-              const columnEnd =
-                columnStart === cols ? cols : ((index + 1) % cols) + 1;
-              const itemClassnames = `item ${
-                imagesLoaded ? "images-loaded" : ""
-              }`;
-
               const {
                 attributes: { slug, featuredImage, title },
               } = item;
-              const imageColorsInfos = imagesColors[`image-${index}`];
               const key = slug + "#" + index;
               return (
                 <GridItem
                   key={key}
                   index={index}
-                  columnStart={columnStart}
-                  columnEnd={columnEnd}
-                  itemClassnames={itemClassnames}
                   slug={slug}
                   featuredImage={featuredImage}
                   title={title}
-                  imageColorsInfos={imageColorsInfos}
                   withColorPalette={withColorPalette}
                   imagesLoaded={imagesLoaded}
                   debuggModeInCards={debuggModeInCards}
