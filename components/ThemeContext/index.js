@@ -5,6 +5,4 @@ const ThemeContext = createContext({
 });
 ThemeContext.displayName = "ThemeContextInformation";
 
-const { Provider, Consumer } = ThemeContext;
-export { Provider, Consumer };
 export default ThemeContext;

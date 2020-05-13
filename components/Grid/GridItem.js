@@ -25,7 +25,7 @@ const GridItem = ({
     setImageColors(imageColorsInfo);
     setTimeout(() => {
       setImageLoaded(true);
-    }, 700);
+    }, 400);
   }, []);
 
   useEffect(() => {
@@ -40,12 +40,23 @@ const GridItem = ({
     ["image-loaded"]: imageLoaded,
   });
 
+  const imageContainerBgClassNames = classnames('img-container__bg', {
+    ['colors-loaded']: imageColors && !!imageColors.color,
+  });
+
   const itemContent = (
     <>
       <div className="img-container">
         {withColorPalette && (
+          <>
           <div
-            className="img-container__bg"
+            className="img-container__bg--loading"
+            style={{
+              background: "#f7f8f9",
+            }}
+          ></div>
+          <div
+            className={imageContainerBgClassNames}
             style={{
               background: `${
                 !!imageColors && !!imageColors.color
@@ -54,6 +65,7 @@ const GridItem = ({
               }`,
             }}
           ></div>
+          </>
         )}
         <div className="img-container__inner">
           <img

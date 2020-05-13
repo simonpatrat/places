@@ -6,7 +6,7 @@ import NavMenu from "../components/NavMenu";
 // import { AppContextType } from "next/dist/next-server/lib/utils"
 import "../styles/global.scss";
 
-import { Consumer as ThemeConsumer } from "../components/ThemeContext";
+import ThemeContext from "../components/ThemeContext";
 import Theme from "../components/Theme";
 import Layout from "../components/Layout";
 
@@ -47,7 +47,7 @@ const MyApp = (props) => {
           />
         </Head>
 
-        <ThemeConsumer>
+        <ThemeContext.Consumer>
           {(value) => (
             <Layout {...value}>
               <NavMenu {...value} />
@@ -56,7 +56,7 @@ const MyApp = (props) => {
               </div>
             </Layout>
           )}
-        </ThemeConsumer>
+        </ThemeContext.Consumer>
       </Theme>
     </>
   );
