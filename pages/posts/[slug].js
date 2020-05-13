@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import ColorThief from "colorthief";
 
 import ThemeContext from "../../components/ThemeContext";
@@ -18,18 +18,48 @@ const Post = (props) => {
   const [postBgSecondColor, setPostBgSecondColor] = useState("white");
   const [postDate, setPostDate] = useState(null);
 
+  const mapRef = useRef(null);
+
   if (!props.post) {
     return <div>Loading...</div>;
   }
 
   const {
     post: {
-      attributes: { title, featuredImage, rating, date, resume },
+      attributes: {
+        title,
+        featuredImage,
+        rating,
+        date,
+        resume,
+        gpsCoordinates,
+      },
       html,
     },
     nextPost,
     previousPost,
   } = props;
+
+  useEffect(() => {
+    const makePostMap = () => {
+      const coordinatesArray = gpsCoordinates.split(",").map((coordinate) => {
+        return parseFloat(coordinate);
+      });
+
+      let endPointLocation = new L.LatLng(...coordinatesArray);
+      let map = new L.Map(mapRef.current, {
+        center: endPointLocation,
+        zoom: 10,
+        layers: new L.TileLayer(
+          "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+        ),
+      });
+      let marker = new L.Marker(endPointLocation);
+      marker.bindPopup(title);
+      map.addLayer(marker);
+    };
+    makePostMap();
+  }, [gpsCoordinates, mapRef, title]);
 
   useEffect(() => {
     document.documentElement.classList.add(`${theme}-mode`);
@@ -146,7 +176,6 @@ const Post = (props) => {
         </div>
         <div className="post__body">
           <h2 className="post__title">{title}</h2>
-
           <div
             className="post__content-html"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -154,7 +183,15 @@ const Post = (props) => {
           <div className="post__date">{postDate}</div>
           <div className="post__resume">{resume}</div>
           <div className="post__rating">{rating}</div>
+          <div className="post__gps-coordinates">{gpsCoordinates}</div>
         </div>
+        <section className="post-map">
+          <div
+            className="post-map__inner"
+            ref={mapRef}
+            style={{ height: "600px" }}
+          ></div>
+        </section>
       </article>
       {previousPost && (
         <Link

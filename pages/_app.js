@@ -40,6 +40,11 @@ const MyApp = (props) => {
             rel="stylesheet"
             href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
           ></link>
+          <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
+          />
         </Head>
 
         <ThemeConsumer>

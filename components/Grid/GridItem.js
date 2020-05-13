@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import classnames from "classnames";
-import { getImageColorInfo } from "./lib/helpers/imagesColors";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { getImageColorInfo } from "./lib/helpers/imagesColors";
 
 const GridItem = ({
   index,
@@ -20,7 +20,8 @@ const GridItem = ({
   const imageEl = useRef(null);
 
   const onImageLoad = useCallback(async (event) => {
-    const imageColorsInfo = await getImageColorInfo(event.target);
+    const image = event.target;
+    const imageColorsInfo = await getImageColorInfo(image);
     setImageColors(imageColorsInfo);
     setTimeout(() => {
       setImageLoaded(true);
@@ -87,13 +88,7 @@ const GridItem = ({
         <div className="item__inner">{itemContent}</div>
       )}
 
-      {debuggModeInCards && (
-        <div className="content">
-          <div>In Column: {columnStart}</div>
-          <div>Column start: {columnStart}</div>
-          <div>Column end: {columnEnd}</div>
-        </div>
-      )}
+      {debuggModeInCards && <div className="content"></div>}
     </li>
   );
 };
