@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import classnames from 'classnames';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import classnames from "classnames";
 import { getImageColorInfo } from "./lib/helpers/imagesColors";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -15,13 +15,9 @@ const GridItem = ({
   onMouseEnter,
   url,
 }) => {
-
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageColors, setImageColors] = useState(null);
-
-  useEffect(() => {
-
-  }, []);
+  const imageEl = useRef(null);
 
   const onImageLoad = useCallback(async (event) => {
     const imageColorsInfo = await getImageColorInfo(event.target);
@@ -31,10 +27,17 @@ const GridItem = ({
     }, 700);
   }, []);
 
-  const itemClassnames = classnames('item', {
-    ['all-images-loaded']: imagesLoaded,
-    ['image-loaded']: imageLoaded,
-  })
+  useEffect(() => {
+    if (imageEl.current.complete) {
+      const fakeLoadEvent = { target: imageEl.current };
+      onImageLoad(fakeLoadEvent);
+    }
+  }, []);
+
+  const itemClassnames = classnames("item", {
+    ["all-images-loaded"]: imagesLoaded,
+    ["image-loaded"]: imageLoaded,
+  });
 
   const itemContent = (
     <>
@@ -49,12 +52,11 @@ const GridItem = ({
                   : "#f7f8f9"
               }`,
             }}
-          >
-
-          </div>
+          ></div>
         )}
         <div className="img-container__inner">
           <img
+            ref={imageEl}
             {...(withColorPalette && {
               crossOrigin: "anonymous",
             })}
@@ -62,9 +64,7 @@ const GridItem = ({
             alt={title}
             className={imageLoaded ? "loaded" : ""}
             onLoad={onImageLoad}
-
           />
-
         </div>
         <div className="item__information">
           <h3 className="item__title">{title}</h3>
