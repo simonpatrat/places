@@ -82,10 +82,10 @@ const Post = (props) => {
       setPostImageColorBrightness(colorBrightness);
       setPostImageColorPalette(palette);
       setPostImageLoaded(true);
-      document.documentElement.style.setProperty(
+      /*      document.documentElement.style.setProperty(
         "--background-color",
         cssColor
-      );
+      ); */
       document.documentElement.style.setProperty(
         "--text-color",
         colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"

@@ -1,6 +1,8 @@
 .post {
   min-height: 100vh;
+  background: var(--background-color, #fff);
   color: var(--post-text-color, black);
+  margin: 0 -16px;
 
   .post__content-pusher,
   .img-container {
@@ -27,6 +29,6 @@
   }
 
   &__header-bg {
-    background-blend-mode: overlay;
+    height: calc(100vh - 76px);
   }
 }

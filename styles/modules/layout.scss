@@ -1,8 +1,12 @@
 .page {
-  width: 95%;
+  width: 100%;
   max-width: 1680px;
   margin: 0 auto;
   padding: 76px 16px 16px 16px;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
 
   /*   &__content {
     padding: 0 6%;

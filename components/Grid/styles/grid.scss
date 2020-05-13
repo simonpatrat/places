@@ -10,8 +10,12 @@ $gap: 50px;
 .grid-wrapper {
   margin: auto -#{$gap};
   min-height: 100vh;
-}
+  overflow: hidden;
 
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+}
 
 .grid {
   --item-hover-right-pos: -25px;
@@ -39,6 +43,9 @@ $gap: 50px;
     width: calc(100% / 1);
     flex-basis: calc(100% / 1);
 
+    @media (max-width: 768px) {
+      padding: 0;
+    }
 
     @media (min-width: 769px) {
       width: calc(100% / 2);
@@ -76,20 +83,18 @@ $gap: 50px;
         .item__inner {
           align-items: flex-start;
         }
-
       }
 
       &:nth-of-type(3n - 1) {
         .item__inner {
-            align-items: center;
+          align-items: center;
         }
-
       }
 
       &:nth-of-type(3n) {
         .item__inner {
-            align-items: flex-end;
-          }
+          align-items: flex-end;
+        }
       }
     }
 
@@ -101,9 +106,7 @@ $gap: 50px;
           align-items: flex-start;
         }
       }
-
     }
-
 
     .content {
       padding: 16px;
@@ -124,11 +127,9 @@ $gap: 50px;
     }
 
     .img-container {
-
       @media (min-width: 1366px) and (max-width: 1920px) {
         margin-top: 200px;
       }
-
     }
 
     &:nth-of-type(3n - 1) {
@@ -175,7 +176,6 @@ $gap: 50px;
     .img-container__bg {
       transform-origin: bottom;
       &.colors-loaded {
-
         transform: scaleY(1);
         // transition-delay: 400ms;
         box-shadow: 0 0 20px 0 rgba(#000, 0.2);
@@ -192,37 +192,30 @@ $gap: 50px;
       overflow: hidden;
       height: 0;
       padding-top: 1440 / 1920 * 100%;
-
     }
   }
 
-
-
-    .item {
-
-
-      &.image-loaded {
-        .img-container__bg--loading {
-          opacity: 0;
-          transition-delay: 700ms;
+  .item {
+    &.image-loaded {
+      .img-container__bg--loading {
+        opacity: 0;
+        transition-delay: 700ms;
+      }
+      .img-container {
+        .img-container__bg {
         }
-        .img-container {
-          .img-container__bg {
 
-          }
+        &__inner {
+          height: auto;
+          padding-top: 0;
 
-          &__inner {
-            height: auto;
-            padding-top: 0;
-
-            img {
-              position: static;
-            }
+          img {
+            position: static;
           }
         }
       }
     }
-
+  }
 
   .item__overlay {
     position: absolute;

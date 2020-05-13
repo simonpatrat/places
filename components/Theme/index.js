@@ -18,7 +18,7 @@ class Theme extends React.Component {
         },
       },
       () => {
-        document.documentElement.style.setProperty("--background-color", color);
+        // document.documentElement.style.setProperty("--background-color", color);
       }
     );
   };

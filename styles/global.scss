@@ -31,12 +31,13 @@ body {
   font-weight: 100;
   overflow-x: hidden;
   min-height: 100vh;
-  background: linear-gradient(
+  background: var(--background-color, #fff);
+  /*   background: linear-gradient(
     180deg,
     var(--background-color, #fff) 0%,
     var(--background-color, #fff) 50%,
     var(--background-gradient-second-color, #fff) calc(50% - 76px)
-  );
+  ); */
   background-repeat: no-repeat;
   color: var(--text-color);
 }
