@@ -133,26 +133,18 @@ const Post = (props) => {
           }}
         ></div>
         {/* <div className="post__content-pusher"></div> */}
-        <div className="img-container">
+        <div className="post__img-container">
           {!postImageLoaded && <div className="loading">Loading image...</div>}
           <img
             key={featuredImage}
             src={featuredImage}
             alt={title}
             style={{
-              maxWidth: `100%`,
-              height: `auto`,
               opacity: postImageLoaded ? 1 : 0,
-              transition: "all 500ms ease",
-              display: "block",
-              maxHeight: "100%",
-              margin: "auto",
-              position: "relative",
-              zIndex: 1,
             }}
           />
         </div>
-        <div className="img-information-container">
+        <div className="post__img-information-container">
           {!!postImageColorPalette && postImageLoaded && (
             <div
               className="palette"

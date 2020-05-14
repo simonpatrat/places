@@ -29,6 +29,10 @@ $gap: 50px;
   justify-content: space-between;
   align-items: flex-start;
 
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+
   @media (min-width: 1366px) and (max-width: 1920px) {
     margin-top: 200px;
   }

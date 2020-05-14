@@ -50,6 +50,14 @@ a {
   color: var(--link-color, dodgerblue);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+}
+
+@import "./modules/normalize";
 @import "./modules/layout";
 @import "./modules/color-palette";
 @import "./modules/NavMenu";
