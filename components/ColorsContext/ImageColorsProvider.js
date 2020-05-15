@@ -1,8 +1,8 @@
 import React from "react";
-import ColorsContext from "../ColorsContext";
+import ColorsContext from "./index";
 
 
-class Colors extends React.Component {
+class ImageColorsProvider extends React.Component {
     state = {
       value: {
         colors: {},
@@ -18,7 +18,7 @@ class Colors extends React.Component {
           value: {
             ...this.state.value,
             colors: {
-                ...this.state.colors,
+                ...this.state.value.colors,
                 [imageId]: colorInfo,
             }
           },
@@ -44,4 +44,4 @@ class Colors extends React.Component {
     }
   }
 
-  export default Colors;
+  export default ImageColorsProvider;

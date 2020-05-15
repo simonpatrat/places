@@ -3,17 +3,20 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import ColorThief from "colorthief";
 
 import ThemeContext from "../../components/ThemeContext";
+import ColorsContext from '../../components/ColorsContext';
 
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
 
 const Post = (props) => {
   const { theme } = useContext(ThemeContext);
+  const { colors, setColor } = useContext(ColorsContext);
   const [postImageColorPalette, setPostImageColorPalette] = useState(null);
   const [postImageLoaded, setPostImageLoaded] = useState(false);
   const [postImageColorBrightness, setPostImageColorBrightness] = useState(
     "light"
   );
+
   const [postImageColor, setPostImageColor] = useState(`rgb(0,0,0)`);
   const [postBgSecondColor, setPostBgSecondColor] = useState("white");
   const [postDate, setPostDate] = useState(null);
@@ -33,6 +36,7 @@ const Post = (props) => {
         date,
         resume,
         gpsCoordinates,
+        slug,
       },
       html,
     },

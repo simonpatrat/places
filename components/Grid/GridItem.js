@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, useContext } from "react";
 import classnames from "classnames";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { getImageColorInfo } from "./lib/helpers/imagesColors";
+import ColorsContext from '../ColorsContext';
 
 const GridItem = ({
   index,
@@ -15,14 +16,25 @@ const GridItem = ({
   onMouseEnter,
   url,
 }) => {
+  const colorContext = useContext(ColorsContext);
+  const { setColor, colors } = colorContext;
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageColors, setImageColors] = useState(null);
   const imageEl = useRef(null);
+  const imageColors = colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
 
   const onImageLoad = useCallback(async (event) => {
     const image = event.target;
-    const imageColorsInfo = await getImageColorInfo(image);
-    setImageColors(imageColorsInfo);
+
+    if (!imageColors) {
+
+      console.log('Je dois setter la couleur pour ', `image-${slug}`);
+      const imageColorsInfo = await getImageColorInfo(image);
+      // setImageColors(imageColorsInfo);
+      setColor({
+        imageId: `image-${slug}`,
+        colorInfo: imageColorsInfo,
+      });
+    }
     setTimeout(() => {
       setImageLoaded(true);
     }, 400);
@@ -43,6 +55,7 @@ const GridItem = ({
   const imageContainerBgClassNames = classnames('img-container__bg', {
     ['colors-loaded']: imageColors && !!imageColors.color,
   });
+
 
   const itemContent = (
     <>
@@ -90,7 +103,7 @@ const GridItem = ({
     <li
       className={itemClassnames}
       data-index={index}
-      onMouseEnter={(event) => onMouseEnter(event, index)}
+      // onMouseEnter={(event) => onMouseEnter(event, index)}
     >
       {url || slug ? (
         <Link href="/posts/[slug]" as={`/posts/${slug}`}>
