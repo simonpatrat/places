@@ -5,7 +5,7 @@ export const getImageColorInfo = (img, index) => {
     if (ColorThief) {
       const colorThief = new ColorThief();
       const color = colorThief.getColor(img);
-      const palette = colorThief.getPalette(img);
+      const palette = colorThief.getPalette(img, 5);
       resolve({
         // imageId: `image-${index}`,
         color,

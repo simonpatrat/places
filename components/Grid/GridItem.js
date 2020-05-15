@@ -27,9 +27,7 @@ const GridItem = ({
 
     if (!imageColors) {
 
-      console.log('Je dois setter la couleur pour ', `image-${slug}`);
       const imageColorsInfo = await getImageColorInfo(image);
-      // setImageColors(imageColorsInfo);
       setColor({
         imageId: `image-${slug}`,
         colorInfo: imageColorsInfo,
@@ -65,7 +63,7 @@ const GridItem = ({
           <div
             className="img-container__bg--loading"
             style={{
-              background: "#f7f8f9",
+              background: !!imageColors && !!imageColors.color ? 'transparent' : "#f7f8f9",
             }}
           ></div>
           <div

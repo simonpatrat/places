@@ -1,32 +1,14 @@
 import Link from "next/link";
-import React, { useState, useEffect, useContext, useRef } from "react";
-import ColorThief from "colorthief";
+import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
 
 import ThemeContext from "../../components/ThemeContext";
 import ColorsContext from '../../components/ColorsContext';
 
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
+import { getImageColorInfo } from "../../components/Grid/lib/helpers/imagesColors";
 
 const Post = (props) => {
-  const { theme } = useContext(ThemeContext);
-  const { colors, setColor } = useContext(ColorsContext);
-  const [postImageColorPalette, setPostImageColorPalette] = useState(null);
-  const [postImageLoaded, setPostImageLoaded] = useState(false);
-  const [postImageColorBrightness, setPostImageColorBrightness] = useState(
-    "light"
-  );
-
-  const [postImageColor, setPostImageColor] = useState(`rgb(0,0,0)`);
-  const [postBgSecondColor, setPostBgSecondColor] = useState("white");
-  const [postDate, setPostDate] = useState(null);
-
-  const mapRef = useRef(null);
-
-  if (!props.post) {
-    return <div>Loading...</div>;
-  }
-
   const {
     post: {
       attributes: {
@@ -43,6 +25,22 @@ const Post = (props) => {
     nextPost,
     previousPost,
   } = props;
+
+  if (!props.post) {
+    return <div>Loading...</div>;
+  }
+
+  const { theme } = useContext(ThemeContext);
+  const { colors, setColor } = useContext(ColorsContext);
+  const imageColors = colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
+
+  const [postImageLoaded, setPostImageLoaded] = useState(false);
+
+  const [postDate, setPostDate] = useState(null);
+
+  const mapRef = useRef(null);
+
+
 
   useEffect(() => {
     const makePostMap = () => {
@@ -68,55 +66,44 @@ const Post = (props) => {
   useEffect(() => {
     document.documentElement.classList.add(`${theme}-mode`);
 
-    const colorThief = new ColorThief();
-    let img = new Image();
-    const cssStyles = window.getComputedStyle(document.documentElement);
-    const initialBgColor = cssStyles.getPropertyValue("--background-color");
-    const initialTextColor = cssStyles.getPropertyValue("--text-color");
-
-    img.addEventListener("load", function () {
-      const palette = colorThief.getPalette(img, 5);
-      const mainColor = colorThief.getColor(img);
-      const cssColor = `rgb(${mainColor.join(",")})`;
-      const colorBrightness = lightOrDark(cssColor);
-      const bgSecondColor = theme === "dark" ? "#1e272e" : "white";
-
-      setPostBgSecondColor(bgSecondColor);
-      setPostImageColor(cssColor);
-      setPostImageColorBrightness(colorBrightness);
-      setPostImageColorPalette(palette);
-      setPostImageLoaded(true);
-      /*      document.documentElement.style.setProperty(
-        "--background-color",
-        cssColor
-      ); */
-      document.documentElement.style.setProperty(
-        "--text-color",
-        colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
-      );
-    });
-
-    img.crossOrigin = "Anonymous";
-    img.src = featuredImage;
-
-    const body = document.querySelector("body");
-    /*     body.style.backgroundImage = `url(${featuredImage})`;
-    body.style.backgroundSize = "cover";
-    body.style.backgroundRepeat = "no-repeat"; */
-
     return () => {
       document.documentElement.style.setProperty("--background-color", "");
       document.documentElement.style.setProperty("--text-color", "");
-      /*       body.style.backgroundImage = ``;
-      body.style.backgroundSize = "";
-      body.style.backgroundRepeat = ""; */
     };
-  }, [featuredImage]);
+  }, [featuredImage, imageColors]);
+
+  const handleImageLoad = useCallback(async (event) => {
+
+    const image = event.target;
+
+    if (!imageColors) {
+      const imageColorsInfo = await getImageColorInfo(image);
+
+      setColor({
+        imageId: `image-${slug}`,
+        colorInfo: imageColorsInfo,
+      });
+    }
+
+    const colorBrightness = imageColors && imageColors.color ? lightOrDark(postImageColor) : 'light';
+
+    document.documentElement.style.setProperty(
+      "--text-color",
+      colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
+    );
+
+    setPostImageLoaded(true);
+  }, [featuredImage, imageColors]);
 
   useEffect(() => {
     const theDate = new Date(date).toLocaleDateString();
     setPostDate(theDate);
   }, [date]);
+
+  const postImageColor = imageColors && imageColors.color ? `rgb(${imageColors.color.join(",")})` : `rgb(0,0,0)`;
+
+  const bgSecondColor = theme === "dark" ? "#1e272e" : "white";
+  const postImageColorPalette = imageColors && imageColors.palette ? imageColors.palette : null;
 
   return (
     <>
@@ -146,10 +133,12 @@ const Post = (props) => {
             style={{
               opacity: postImageLoaded ? 1 : 0,
             }}
+            onLoad={handleImageLoad}
+            crossOrigin="anonymous"
           />
         </div>
         <div className="post__img-information-container">
-          {!!postImageColorPalette && postImageLoaded && (
+          {!!postImageColorPalette && (
             <div
               className="palette"
               style={{
