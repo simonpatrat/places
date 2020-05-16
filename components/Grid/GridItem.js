@@ -44,11 +44,32 @@ const GridItem = ({
     setImageLoaded(true);
   }, []);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (imageEl.current.complete) {
       const fakeLoadEvent = { target: imageEl.current };
       onImageLoad(fakeLoadEvent);
     }
+  }, []); */
+
+  useEffect(() => {
+    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.getAttribute("src")) {
+          const lazyImage = entry.target;
+          console.log("lazy loading ", lazyImage);
+          lazyImage.src = lazyImage.dataset.src;
+          // lazyImage.classList.remove("lzy_img");
+          imgObserver.unobserve(lazyImage);
+        }
+      });
+    });
+    if (imageEl.current) {
+      imageObserver.observe(imageEl.current);
+    }
+
+    return () => {
+      // imageObserver.unobserve();
+    };
   }, []);
 
   const itemClassnames = classnames("item", {
@@ -84,7 +105,7 @@ const GridItem = ({
                 }`,
               }}
             >
-              {imageLoaded && <Loading />}
+              {!imageLoaded && <Loading />}
             </div>
           </>
         )}
@@ -94,7 +115,7 @@ const GridItem = ({
             {...(withColorPalette && {
               crossOrigin: "anonymous",
             })}
-            src={featuredImage}
+            data-src={featuredImage}
             alt={title}
             className={imageLoaded ? "loaded" : ""}
             onLoad={onImageLoad}

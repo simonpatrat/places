@@ -8,7 +8,7 @@ export const imageLoaded = (imgUrl, index) => {
     img.onload = async () => {
       const colorInfo = await getImageColorInfo(img);
       const imageIdInfo =
-        typeof index !== "undefined" ? { imageId: `image-${index}` } : {};
+        typeof index !== "undefined" ? { imageId: `image-${imgUrl}` } : {};
       resolve({
         imgUrl,
         status: "ok",

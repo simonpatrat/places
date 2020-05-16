@@ -46,7 +46,11 @@ export default class Home extends Component {
     this.handleCategoryFilterSelection(categoryName);
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    document.documentElement.style.setProperty("--background-color", "");
+    document.documentElement.style.setProperty("--text-color", "");
+    document.documentElement.style.setProperty("--navmenu-text-color", "");
+  }
 
   loadMorePosts = () => {
     console.log("TODO: Load more posts with offset");

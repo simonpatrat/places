@@ -69,12 +69,19 @@ const Post = (props) => {
 
   useEffect(() => {
     document.documentElement.classList.add(`${theme}-mode`);
+    const colorBrightness =
+      imageColors && imageColors.color ? lightOrDark(postImageColor) : "light";
 
-    return () => {
-      document.documentElement.style.setProperty("--background-color", "");
-      document.documentElement.style.setProperty("--text-color", "");
-    };
-  }, [featuredImage, imageColors]);
+    document.documentElement.style.setProperty(
+      "--navmenu-text-color",
+      colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
+    );
+    /*    return () => {
+      // document.documentElement.style.setProperty("--background-color", "red");
+      // document.documentElement.style.setProperty("--text-color", "");
+      // document.documentElement.style.setProperty("--navmenu-text-color", "");
+    }; */
+  }, [imageColors]);
 
   const handleImageLoad = useCallback(
     async (event) => {
@@ -88,16 +95,6 @@ const Post = (props) => {
           colorInfo: imageColorsInfo,
         });
       }
-
-      const colorBrightness =
-        imageColors && imageColors.color
-          ? lightOrDark(postImageColor)
-          : "light";
-
-      document.documentElement.style.setProperty(
-        "--navmenu-text-color",
-        colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
-      );
 
       setPostImageLoaded(true);
     },
@@ -114,9 +111,6 @@ const Post = (props) => {
       const fakeLoadEvent = { target: postImageRef.current };
       handleImageLoad(fakeLoadEvent);
     }
-    return function resetCssVars() {
-      document.documentElement.style.setProperty("--navmenu-text-color", "");
-    };
   }, []);
   const postImageColor =
     imageColors && imageColors.color

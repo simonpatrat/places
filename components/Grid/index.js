@@ -95,16 +95,6 @@ class Grid extends React.Component {
 
     return (
       <>
-        {/* <div className="grid-config">
-                <div className="loading-info">
-                  {imagesLoaded ? (
-                    <span>Images Loaded!</span>
-                  ) : (
-                    <span>Loading images ...</span>
-                  )}
-                </div>
-
-            </div> */}
         <div className="grid-wrapper">
           <ul className={gridClassnames} ref={this.gridRef} style={{}}>
             {list.map((item, index) => {
