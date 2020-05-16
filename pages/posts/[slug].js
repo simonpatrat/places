@@ -15,26 +15,23 @@ import { lightOrDark } from "../../lib/color";
 import { getImageColorInfo } from "../../components/Grid/lib/helpers/imagesColors";
 
 const Post = (props) => {
-  const {
-    post: {
-      attributes: {
-        title,
-        featuredImage,
-        rating,
-        date,
-        resume,
-        gpsCoordinates,
-        slug,
-      },
-      html,
-    },
-    nextPost,
-    previousPost,
-  } = props;
+  const { post, nextPost, previousPost } = props;
 
   if (!props.post) {
     return <div>Loading...</div>;
   }
+  const {
+    attributes: {
+      title,
+      featuredImage,
+      rating,
+      date,
+      resume,
+      gpsCoordinates,
+      slug,
+    },
+    html,
+  } = post;
 
   const postImageRef = useRef(null);
 
