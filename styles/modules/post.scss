@@ -8,7 +8,7 @@
   &__img-container {
     height: calc(100vh - (78px * 2));
 
-    @media (min-width: 1024px) and(orientation: portrait) {
+    @media (min-width: 1000px) and (max-width: 1280px) and(orientation: portrait) {
       height: calc(75vh - (78px * 3));
     }
   }
