@@ -20,6 +20,7 @@ import {
 
 const Post = (props) => {
   const { post, nextPost, previousPost } = props;
+  let PLACES_LEAFLET_MAP = null;
 
   if (!props.post) {
     return <div>Loading...</div>;
@@ -73,10 +74,17 @@ const Post = (props) => {
       let marker = new L.Marker(endPointLocation);
       marker.bindPopup(title);
       map.addLayer(marker);
+      PLACES_LEAFLET_MAP = map;
     };
     if (postImageGPSCoordinates) {
       makePostMap();
     }
+    return () => {
+      if (PLACES_LEAFLET_MAP) {
+        PLACES_LEAFLET_MAP.remove();
+        PLACES_LEAFLET_MAP = null;
+      }
+    };
   }, [postImageGPSCoordinates, mapRef, title]);
 
   useEffect(() => {
