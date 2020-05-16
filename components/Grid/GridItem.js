@@ -56,7 +56,6 @@ const GridItem = ({
       entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.getAttribute("src")) {
           const lazyImage = entry.target;
-          console.log("lazy loading ", lazyImage);
           lazyImage.src = lazyImage.dataset.src;
           // lazyImage.classList.remove("lzy_img");
           imgObserver.unobserve(lazyImage);

@@ -13,6 +13,10 @@ import ColorsContext from "../../components/ColorsContext";
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
 import { getImageColorInfo } from "../../components/Grid/lib/helpers/imagesColors";
+import {
+  getImageExifData,
+  getImageGPSCoordinatesFromExifData,
+} from "../../lib/imageExifData";
 
 const Post = (props) => {
   const { post, nextPost, previousPost } = props;
@@ -41,6 +45,7 @@ const Post = (props) => {
     colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
 
   const [postImageLoaded, setPostImageLoaded] = useState(false);
+  const [postImageGPSCoordinates, setPostImageGPSCoordinates] = useState(null);
 
   const [postDate, setPostDate] = useState(null);
 
@@ -48,7 +53,12 @@ const Post = (props) => {
 
   useEffect(() => {
     const makePostMap = () => {
-      const coordinatesArray = gpsCoordinates.split(",").map((coordinate) => {
+      const coordinatesAsArray = [
+        postImageGPSCoordinates.latitude,
+        postImageGPSCoordinates.longitude,
+      ];
+
+      const coordinatesArray = coordinatesAsArray.map((coordinate) => {
         return parseFloat(coordinate);
       });
 
@@ -64,8 +74,10 @@ const Post = (props) => {
       marker.bindPopup(title);
       map.addLayer(marker);
     };
-    makePostMap();
-  }, [gpsCoordinates, mapRef, title]);
+    if (postImageGPSCoordinates) {
+      makePostMap();
+    }
+  }, [postImageGPSCoordinates, mapRef, title]);
 
   useEffect(() => {
     document.documentElement.classList.add(`${theme}-mode`);
@@ -94,6 +106,26 @@ const Post = (props) => {
           imageId: `image-${slug}`,
           colorInfo: imageColorsInfo,
         });
+      }
+      const imageExifData = await getImageExifData(image);
+
+      if (Object.keys(imageExifData).length > 0 && imageExifData.GPSLatitude) {
+        const imageGPSCoordinates = await getImageGPSCoordinatesFromExifData(
+          imageExifData
+        );
+
+        setPostImageGPSCoordinates(imageGPSCoordinates);
+      } else if (gpsCoordinates) {
+        setPostImageGPSCoordinates(
+          gpsCoordinates.split(",").reduce((acc, next, index) => {
+            if (index === 0) {
+              acc.latitude = next;
+            } else {
+              acc.longitude = next;
+            }
+            return acc;
+          }, {})
+        );
       }
 
       setPostImageLoaded(true);
@@ -127,14 +159,11 @@ const Post = (props) => {
         <div
           className="post__header-bg"
           style={{
-            /*             backgroundImage: `url(${featuredImage})`,
-            backgroundSize: "cover", */
             backgroundRepeat: "no-repeat",
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
-            // height: "calc(50vh - 76px)",
             zIndex: 0,
             backgroundColor: postImageColor,
           }}
@@ -160,7 +189,10 @@ const Post = (props) => {
           )}
           <img
             key={featuredImage}
-            src={featuredImage}
+            // TODO: change netlify CMS config to send only image name
+            // FIXME: construct images urls dynamically depending on context
+            // And remove the replace regexs
+            src={featuredImage.replace(/w_1920/gi, "w_1920,fl_keep_iptc,")}
             alt={title}
             style={{
               opacity: postImageLoaded ? 1 : 0,
