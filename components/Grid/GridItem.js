@@ -1,9 +1,17 @@
-import React, { useState, useEffect, useCallback, useRef, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useContext,
+} from "react";
 import classnames from "classnames";
 import Link from "next/link";
 import PropTypes from "prop-types";
+
+import Loading from "../Loading";
 import { getImageColorInfo } from "./lib/helpers/imagesColors";
-import ColorsContext from '../ColorsContext';
+import ColorsContext from "../ColorsContext";
 
 const GridItem = ({
   index,
@@ -20,22 +28,20 @@ const GridItem = ({
   const { setColor, colors } = colorContext;
   const [imageLoaded, setImageLoaded] = useState(false);
   const imageEl = useRef(null);
-  const imageColors = colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
+  const imageColors =
+    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
 
   const onImageLoad = useCallback(async (event) => {
     const image = event.target;
 
     if (!imageColors) {
-
       const imageColorsInfo = await getImageColorInfo(image);
       setColor({
         imageId: `image-${slug}`,
         colorInfo: imageColorsInfo,
       });
     }
-    setTimeout(() => {
-      setImageLoaded(true);
-    }, 400);
+    setImageLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -50,32 +56,36 @@ const GridItem = ({
     ["image-loaded"]: imageLoaded,
   });
 
-  const imageContainerBgClassNames = classnames('img-container__bg', {
-    ['colors-loaded']: imageColors && !!imageColors.color,
+  const imageContainerBgClassNames = classnames("img-container__bg", {
+    ["colors-loaded"]: imageColors && !!imageColors.color,
   });
-
 
   const itemContent = (
     <>
       <div className="img-container">
         {withColorPalette && (
           <>
-          <div
-            className="img-container__bg--loading"
-            style={{
-              background: !!imageColors && !!imageColors.color ? 'transparent' : "#f7f8f9",
-            }}
-          ></div>
-          <div
-            className={imageContainerBgClassNames}
-            style={{
-              background: `${
-                !!imageColors && !!imageColors.color
-                  ? "rgb(" + imageColors.color.join(",") + ")"
-                  : "#f7f8f9"
-              }`,
-            }}
-          ></div>
+            <div
+              className="img-container__bg--loading"
+              style={{
+                background:
+                  !!imageColors && !!imageColors.color
+                    ? "transparent"
+                    : "#f7f8f9",
+              }}
+            ></div>
+            <div
+              className={imageContainerBgClassNames}
+              style={{
+                background: `${
+                  !!imageColors && !!imageColors.color
+                    ? "rgb(" + imageColors.color.join(",") + ")"
+                    : "#f7f8f9"
+                }`,
+              }}
+            >
+              {imageLoaded && <Loading />}
+            </div>
           </>
         )}
         <div className="img-container__inner">

@@ -6,6 +6,10 @@ const NavMenu = ({ theme, setTheme }) => {
   const handleClickOnChangeColorFilterButton = useCallback((event) => {
     document.documentElement.classList.toggle("black-and-white");
   });
+  const handleClickOnToggleCategoriesMenuButton = useCallback((event) => {
+    console.log("TODO: handle categories menu toggling.");
+    document.documentElement.classList.toggle("show-filters");
+  });
   return (
     <div className="navmenu-container">
       <nav className="navmenu">
@@ -33,6 +37,16 @@ const NavMenu = ({ theme, setTheme }) => {
               aria-label={"Passer en noir et blanc"}
             >
               <span className="las la-tint-slash icon" />
+            </button>
+          </li>
+          <li className="navmenu__list__item">
+            <button
+              type="button"
+              className="button navmenu__button navmenu__button--toggle-categories-menu"
+              onClick={handleClickOnToggleCategoriesMenuButton}
+              aria-label={"Passer en noir et blanc"}
+            >
+              <span className="las la-bars icon" />
             </button>
           </li>
         </ul>

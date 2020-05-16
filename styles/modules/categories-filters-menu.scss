@@ -1,10 +1,14 @@
 .categories-filters-menu {
   list-style: none;
   padding: 16px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   overflow-x: scroll;
+
+  .show-filters & {
+    display: flex;
+  }
 }
 
 .categories-filters-button {

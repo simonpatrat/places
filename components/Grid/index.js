@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import GridItem from "./GridItem";
 
-
 import { loadAllImages } from "./lib/helpers/imagesLoaded";
 
 class Grid extends React.Component {
@@ -89,18 +88,14 @@ class Grid extends React.Component {
   };
 
   render() {
-    const {
-      list,
-      debuggModeInCards,
-      withColorPalette,
-    } = this.props;
+    const { list, debuggModeInCards, withColorPalette } = this.props;
     const { imagesLoaded } = this.state;
 
     const gridClassnames = `grid ${imagesLoaded ? "images-loaded" : ""}`;
 
     return (
-          <>
-            {/* <div className="grid-config">
+      <>
+        {/* <div className="grid-config">
                 <div className="loading-info">
                   {imagesLoaded ? (
                     <span>Images Loaded!</span>
@@ -109,38 +104,35 @@ class Grid extends React.Component {
                   )}
                 </div>
 
-            </div> */
-            }
-            <div className="grid-wrapper">
-              <ul
-                className={gridClassnames}
-                ref={this.gridRef}
-                style={{
-
-                }}
-              >
-                {list.map((item, index) => {
-                  const {
-                    attributes: { slug, featuredImage, title },
-                  } = item;
-                  const key = slug + "#" + index;
-                  return (
-                    <GridItem
-                      key={key}
-                      index={index}
-                      slug={slug}
-                      featuredImage={featuredImage}
-                      title={title}
-                      withColorPalette={withColorPalette}
-                      imagesLoaded={imagesLoaded}
-                      debuggModeInCards={debuggModeInCards}
-                      onMouseEnter={this.handleItemMouseEnter}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
-          </>
+            </div> */}
+        <div className="grid-wrapper">
+          <ul className={gridClassnames} ref={this.gridRef} style={{}}>
+            {list.map((item, index) => {
+              const {
+                attributes: { slug, featuredImage, title },
+              } = item;
+              const featuredImageThumbnail = featuredImage.replace(
+                /w_1920/gi,
+                "w_480"
+              );
+              const key = slug + "#" + index;
+              return (
+                <GridItem
+                  key={key}
+                  index={index}
+                  slug={slug}
+                  featuredImage={featuredImageThumbnail}
+                  title={title}
+                  withColorPalette={withColorPalette}
+                  imagesLoaded={imagesLoaded}
+                  debuggModeInCards={debuggModeInCards}
+                  onMouseEnter={this.handleItemMouseEnter}
+                />
+              );
+            })}
+          </ul>
+        </div>
+      </>
     );
   }
 }

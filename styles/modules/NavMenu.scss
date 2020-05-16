@@ -20,12 +20,17 @@
   max-width: 1680px;
   margin: 0 auto;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   @media (min-width: 1280px) {
     padding: 0 32px;
   }
 
-  a {
-    color: var(--color-text);
+  a,
+  button {
+    color: var(--navmenu-text-color);
     text-decoration: none;
   }
 
@@ -40,7 +45,7 @@
 
   &__title {
     display: block;
-    color: var(--color-text);
+    color: var(--navmenu-text-color);
     text-decoration: none;
 
     h1 {

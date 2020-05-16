@@ -1,8 +1,14 @@
 import Link from "next/link";
-import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  useRef,
+  useCallback,
+} from "react";
 
 import ThemeContext from "../../components/ThemeContext";
-import ColorsContext from '../../components/ColorsContext';
+import ColorsContext from "../../components/ColorsContext";
 
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
@@ -30,17 +36,18 @@ const Post = (props) => {
     return <div>Loading...</div>;
   }
 
+  const postImageRef = useRef(null);
+
   const { theme } = useContext(ThemeContext);
   const { colors, setColor } = useContext(ColorsContext);
-  const imageColors = colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
+  const imageColors =
+    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
 
   const [postImageLoaded, setPostImageLoaded] = useState(false);
 
   const [postDate, setPostDate] = useState(null);
 
   const mapRef = useRef(null);
-
-
 
   useEffect(() => {
     const makePostMap = () => {
@@ -72,38 +79,56 @@ const Post = (props) => {
     };
   }, [featuredImage, imageColors]);
 
-  const handleImageLoad = useCallback(async (event) => {
+  const handleImageLoad = useCallback(
+    async (event) => {
+      const image = event.target;
 
-    const image = event.target;
+      if (!imageColors) {
+        const imageColorsInfo = await getImageColorInfo(image);
 
-    if (!imageColors) {
-      const imageColorsInfo = await getImageColorInfo(image);
+        setColor({
+          imageId: `image-${slug}`,
+          colorInfo: imageColorsInfo,
+        });
+      }
 
-      setColor({
-        imageId: `image-${slug}`,
-        colorInfo: imageColorsInfo,
-      });
-    }
+      const colorBrightness =
+        imageColors && imageColors.color
+          ? lightOrDark(postImageColor)
+          : "light";
 
-    const colorBrightness = imageColors && imageColors.color ? lightOrDark(postImageColor) : 'light';
+      document.documentElement.style.setProperty(
+        "--navmenu-text-color",
+        colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
+      );
 
-    document.documentElement.style.setProperty(
-      "--text-color",
-      colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
-    );
-
-    setPostImageLoaded(true);
-  }, [featuredImage, imageColors]);
+      setPostImageLoaded(true);
+    },
+    [featuredImage, imageColors]
+  );
 
   useEffect(() => {
     const theDate = new Date(date).toLocaleDateString();
     setPostDate(theDate);
   }, [date]);
 
-  const postImageColor = imageColors && imageColors.color ? `rgb(${imageColors.color.join(",")})` : `rgb(0,0,0)`;
+  useEffect(() => {
+    if (postImageRef.current.complete) {
+      const fakeLoadEvent = { target: postImageRef.current };
+      handleImageLoad(fakeLoadEvent);
+    }
+    return function resetCssVars() {
+      document.documentElement.style.setProperty("--navmenu-text-color", "");
+    };
+  }, []);
+  const postImageColor =
+    imageColors && imageColors.color
+      ? `rgb(${imageColors.color.join(",")})`
+      : `rgb(0,0,0)`;
 
   const bgSecondColor = theme === "dark" ? "#1e272e" : "white";
-  const postImageColorPalette = imageColors && imageColors.palette ? imageColors.palette : null;
+  const postImageColorPalette =
+    imageColors && imageColors.palette ? imageColors.palette : null;
 
   return (
     <>
@@ -125,7 +150,23 @@ const Post = (props) => {
         ></div>
         {/* <div className="post__content-pusher"></div> */}
         <div className="post__img-container">
-          {!postImageLoaded && <div className="loading">Loading image...</div>}
+          {!postImageLoaded && (
+            <div
+              className="loading"
+              style={{
+                color: "#fff",
+              }}
+            >
+              Loading image...
+            </div>
+          )}
+          {postImageLoaded && (
+            <Link href="/">
+              <a className="button-close-image" title="Return to home page">
+                <span className="las la-times icon"></span>
+              </a>
+            </Link>
+          )}
           <img
             key={featuredImage}
             src={featuredImage}
@@ -133,6 +174,7 @@ const Post = (props) => {
             style={{
               opacity: postImageLoaded ? 1 : 0,
             }}
+            ref={postImageRef}
             onLoad={handleImageLoad}
             crossOrigin="anonymous"
           />
