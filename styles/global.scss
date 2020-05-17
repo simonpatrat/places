@@ -33,6 +33,7 @@ body {
   font-weight: 100;
   overflow-x: hidden;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   background: var(--background-color, #fff);
   /*   background: linear-gradient(
     180deg,
