@@ -214,7 +214,7 @@ async function loadCategories() {
 
   function importAll(r) {
     const categoriesToLoad = r.keys();
-    console.log("categoriesToLoad: ", categoriesToLoad);
+
     categoriesToLoad.forEach((key) => {
       const category = r(key);
       const categorySlug = key.substring(2, key.length - 3);

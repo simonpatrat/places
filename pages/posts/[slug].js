@@ -92,15 +92,31 @@ const Post = (props) => {
     const colorBrightness =
       imageColors && imageColors.color ? lightOrDark(postImageColor) : "light";
 
-    document.documentElement.style.setProperty(
+    /*     document.documentElement.style.setProperty(
       "--navmenu-text-color",
       colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
+    ); */
+    document.documentElement.classList.add(
+      `with-photo-color-theme--${colorBrightness}`
     );
     /*    return () => {
       // document.documentElement.style.setProperty("--background-color", "red");
       // document.documentElement.style.setProperty("--text-color", "");
       // document.documentElement.style.setProperty("--navmenu-text-color", "");
     }; */
+
+    return () => {
+      const classNamesToRemove = [...document.documentElement.classList].filter(
+        (c) => {
+          return c.includes("with-photo-color-theme");
+        }
+      );
+      if (classNamesToRemove.length > 0) {
+        classNamesToRemove.forEach((cn) => {
+          document.documentElement.classList.remove(cn);
+        });
+      }
+    };
   }, [imageColors]);
 
   const handleImageLoad = useCallback(
@@ -240,10 +256,15 @@ const Post = (props) => {
           />
           <div className="post__date">{postDate}</div>
           <div className="post__resume">{resume}</div>
-          <div className="post__rating">{rating}</div>
-          <div className="post__gps-coordinates">{gpsCoordinates}</div>
+          {/*         <div className="post__rating">{rating}</div>
+          <div className="post__gps-coordinates">{gpsCoordinates}</div> */}
         </div>
-        <section className="post-map">
+        <section
+          className="post-map"
+          style={{
+            background: !!postImageColor ? postImageColor : "transparent",
+          }}
+        >
           <div
             className="post-map__inner"
             ref={mapRef}
@@ -251,19 +272,29 @@ const Post = (props) => {
           ></div>
         </section>
       </article>
-      {previousPost && (
-        <Link
-          href="/posts/[slug]"
-          as={`/posts/${previousPost.attributes.slug}`}
-        >
-          <a>{previousPost.attributes.title}</a>
-        </Link>
-      )}
-      {nextPost && (
-        <Link href="/posts/[slug]" as={`/posts/${nextPost.attributes.slug}`}>
-          <a>{nextPost.attributes.title}</a>
-        </Link>
-      )}
+      <div className="post-navigation">
+        {previousPost && (
+          <Link
+            href="/posts/[slug]"
+            as={`/posts/${previousPost.attributes.slug}`}
+          >
+            <a className="post-navigation__link post-navigation__link--previous">
+              <span className="icon las la-arrow-left"></span>
+              &nbsp;
+              {previousPost.attributes.title}
+            </a>
+          </Link>
+        )}
+        {nextPost && (
+          <Link href="/posts/[slug]" as={`/posts/${nextPost.attributes.slug}`}>
+            <a className="post-navigation__link post-navigation__link--next">
+              {nextPost.attributes.title}
+              &nbsp;
+              <span className="icon las la-arrow-right"></span>
+            </a>
+          </Link>
+        )}
+      </div>
     </>
   );
 };

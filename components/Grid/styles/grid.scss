@@ -51,6 +51,9 @@ $gap: 50px;
     @media (max-width: 768px) {
       display: block;
       padding: $gap 0;
+      /*       padding: $gap / 2 $gap / 4;
+      width: calc(100% / 2);
+      flex-basis: calc(100% / 2); */
     }
 
     @media (max-width: 1024px) {

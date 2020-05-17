@@ -19,6 +19,14 @@ html {
     --navmenu-text-color: #fff;
   }
 
+  &.with-photo-color-theme--dark {
+    --navmenu-text-color: #fff;
+  }
+
+  &.with-photo-color-theme--light {
+    --navmenu-text-color: #000;
+  }
+
   &.black-and-white {
     img {
       filter: grayscale(1);
@@ -63,4 +71,5 @@ a {
 @import "./modules/LoadingBar";
 @import "./modules/categories-filters-menu";
 @import "./modules/Loading";
+@import "./modules/map";
 @import "../components/Grid/styles/grid";
