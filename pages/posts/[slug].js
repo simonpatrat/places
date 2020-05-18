@@ -78,25 +78,25 @@ const Post = (props) => {
       map.addLayer(marker);
       PLACES_LEAFLET_MAP = map;
     };
+    const addThemeClassNames = () => {
+      document.documentElement.classList.add(`${theme}-mode`);
+      const colorBrightness =
+        imageColors && imageColors.color
+          ? lightOrDark(postImageColor)
+          : "light";
+
+      document.documentElement.classList.add(
+        `with-photo-color-theme--${colorBrightness}`
+      );
+    };
+
     if (postImageGPSCoordinates) {
       makePostMap();
     }
-    return () => {
-      if (PLACES_LEAFLET_MAP) {
-        PLACES_LEAFLET_MAP.remove();
-        PLACES_LEAFLET_MAP = null;
-      }
-    };
-  }, [postImageGPSCoordinates, mapRef, title]);
 
-  useEffect(() => {
-    document.documentElement.classList.add(`${theme}-mode`);
-    const colorBrightness =
-      imageColors && imageColors.color ? lightOrDark(postImageColor) : "light";
-
-    document.documentElement.classList.add(
-      `with-photo-color-theme--${colorBrightness}`
-    );
+    if (imageColors) {
+      addThemeClassNames();
+    }
 
     return () => {
       const classNamesToRemove = [...document.documentElement.classList].filter(
@@ -109,8 +109,12 @@ const Post = (props) => {
           document.documentElement.classList.remove(cn);
         });
       }
+      if (PLACES_LEAFLET_MAP) {
+        PLACES_LEAFLET_MAP.remove();
+        PLACES_LEAFLET_MAP = null;
+      }
     };
-  }, [imageColors]);
+  }, [postImageGPSCoordinates, mapRef, title, imageColors]);
 
   const handleImageLoad = useCallback(
     async (event) => {

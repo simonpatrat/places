@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import GridItem from "./GridItem";
 
-import { loadAllImages } from "./lib/helpers/imagesLoaded";
-
 class Grid extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +12,7 @@ class Grid extends React.Component {
       enteringItemFrom: "left",
       imagesColors: {},
       imagesLoaded: false,
+      loadedImages: [],
     };
 
     this.gridRef = React.createRef();
@@ -36,17 +35,17 @@ class Grid extends React.Component {
     this.setState({
       nbItems,
     });
-    const images = list.map((it) => it.attributes.featuredImage);
+    /*     const images = list.map((it) => it.attributes.featuredImage);
     const allImages = await loadAllImages(images);
     const imagesColors = allImages.reduce((acc, next) => {
       acc[next.imageId] = next;
       return acc;
-    }, {});
-
+    }, {}); */
+    /*
     this.setState({
       imagesLoaded: true,
       imagesColors,
-    });
+    }); */
 
     this.handleGridResize();
     const resizeObserver = new ResizeObserver(this.handleGridResize);
@@ -76,6 +75,33 @@ class Grid extends React.Component {
     });
 
     this.gridRef.current.style.setProperty("--item-hover-right-pos", decalage);
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    const { loadedImages, nbItems } = this.state;
+    if (loadedImages.length !== prevState.loadedImages.length) {
+      if (loadedImages.length === nbItems) {
+        this.setState({
+          imagesLoaded: true,
+        });
+      }
+    }
+  }
+
+  handleImageLoad = ({ image, postSlug }) => {
+    console.log("Loaded image");
+    const { loadedImages } = this.state;
+    console.log(typeof loadedImages, loadedImages);
+    const newLoadedImages = [
+      ...loadedImages,
+      {
+        image,
+        postSlug,
+      },
+    ];
+    this.setState({
+      loadedImages: newLoadedImages,
+    });
   };
 
   render() {
@@ -108,6 +134,7 @@ class Grid extends React.Component {
                   imagesLoaded={imagesLoaded}
                   debuggModeInCards={debuggModeInCards}
                   onMouseEnter={this.handleItemMouseEnter}
+                  onImageLoadCallBack={this.handleImageLoad}
                 />
               );
             })}

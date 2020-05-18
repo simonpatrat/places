@@ -22,6 +22,7 @@ const GridItem = ({
   imagesLoaded,
   debuggModeInCards,
   onMouseEnter,
+  onImageLoadCallBack,
   url,
 }) => {
   const colorContext = useContext(ColorsContext);
@@ -42,6 +43,10 @@ const GridItem = ({
       });
     }
     setImageLoaded(true);
+    onImageLoadCallBack({
+      image,
+      postSlug: slug,
+    });
   }, []);
 
   /*   useEffect(() => {
@@ -52,22 +57,22 @@ const GridItem = ({
   }, []); */
 
   useEffect(() => {
-    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+    const handleIntersectionObserver = (entries, imgObserver) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.getAttribute("src")) {
           const lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
-          // lazyImage.classList.remove("lzy_img");
           imgObserver.unobserve(lazyImage);
         }
       });
-    });
+    };
+    const imageObserver = new IntersectionObserver(handleIntersectionObserver);
     if (imageEl.current) {
       imageObserver.observe(imageEl.current);
     }
 
     return () => {
-      // imageObserver.unobserve();
+      imageObserver.unobserve(imageEl.current);
     };
   }, []);
 
@@ -111,9 +116,7 @@ const GridItem = ({
         <div className="img-container__inner">
           <img
             ref={imageEl}
-            {...(withColorPalette && {
-              crossOrigin: "anonymous",
-            })}
+            crossOrigin="anonymous"
             data-src={featuredImage}
             alt={title}
             className={imageLoaded ? "loaded" : ""}
