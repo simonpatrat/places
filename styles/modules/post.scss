@@ -159,16 +159,21 @@
     transform: translateY(calc(-50% - 38px));
     z-index: 10;
 
-    @media (max-width: 768px) {
-      top: auto;
-      bottom: 0;
-      transform: translateY(100%);
-    }
-
     .post-navigation__link {
       font-size: 24px;
       margin: 0 8px;
       color: var(--navmenu-text-color);
+    }
+
+    @media (max-width: 768px) {
+      top: auto;
+      bottom: 0;
+      transform: translateY(100%);
+      .post-navigation__link {
+        font-size: 24px;
+        margin: 0 8px;
+        color: var(--text-color);
+      }
     }
   }
 }
