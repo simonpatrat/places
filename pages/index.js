@@ -146,30 +146,31 @@ export default class Home extends Component {
         </Head>
 
         <article>
-          <div className="page__header">{categoriesMenu}</div>
-          <div
-            className="page__content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div className="page__header">
+            <div className="container">
+              <div className="row">{categoriesMenu}</div>
+            </div>
+          </div>
 
-          {shouldDisplayPostsList && (
-            <Grid
-              list={orderedPosts}
-              useImagesLoaded={true}
-              withColorPalette
-              cols={{
-                480: 1,
-                768: 1,
-                1024: 2,
-                1366: 2,
-                1440: 3,
-                1920: 3,
-                99999: 4,
-              }}
-              gap={100}
-              debuggModeInCards={false}
-            ></Grid>
-          )}
+          <div className="page__content">
+            <div className="container">
+              <div className="row">
+                <section dangerouslySetInnerHTML={{ __html: html }} />
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="row">
+              {shouldDisplayPostsList && (
+                <Grid
+                  list={orderedPosts}
+                  useImagesLoaded={true}
+                  withColorPalette
+                  debuggModeInCards={false}
+                ></Grid>
+              )}
+            </div>
+          </div>
         </article>
       </>
     );

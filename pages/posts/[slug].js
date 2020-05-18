@@ -92,18 +92,9 @@ const Post = (props) => {
     const colorBrightness =
       imageColors && imageColors.color ? lightOrDark(postImageColor) : "light";
 
-    /*     document.documentElement.style.setProperty(
-      "--navmenu-text-color",
-      colorBrightness === "dark" ? "white" : "rgb(10, 1, 32)"
-    ); */
     document.documentElement.classList.add(
       `with-photo-color-theme--${colorBrightness}`
     );
-    /*    return () => {
-      // document.documentElement.style.setProperty("--background-color", "red");
-      // document.documentElement.style.setProperty("--text-color", "");
-      // document.documentElement.style.setProperty("--navmenu-text-color", "");
-    }; */
 
     return () => {
       const classNamesToRemove = [...document.documentElement.classList].filter(
@@ -173,7 +164,6 @@ const Post = (props) => {
       ? `rgb(${imageColors.color.join(",")})`
       : `rgb(0,0,0)`;
 
-  const bgSecondColor = theme === "dark" ? "#1e272e" : "white";
   const postImageColorPalette =
     imageColors && imageColors.palette ? imageColors.palette : null;
 
@@ -192,7 +182,6 @@ const Post = (props) => {
             backgroundColor: postImageColor,
           }}
         ></div>
-        {/* <div className="post__content-pusher"></div> */}
         <div className="post__img-container">
           {!postImageLoaded && (
             <div
@@ -205,11 +194,20 @@ const Post = (props) => {
             </div>
           )}
           {postImageLoaded && (
-            <Link href="/">
-              <a className="button-close-image" title="Return to home page">
-                <span className="las la-times icon"></span>
-              </a>
-            </Link>
+            <div className="close-post-wrapper">
+              <div className="container">
+                <div className="row flex jc-flex-end">
+                  <Link href="/">
+                    <a
+                      className="button-close-image"
+                      title="Return to home page"
+                    >
+                      <span className="las la-times icon"></span>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
           )}
           <img
             key={featuredImage}
@@ -225,6 +223,36 @@ const Post = (props) => {
             onLoad={handleImageLoad}
             crossOrigin="anonymous"
           />
+          <div className="post-navigation post-navigation--over-image">
+            {previousPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${previousPost.attributes.slug}`}
+              >
+                <a
+                  className="post-navigation__link post-navigation__link--previous"
+                  title={previousPost.attributes.title}
+                >
+                  <span className="icon las la-arrow-left"></span>
+                </a>
+              </Link>
+            )}
+            {!previousPost && <div></div>}
+            {nextPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${nextPost.attributes.slug}`}
+              >
+                <a
+                  className="post-navigation__link post-navigation__link--next"
+                  title={nextPost.attributes.title}
+                >
+                  <span className="icon las la-arrow-right"></span>
+                </a>
+              </Link>
+            )}
+            {!nextPost && <div></div>}
+          </div>
         </div>
         <div className="post__img-information-container">
           {!!postImageColorPalette && (
@@ -248,52 +276,64 @@ const Post = (props) => {
             </div>
           )}
         </div>
-        <div className="post__body">
-          <h2 className="post__title">{title}</h2>
-          <div
-            className="post__content-html"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-          <div className="post__date">{postDate}</div>
-          <div className="post__resume">{resume}</div>
-          {/*         <div className="post__rating">{rating}</div>
+        <div className="container">
+          <div className="row">
+            <div className="post__body">
+              <h2 className="post__title">{title}</h2>
+              <div
+                className="post__content-html"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+              <div className="post__date">{postDate}</div>
+              <div className="post__resume">{resume}</div>
+              {/*         <div className="post__rating">{rating}</div>
           <div className="post__gps-coordinates">{gpsCoordinates}</div> */}
+            </div>
+          </div>
         </div>
-        <section
-          className="post-map"
-          style={{
-            background: !!postImageColor ? postImageColor : "transparent",
-          }}
-        >
-          <div
-            className="post-map__inner"
-            ref={mapRef}
-            style={{ height: "600px" }}
-          ></div>
-        </section>
+        <div className="container">
+          <div className="row">
+            <section
+              className="post-map"
+              style={{
+                background: !!postImageColor ? postImageColor : "transparent",
+              }}
+            >
+              <div className="post-map__inner" ref={mapRef}></div>
+            </section>
+          </div>
+        </div>
       </article>
-      <div className="post-navigation">
-        {previousPost && (
-          <Link
-            href="/posts/[slug]"
-            as={`/posts/${previousPost.attributes.slug}`}
-          >
-            <a className="post-navigation__link post-navigation__link--previous">
-              <span className="icon las la-arrow-left"></span>
-              &nbsp;
-              {previousPost.attributes.title}
-            </a>
-          </Link>
-        )}
-        {nextPost && (
-          <Link href="/posts/[slug]" as={`/posts/${nextPost.attributes.slug}`}>
-            <a className="post-navigation__link post-navigation__link--next">
-              {nextPost.attributes.title}
-              &nbsp;
-              <span className="icon las la-arrow-right"></span>
-            </a>
-          </Link>
-        )}
+
+      <div className="container">
+        <div className="row">
+          <div className="post-navigation">
+            {previousPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${previousPost.attributes.slug}`}
+              >
+                <a className="post-navigation__link post-navigation__link--previous">
+                  <span className="icon las la-arrow-left"></span>
+                  &nbsp;
+                  {previousPost.attributes.title}
+                </a>
+              </Link>
+            )}
+            {nextPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${nextPost.attributes.slug}`}
+              >
+                <a className="post-navigation__link post-navigation__link--next">
+                  {nextPost.attributes.title}
+                  &nbsp;
+                  <span className="icon las la-arrow-right"></span>
+                </a>
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
     </>
   );

@@ -20,17 +20,14 @@ class Grid extends React.Component {
   }
 
   handleGridResize = (entries) => {
-    const { cols: colsFromProps } = this.props;
-    const { innerWidth } = window;
-    const breakPoints = Object.keys(colsFromProps);
+    const gridElement = entries ? [...entries][0].target : this.gridRef.current;
+    if (gridElement) {
+      const gridElementSize = gridElement.offsetWidth;
+      const itemSize = gridElement.querySelector(".item").offsetWidth;
+      const nbCols = Math.floor(gridElementSize / itemSize);
 
-    const currentBreakPoint = Math.min(
-      ...breakPoints.filter((bpKey) => {
-        return innerWidth <= bpKey;
-      })
-    );
-    const nbCols = colsFromProps[currentBreakPoint];
-    this.setState({ cols: nbCols });
+      this.setState({ cols: nbCols });
+    }
   };
 
   async componentDidMount() {
@@ -51,18 +48,12 @@ class Grid extends React.Component {
       imagesColors,
     });
 
-    if (
-      typeof colsFromProps !== "number" &&
-      !!colsFromProps &&
-      typeof colsFromProps === "object"
-    ) {
-      this.handleGridResize();
-      const resizeObserver = new ResizeObserver(this.handleGridResize);
-      this.gridResizeObserver = resizeObserver;
+    this.handleGridResize();
+    const resizeObserver = new ResizeObserver(this.handleGridResize);
+    this.gridResizeObserver = resizeObserver;
 
-      if (!!this.gridRef && !!this.gridRef.current) {
-        this.gridResizeObserver.observe(this.gridRef.current);
-      }
+    if (!!this.gridRef && !!this.gridRef.current) {
+      this.gridResizeObserver.observe(this.gridRef.current);
     }
   }
 
@@ -132,9 +123,7 @@ Grid.propTypes = {
   useImagesLoaded: PropTypes.bool,
   imagesLoaded: PropTypes.bool,
   cols: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
-  gap: PropTypes.number,
   debuggModeInCards: PropTypes.bool,
-  withPadding: PropTypes.bool, // use grid gap as grid padding
 };
 
 export default Grid;

@@ -1,8 +1,9 @@
 .page {
-  width: 95%;
-  max-width: 1680px;
+  // width: 95%;
+  // max-width: 1680px;
   margin: 0 auto;
-  padding: 76px 16px 16px 16px;
+  padding-top: 76px;
+  // padding: 76px 16px 16px 16px;
   overflow-x: hidden;
 
   @media (max-width: 768px) {
@@ -15,6 +16,6 @@
   } */
 
   @media (min-width: 1280px) {
-    padding: 76px 32px 32px 32px;
+    // padding: 76px 32px 32px 32px;
   }
 }

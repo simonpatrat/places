@@ -3,4 +3,14 @@
   max-width: 100%;
   margin: auto;
   padding: 32px;
+
+  &__inner {
+    height: 320px;
+    @media (min-width: 1024px) {
+      height: 480px;
+    }
+    @media (min-width: 1280px) {
+      height: 600px;
+    }
+  }
 }

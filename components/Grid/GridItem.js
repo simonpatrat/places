@@ -71,7 +71,7 @@ const GridItem = ({
     };
   }, []);
 
-  const itemClassnames = classnames("item", {
+  const itemClassnames = classnames("item grid__item", {
     ["all-images-loaded"]: imagesLoaded,
     ["image-loaded"]: imageLoaded,
   });
