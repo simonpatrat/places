@@ -78,6 +78,14 @@
     }
   }
 
+  &.with-large-image {
+    .post__img-container {
+      img {
+        max-height: none;
+      }
+    }
+  }
+
   &__body {
     max-width: 1280px;
     margin: 8px auto 32px auto;
@@ -103,6 +111,10 @@
     @media (min-width: 1024px) and(orientation: portrait) {
       height: calc(75vh - (78px * 2));
     }
+  }
+
+  .img-wrapper {
+    position: relative;
   }
 }
 

@@ -6,6 +6,7 @@ import React, {
   useRef,
   useCallback,
 } from "react";
+import classnames from "classnames";
 
 import ThemeContext from "../../components/ThemeContext";
 import ColorsContext from "../../components/ColorsContext";
@@ -47,6 +48,7 @@ const Post = (props) => {
 
   const [postImageLoaded, setPostImageLoaded] = useState(false);
   const [postImageGPSCoordinates, setPostImageGPSCoordinates] = useState(null);
+  const [displayLargeImage, setDisplayLargeImage] = useState(false);
 
   const [postDate, setPostDate] = useState(null);
 
@@ -159,17 +161,25 @@ const Post = (props) => {
       handleImageLoad(fakeLoadEvent);
     }
   }, []);
+
+  const handleEnlargeImageButtonClick = useCallback((event) => {
+    setDisplayLargeImage(!displayLargeImage);
+  });
+
   const postImageColor =
     imageColors && imageColors.color
       ? `rgb(${imageColors.color.join(",")})`
-      : `rgb(0,0,0)`;
+      : `rgba(0,0,0,0.2)`;
 
   const postImageColorPalette =
     imageColors && imageColors.palette ? imageColors.palette : null;
 
+  const postClassnames = classnames("post", {
+    "with-large-image": displayLargeImage,
+  });
   return (
     <>
-      <article className="post">
+      <article className={postClassnames}>
         <div
           className="post__header-bg"
           style={{
@@ -209,6 +219,7 @@ const Post = (props) => {
               </div>
             </div>
           )}
+
           <img
             key={featuredImage}
             // TODO: change netlify CMS config to send only image name
@@ -223,6 +234,18 @@ const Post = (props) => {
             onLoad={handleImageLoad}
             crossOrigin="anonymous"
           />
+          <button
+            style={{
+              display: "none",
+            }}
+            type="button"
+            className="button-enlarge-post-image"
+            onClick={handleEnlargeImageButtonClick}
+            aria-label="Enlarge image"
+          >
+            <span className="icon las la-expand-arrows-alt"></span>
+          </button>
+
           <div className="post-navigation post-navigation--over-image">
             {previousPost && (
               <Link
