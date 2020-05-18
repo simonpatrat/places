@@ -167,6 +167,17 @@ export default class Home extends Component {
                   useImagesLoaded={true}
                   withColorPalette
                   debuggModeInCards={false}
+                  cols={{
+                    480: 1,
+                    768: 2,
+                    1024: 2,
+                    1366: 3,
+                    1440: 3,
+                    1680: 3,
+                    1880: 3,
+                    1920: 4,
+                    99999: 4,
+                  }}
                 ></Grid>
               )}
             </div>

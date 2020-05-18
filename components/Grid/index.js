@@ -13,40 +13,41 @@ class Grid extends React.Component {
       imagesColors: {},
       imagesLoaded: false,
       loadedImages: [],
+      gridList: [],
     };
 
     this.gridRef = React.createRef();
   }
 
   handleGridResize = (entries) => {
-    const gridElement = entries ? [...entries][0].target : this.gridRef.current;
-    if (gridElement) {
-      const gridElementSize = gridElement.offsetWidth;
-      const itemSize = gridElement.querySelector(".item").offsetWidth;
-      const nbCols = Math.floor(gridElementSize / itemSize);
-
-      this.setState({ cols: nbCols });
-    }
+    this.setState({ cols: this.getNumberOfCols() }, () => {
+      this.makeGridColumns();
+    });
   };
 
-  async componentDidMount() {
-    const { list, cols: colsFromProps, withColorPalette } = this.props;
+  getNumberOfCols = () => {
+    const { cols: colsFromProps } = this.props;
+    const { innerWidth } = window;
+    const breakPoints = Object.keys(colsFromProps);
+
+    const currentBreakPoint = Math.min(
+      ...breakPoints.filter((bpKey) => {
+        return innerWidth <= bpKey;
+      })
+    );
+
+    const nbCols = colsFromProps[currentBreakPoint];
+    return nbCols;
+  };
+
+  componentDidMount() {
+    const { list } = this.props;
     const nbItems = list.length;
     this.setState({
       nbItems,
     });
-    /*     const images = list.map((it) => it.attributes.featuredImage);
-    const allImages = await loadAllImages(images);
-    const imagesColors = allImages.reduce((acc, next) => {
-      acc[next.imageId] = next;
-      return acc;
-    }, {}); */
-    /*
-    this.setState({
-      imagesLoaded: true,
-      imagesColors,
-    }); */
 
+    this.makeGridColumns();
     this.handleGridResize();
     const resizeObserver = new ResizeObserver(this.handleGridResize);
     this.gridResizeObserver = resizeObserver;
@@ -61,6 +62,27 @@ class Grid extends React.Component {
       this.gridResizeObserver.unobserve(this.gridRef.current);
     }
   }
+
+  makeGridColumns = () => {
+    const { list } = this.props;
+    const { cols } = this.state;
+    let gridList = {}; // new Array(cols).fill([]);
+    for (let i = 0; i < cols; i++) {
+      gridList[`column${i}`] = [];
+    }
+
+    list.forEach((item, index) => {
+      const inColumn = index % cols;
+      gridList[`column${inColumn}`].push(item);
+    });
+
+    this.setState({
+      gridList: Object.keys(gridList).map((itemKey) => {
+        const itemValue = gridList[itemKey];
+        return itemValue;
+      }),
+    });
+  };
 
   handleItemMouseEnter = (event, index) => {
     const { pageX, pageY } = event;
@@ -89,9 +111,7 @@ class Grid extends React.Component {
   }
 
   handleImageLoad = ({ image, postSlug }) => {
-    console.log("Loaded image");
     const { loadedImages } = this.state;
-    console.log(typeof loadedImages, loadedImages);
     const newLoadedImages = [
       ...loadedImages,
       {
@@ -106,38 +126,52 @@ class Grid extends React.Component {
 
   render() {
     const { list, debuggModeInCards, withColorPalette } = this.props;
-    const { imagesLoaded } = this.state;
+    const { imagesLoaded, gridList, cols } = this.state;
 
     const gridClassnames = `grid ${imagesLoaded ? "images-loaded" : ""}`;
 
     return (
       <>
         <div className="grid-wrapper">
-          <ul className={gridClassnames} ref={this.gridRef} style={{}}>
-            {list.map((item, index) => {
-              const {
-                attributes: { slug, featuredImage, title },
-              } = item;
-              const featuredImageThumbnail = featuredImage.replace(
-                /w_1920/gi,
-                "w_480"
-              );
-              const key = slug + "#" + index;
-              return (
-                <GridItem
-                  key={key}
-                  index={index}
-                  slug={slug}
-                  featuredImage={featuredImageThumbnail}
-                  title={title}
-                  withColorPalette={withColorPalette}
-                  imagesLoaded={imagesLoaded}
-                  debuggModeInCards={debuggModeInCards}
-                  onMouseEnter={this.handleItemMouseEnter}
-                  onImageLoadCallBack={this.handleImageLoad}
-                />
-              );
-            })}
+          <ul className={gridClassnames} ref={this.gridRef}>
+            {gridList.length > 0 &&
+              gridList.map((col, colIndex) => {
+                return (
+                  <div
+                    className="grid__col"
+                    key={`col-${colIndex}`}
+                    style={{
+                      width: `calc(100% / ${cols})`,
+                      flexBasis: `calc(100% / ${cols})`,
+                    }}
+                  >
+                    {col.map((item, index) => {
+                      const {
+                        attributes: { slug, featuredImage, title },
+                      } = item;
+                      const featuredImageThumbnail = featuredImage.replace(
+                        /w_1920/gi,
+                        "w_480"
+                      );
+                      const key = slug + "#" + index;
+                      return (
+                        <GridItem
+                          key={key}
+                          index={index}
+                          slug={slug}
+                          featuredImage={featuredImageThumbnail}
+                          title={title}
+                          withColorPalette={withColorPalette}
+                          imagesLoaded={imagesLoaded}
+                          debuggModeInCards={debuggModeInCards}
+                          onMouseEnter={this.handleItemMouseEnter}
+                          onImageLoadCallBack={this.handleImageLoad}
+                        />
+                      );
+                    })}
+                  </div>
+                );
+              })}
           </ul>
         </div>
       </>

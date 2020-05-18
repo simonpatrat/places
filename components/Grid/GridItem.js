@@ -34,6 +34,7 @@ const GridItem = ({
 
   const onImageLoad = useCallback(async (event) => {
     const image = event.target;
+    image.width = event.target.width == 0 ? 500 : event.target.width;
 
     if (!imageColors) {
       const imageColorsInfo = await getImageColorInfo(image);
