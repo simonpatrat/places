@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ResizeObserver from "resize-observer-polyfill";
 
 import GridItem from "./GridItem";
 
