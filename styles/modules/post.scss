@@ -116,6 +116,15 @@
   .img-wrapper {
     position: relative;
   }
+
+  &__content-html {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 32px auto;
+    }
+  }
 }
 
 .post-navigation {
