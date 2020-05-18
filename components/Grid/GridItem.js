@@ -117,7 +117,7 @@ const GridItem = ({
         <div className="img-container__inner">
           <img
             ref={imageEl}
-            crossOrigin="anonymous"
+            crossOrigin="Anonymous"
             data-src={featuredImage}
             alt={title}
             className={imageLoaded ? "loaded" : ""}

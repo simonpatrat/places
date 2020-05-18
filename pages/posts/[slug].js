@@ -236,7 +236,7 @@ const Post = (props) => {
             }}
             ref={postImageRef}
             onLoad={handleImageLoad}
-            crossOrigin="anonymous"
+            crossOrigin="Anonymous"
           />
           <button
             style={{
