@@ -184,6 +184,7 @@ const Post = (props) => {
 
   const postClassnames = classnames("post", {
     "with-large-image": displayLargeImage,
+    "image-loaded": postImageLoaded,
   });
   return (
     <>
@@ -207,7 +208,7 @@ const Post = (props) => {
             <div
               className="loading"
               style={{
-                color: "var(--text-color)",
+                color: "var(--navmenu-text-color)",
               }}
             >
               Loading image...

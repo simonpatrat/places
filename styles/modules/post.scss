@@ -44,7 +44,7 @@
       margin: auto;
       position: relative;
       z-index: 1;
-      transition: all 500ms ease;
+      transition: none;
       display: block;
       max-height: 100%;
       object-fit: initial;
@@ -70,6 +70,14 @@
         height: auto;
         box-shadow: 0 0 32px 0 rgba(#000, 0.3);
         object-fit: initial;
+      }
+    }
+  }
+
+  &.image-loaded {
+    .post__img-container {
+      img {
+        transition: all 500ms ease;
       }
     }
   }
