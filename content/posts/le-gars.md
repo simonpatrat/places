@@ -8,5 +8,6 @@ rating: 5
 categories:
   - Ville
   - Montréal
+  - Graffiti
 ---
 ...
