@@ -8,9 +8,11 @@ $gap: 50px;
 }
 
 .grid-wrapper {
-  // margin: auto -#{$gap};
+  // margin: auto auto auto -#{$gap};
+  margin: auto;
   min-height: 100vh;
   overflow: hidden;
+  padding-right: calc(1.496584266497641%);
 
   @media (max-width: 480px) {
     margin: 0 auto;
