@@ -9,5 +9,6 @@ rating: 4
 categories:
   - Montréal
   - Canada
+  - Graffiti
 ---
 ...
