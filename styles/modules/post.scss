@@ -14,17 +14,14 @@
   }
 
   &__img-container {
-    position: relative;
+    // position: relative;
 
-    .close-post-wrapper {
-      position: absolute;
-      z-index: 10;
-      width: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
     .button-close-image {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
       text-decoration: none;
       background: transparent;
       height: 30px;
@@ -35,11 +32,10 @@
       justify-content: center;
       color: var(--navmenu-text-color);
       border: none;
-      background: rgba(#000, 0.1);
       border-radius: 50%;
 
       .icon {
-        color: white;
+        color: var(--navmenu-text-color);
         font-size: 24px;
       }
     }

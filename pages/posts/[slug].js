@@ -208,20 +208,11 @@ const Post = (props) => {
             </div>
           )}
           {postImageLoaded && (
-            <div className="close-post-wrapper">
-              <div className="container">
-                <div className="row flex jc-flex-end">
-                  <Link href="/">
-                    <a
-                      className="button-close-image"
-                      title="Return to home page"
-                    >
-                      <span className="las la-times icon"></span>
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link href="/">
+              <a className="button-close-image" title="Return to home page">
+                <span className="las la-times icon"></span>
+              </a>
+            </Link>
           )}
 
           <img
@@ -251,20 +242,6 @@ const Post = (props) => {
           </button>
 
           <div className="post-navigation post-navigation--over-image">
-            {previousPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${previousPost.attributes.slug}`}
-              >
-                <a
-                  className="post-navigation__link post-navigation__link--previous"
-                  title={previousPost.attributes.title}
-                >
-                  <span className="icon las la-arrow-left"></span>
-                </a>
-              </Link>
-            )}
-            {!previousPost && <div></div>}
             {nextPost && (
               <Link
                 href="/posts/[slug]"
@@ -274,11 +251,25 @@ const Post = (props) => {
                   className="post-navigation__link post-navigation__link--next"
                   title={nextPost.attributes.title}
                 >
-                  <span className="icon las la-arrow-right"></span>
+                  <span className="icon las la-arrow-left"></span>
                 </a>
               </Link>
             )}
             {!nextPost && <div></div>}
+            {previousPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${previousPost.attributes.slug}`}
+              >
+                <a
+                  className="post-navigation__link post-navigation__link--previous"
+                  title={previousPost.attributes.title}
+                >
+                  <span className="icon las la-arrow-right"></span>
+                </a>
+              </Link>
+            )}
+            {!previousPost && <div></div>}
           </div>
         </div>
         <div className="post__img-information-container">
@@ -335,18 +326,6 @@ const Post = (props) => {
       <div className="container">
         <div className="row">
           <div className="post-navigation">
-            {previousPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${previousPost.attributes.slug}`}
-              >
-                <a className="post-navigation__link post-navigation__link--previous">
-                  <span className="icon las la-arrow-left"></span>
-                  &nbsp;
-                  {previousPost.attributes.title}
-                </a>
-              </Link>
-            )}
             {nextPost && (
               <Link
                 href="/posts/[slug]"
@@ -355,7 +334,19 @@ const Post = (props) => {
                 <a className="post-navigation__link post-navigation__link--next">
                   {nextPost.attributes.title}
                   &nbsp;
+                  <span className="icon las la-arrow-left"></span>
+                </a>
+              </Link>
+            )}
+            {previousPost && (
+              <Link
+                href="/posts/[slug]"
+                as={`/posts/${previousPost.attributes.slug}`}
+              >
+                <a className="post-navigation__link post-navigation__link--previous">
                   <span className="icon las la-arrow-right"></span>
+                  &nbsp;
+                  {previousPost.attributes.title}
                 </a>
               </Link>
             )}
