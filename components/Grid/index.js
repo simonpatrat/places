@@ -146,8 +146,8 @@ class Grid extends React.Component {
                     className="grid__col"
                     key={`col-${colIndex}`}
                     style={{
-                      width: `calc(100% / ${cols} - 50px)`,
-                      flexBasis: `calc(100% / ${cols} - 50px)`,
+                      width: `calc(100% / ${cols})`,
+                      flexBasis: `calc(100% / ${cols})`,
                     }}
                   >
                     {col.map((item, index) => {
