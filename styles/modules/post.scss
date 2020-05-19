@@ -170,9 +170,12 @@
     }
 
     @media (max-width: 768px) {
-      top: auto;
+/*       top: auto;
       bottom: 76px;
+ */
       transform: translateY(100%);
+      top: calc(100% - 76px * 2);
+
       .post-navigation__link {
         font-size: 24px;
         margin: 0 8px;
