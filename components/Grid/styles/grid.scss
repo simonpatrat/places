@@ -150,11 +150,11 @@ $gap: 50px;
     .img-container__bg--loading {
       display: block;
       z-index: -1;
-      width: calc(100% + 5%);
-      height: calc(100% + 5%);
+      width: calc(100%);
+      height: calc(100%);
       position: absolute;
-      top: -10%;
-      right: -8%;
+      top: -#{$gap / 2};
+      right: -#{$gap / 2};
       transition: all 400ms ease;
       transform: scaleY(0);
       overflow: hidden;
