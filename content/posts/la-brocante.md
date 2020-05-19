@@ -7,5 +7,6 @@ featuredImage: >-
 rating: 5
 categories:
   - Montréal
+  - Graffiti
 ---
 ...
