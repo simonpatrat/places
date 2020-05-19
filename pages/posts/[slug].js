@@ -157,6 +157,9 @@ const Post = (props) => {
   useEffect(() => {
     const theDate = new Date(date).toLocaleDateString();
     setPostDate(theDate);
+    return () =>   {
+      setPostImageLoaded(false);
+    }
   }, [date]);
 
   useEffect(() => {
@@ -164,6 +167,7 @@ const Post = (props) => {
       const fakeLoadEvent = { target: postImageRef.current };
       handleImageLoad(fakeLoadEvent);
     }
+
   }, []);
 
   const handleEnlargeImageButtonClick = useCallback((event) => {
@@ -196,12 +200,14 @@ const Post = (props) => {
             backgroundColor: postImageColor,
           }}
         ></div>
-        <div className="post__img-container">
+        <div
+            className="post__img-container"
+        >
           {!postImageLoaded && (
             <div
               className="loading"
               style={{
-                color: "#fff",
+                color: "var(--text-color)",
               }}
             >
               Loading image...
