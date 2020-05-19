@@ -11,5 +11,6 @@ categories:
   - Montréal
   - Canada
   - Québec
+  - Graffiti
 ---
 Un graffiti
