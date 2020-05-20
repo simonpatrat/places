@@ -130,12 +130,10 @@
     }
   }
 
-
   @media (max-width: 768px) {
     position: relative;
   }
 }
-
 
 .post-navigation {
   display: flex;
@@ -168,8 +166,6 @@
     margin: 0 auto;
     transform: translateY(calc(-50% - 38px));
     z-index: 10;
-    transform: translateY(0);
-    top: calc(100vh - 78px * 2);
 
     .post-navigation__link {
       font-size: 24px;
