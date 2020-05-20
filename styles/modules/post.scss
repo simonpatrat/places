@@ -129,7 +129,13 @@
       margin: 32px auto;
     }
   }
+
+
+  @media (max-width: 768px) {
+    position: relative;
+  }
 }
+
 
 .post-navigation {
   display: flex;
@@ -162,6 +168,8 @@
     margin: 0 auto;
     transform: translateY(calc(-50% - 38px));
     z-index: 10;
+    transform: translateY(0);
+    top: calc(100vh - 78px * 2);
 
     .post-navigation__link {
       font-size: 24px;
@@ -173,8 +181,8 @@
 /*       top: auto;
       bottom: 76px;
  */
-      transform: translateY(100%);
-      top: calc(100% - 76px * 2);
+      transform: translateY(0);
+      top: calc(100vh - 78px * 2);
 
       .post-navigation__link {
         font-size: 24px;
