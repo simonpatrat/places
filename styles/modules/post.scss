@@ -130,9 +130,6 @@
     }
   }
 
-  @media (max-width: 768px) {
-    position: relative;
-  }
 }
 
 .post-navigation {
@@ -178,7 +175,7 @@
       bottom: 76px;
  */
       transform: translateY(0);
-      top: calc(100vh - 78px * 2);
+      top: calc(100vh - 78px);
 
       .post-navigation__link {
         font-size: 24px;
