@@ -1,0 +1,255 @@
+{
+  "asset_id": "1fde15b2e585266690b60490c1661638",
+  "public_id": "00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2",
+  "format": "jpg",
+  "version": 1589856790,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T02:53:10Z",
+  "bytes": 3416455,
+  "width": 3024,
+  "height": 4032,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+  "next_cursor": "ed10afc2d4728e0eafb6bdbc34144e690d4e35ed33d40cb00d0970f922aa18dc",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 808716,
+      "id": "e89df9e1b0f5d995b33109b79473faa6",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 65058,
+      "id": "06f96214d181d09e4eed42f52691e444",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 770978,
+      "id": "0c07d7e49b11a315dfd0569181e25e09",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1",
+      "format": "jpg",
+      "bytes": 3352,
+      "id": "40e2bebbec94538c9c0988d2bf87483f",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 6128,
+      "id": "788e4cb2230fb9e564e3354105ac9864",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589856790/00100lrPORTRAIT_00100_BURST20191126192813142_COVER_fu1pj2.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "170/100",
+    "BrightnessValue": "-47/100",
+    "ColorSpace": "1",
+    "ComponentsConfiguration": "1, 2, 3, 0",
+    "Contrast": "0",
+    "CustomRendered": "1",
+    "DateTime": "2019:11:26 19:28:13",
+    "DateTimeDigitized": "2019:11:26 19:28:13",
+    "DateTimeOriginal": "2019:11:26 19:28:13",
+    "DigitalZoomRatio": "150/100",
+    "ExifOffset": "254",
+    "ExifVersion": "48, 50, 51, 49",
+    "ExposureBiasValue": "0/6",
+    "ExposureMode": "0",
+    "ExposureProgram": "2",
+    "ExposureTime": "41667/1000000",
+    "Flash": "16",
+    "FlashPixVersion": "48, 49, 48, 48",
+    "FNumber": "180/100",
+    "FocalLength": "4440/1000",
+    "FocalLengthIn35mmFilm": "27",
+    "GPSAltitude": "19000/1000",
+    "GPSAltitudeRef": "0",
+    "GPSDateStamp": "2019:11:27",
+    "GPSDop": "15484/1000",
+    "GPSInfo": "21733",
+    "GPSLatitude": "45/1, 30/1, 56469/1000",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "73/1, 34/1, 35858/1000",
+    "GPSLongitudeRef": "W",
+    "GPSProcessingMethod": "65, 83, 67, 73, 73, 0, 0, 0, 102, 117, 115, 101, 100",
+    "GPSTimeStamp": "0/1, 27/1, 39/1",
+    "GPSVersionID": "2, 2, 0, 0",
+    "ImageLength": "3024",
+    "ImageUniqueID": "d06b7f89d6104e9c0000000000000000",
+    "ImageWidth": "4032",
+    "InteroperabilityOffset": "21984",
+    "Make": "Google",
+    "MakerNote": "72, 68, 82, 80, 2, 239, 100, 53, 109, 94, 112, 30, 44, 234, 227, 76, 87, 80, 136, 81, 215, 202, 52, 111, 135, 241, 228, 229, 215, 134, 29, 12, 133, 75, 89, 52, 233, 45, 84, 105, 190, 195, 241, 33, 41, 19, 19, 11, 250, 40, 149, 217, 76, 122, 169, 101, 181, 157, 11, 3, 25, 167, 208, 180, 183, 118, 179, 154, 136, 186, 152, 126, 98, 152, 208, 25, 149, 50, 146, 134, 252, 175, 120, 246, 192, 164, 226, 51, 245, 106, 199, 127, 1, 136, 63, 93, 192, 245, 247, 2, 182, 96, 1, 254, 48, 26, 19, 118, 154, 47, 209, 189, 110, 228, 197, 228, 90, 226, 87, 204, 155, 1, 219, 110, 80, 167, 209, 34, 20, 34, 164, 16, 58, 176, 57, 179, 66, 128, 46, 201, 192, 223, 97, 219, 80, 183, 250, 100, 5, 232, 228, 159, 229, 246, 183, 179, 135, 5, 146, 130, 162, 191, 106, 76, 226, 42, 75, 2, 8, 115, 208, 106, 54, 231, 242, 234, 172, 42, 133, 67, 230, 133, 44, 217, 46, 21, 141, 116, 129, 44, 172, 165, 26, 172, 20, 75, 212, 209, 49, 52, 87, 204, 55, 66, 108, 17, 248, 4, 92, 149, 230, 83, 79, 99, 61, 224, 202, 42, 142, 233, 211, 186, 253, 196, 38, 99, 159, 162, 149, 63, 30, 211, 66, 238, 244, 190, 24, 131, 74, 32, 235, 15, 133, 172, 131, 252, 53, 103, 53, 98, 117, 47, 99, 221, 244, 204, 101, 242, 153, 145, 91, 16, 216, 25, 15, 124, 52, 138, 160, 154, 9, 231, 131, 250, 192, 207, 165, 144, 239, 181, 110, 43, 204, 71, 71, 49, 246, 194, 195, 207, 39, 77, 52, 78, 126, 66, 3, 94, 115, 68, 218, 210, 15, 2, 140, 25, 16, 131, 167, 48, 231, 96, 150, 40, 79, 125, 86, 243, 27, 132, 189, 248, 46, 51, 98, 134, 97, 117, 185, 253, 41, 51, 134, 198, 73, 112, 167, 0, 133, 9, 113, 135, 15, 200, 182, 96, 238, 23, 210, 235, 239, 0, 102, 43, 47, 37, 208, 76, 186, 217, 58, 64, 187, 5, 129, 175, 199, 4, 152, 30, 238, 24, 132, 121, 42, 5, 116, 226, 129, 237, 193, 182, 205, 140, 237, 214, 247, 255, 46, 76, 205, 17, 187, 179, 41, 137, 26, 192, 159, 185, 39, 243, 11, 17, 57, 200, 156, 100, 103, 86, 83, 234, 225, 149, 20, 187, 133, 215, 42, 42, 78, 170, 22, 212, 213, 183, 21, 30, 200, 95, 126, 7, 27, 131, 103, 179, 11, 60, 111, 155, 194, 215, 47, 208, 241, 238, 203, 190, 125, 251, 110, 27, 229, 123, 118, 133, 90, 239, 177, 20, 6, 151, 89, 90, 247, 163, 177, 243, 147, 30, 244, 162, 96, 244, 21, 126, 171, 82, 93, 248, 79, 36, 82, 136, 4, 252, 143, 33, 69, 97, 4, 105, 154, 82, 61, 102, 106, 75, 41, 144, 180, 132, 195, 48, 29, 97, 141, 200, 23, 194, 90, 188, 172, 38, 214, 110, 140, 18, 78, 14, 157, 155, 97, 141, 136, 210, 8, 180, 240, 187, 200, 213, 251, 225, 52, 164, 200, 41, 231, 200, 39, 45, 191, 106, 89, 42, 80, 37, 169, 22, 240, 16, 240, 188, 138, 203, 123, 210, 59, 215, 138, 21, 57, 135, 232, 12, 25, 126, 198, 54, 210, 10, 199, 185, 165, 109, 72, 244, 151, 234, 47, 67, 233, 178, 212, 191, 114, 78, 122, 76, 232, 121, 48, 113, 209, 189, 71, 111, 111, 229, 171, 242, 6, 118, 50, 164, 168, 199, 56, 151, 4, 46, 202, 6, 244, 151, 25, 29, 134, 39, 248, 99, 105, 9, 158, 239, 143, 38, 136, 150, 30, 104, 239, 151, 3, 121, 249, 168, 90, 153, 37, 58, 18, 227, 245, 223, 233, 185, 56, 5, 26, 75, 242, 41, 101, 220, 149, 137, 61, 113, 135, 161, 45, 44, 118, 99, 239, 148, 55, 246, 112, 145, 207, 135, 74, 142, 59, 16, 166, 236, 237, 65, 210, 121, 69, 37, 12, 80, 103, 75, 71, 60, 34, 192, 144, 32, 216, 248, 144, 197, 131, 189, 155, 208, 81, 187, 202, 182, 55, 170, 185, 81, 109, 222, 19, 79, 107, 134, 253, 159, 72, 53, 111, 49, 77, 65, 15, 155, 142, 151, 252, 205, 202, 30, 72, 19, 177, 125, 250, 80, 160, 99, 156, 40, 85, 123, 89, 232, 117, 119, 8, 107, 219, 211, 139, 244, 102, 58, 21, 69, 143, 63, 202, 24, 16, 143, 230, 147, 108, 67, 88, 152, 55, 27, 44, 95, 47, 173, 71, 130, 97, 188, 135, 164, 21, 30, 26, 57, 193, 88, 83, 53, 254, 183, 93, 233, 71, 196, 233, 143, 4, 0, 242, 221, 19, 252, 74, 150, 223, 71, 68, 40, 163, 56, 232, 66, 120, 115, 218, 19, 122, 199, 195, 242, 220, 248, 183, 53, 51, 133, 17, 222, 160, 126, 0, 234, 208, 84, 185, 33, 241, 78, 162, 189, 236, 253, 32, 119, 85, 198, 35, 226, 73, 238, 231, 146, 56, 74, 201, 53, 29, 98, 73, 97, 250, 123, 47, 11, 162, 233, 132, 160, 165, 2, 245, 113, 136, 240, 118, 152, 122, 52, 153, 233, 198, 194, 127, 179, 193, 27, 102, 254, 102, 255, 184, 35, 81, 12",
+    "MaxApertureValue": "170/100",
+    "MeteringMode": "2",
+    "Model": "Pixel 3",
+    "OffsetTime": "-05:00",
+    "OffsetTimeDigitized": "-05:00",
+    "OffsetTimeOriginal": "-05:00",
+    "Orientation": "1",
+    "PhotographicSensitivity": "337",
+    "PixelXDimension": "3024",
+    "PixelYDimension": "4032",
+    "ResolutionUnit": "2",
+    "Saturation": "0",
+    "SceneCaptureType": "0",
+    "SceneType": "1",
+    "SensingMethod": "2",
+    "Sharpness": "0",
+    "ShutterSpeedValue": "458/100",
+    "Software": "HDR+ 1.0.279154645zp",
+    "SubjectDistance": "172/1000",
+    "SubjectDistanceRange": "1",
+    "SubSecTime": "177403",
+    "SubSecTimeDigitized": "177403",
+    "SubSecTimeOriginal": "177403",
+    "Compression": "6",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48",
+    "JPEGInterchangeFormat": "22108",
+    "JPEGInterchangeFormatLength": "7083",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "WhiteBalance": "0",
+    "YCbCrPositioning": "1",
+    "YCbCrSubSampling": "2, 2"
+  },
+  "colors": [
+    [
+      "#DFE1D1",
+      12.1
+    ],
+    [
+      "#885941",
+      12
+    ],
+    [
+      "#D9B070",
+      11.9
+    ],
+    [
+      "#C38A61",
+      11.5
+    ],
+    [
+      "#30281D",
+      8.3
+    ],
+    [
+      "#C15E19",
+      7.6
+    ],
+    [
+      "#432A1E",
+      7.1
+    ],
+    [
+      "#D6CAB6",
+      6.8
+    ],
+    [
+      "#76352E",
+      5.1
+    ],
+    [
+      "#933F1A",
+      4.8
+    ],
+    [
+      "#CD8420",
+      2.8
+    ],
+    [
+      "#84261B",
+      1.8
+    ],
+    [
+      "#38332E",
+      1.3
+    ],
+    [
+      "#DCE4D8",
+      1.3
+    ],
+    [
+      "#748352",
+      1.1
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "brown",
+        26.7
+      ],
+      [
+        "orange",
+        26.3
+      ],
+      [
+        "white",
+        20.2
+      ],
+      [
+        "red",
+        11.7
+      ],
+      [
+        "black",
+        9.6
+      ],
+      [
+        "green",
+        1.1
+      ]
+    ],
+    "cloudinary": [
+      [
+        "brown",
+        38.2
+      ],
+      [
+        "white",
+        20.2
+      ],
+      [
+        "orange",
+        14.8
+      ],
+      [
+        "red",
+        11.7
+      ],
+      [
+        "black",
+        9.6
+      ],
+      [
+        "olive",
+        1.1
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "00100lrPORTRAIT_00100_BURST20191126192813142_COVER",
+  "etag": "2d288377859ec9a8f172a1a750161c57",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "royal-burger"
+}

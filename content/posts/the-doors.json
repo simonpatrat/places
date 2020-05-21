@@ -1,0 +1,287 @@
+{
+  "asset_id": "d9a16828ad1961461f2124681011750d",
+  "public_id": "LRM_EXPORT_565336662691190_20190510_232351940_hllm6o",
+  "format": "jpg",
+  "version": 1589859999,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T03:46:39Z",
+  "bytes": 6983362,
+  "width": 3024,
+  "height": 4032,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+  "next_cursor": "b2f926535c1cbc7edde0a3e99fc1db1fb3e00ded9bde09b6dbd2d71c851542e0",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 1123278,
+      "id": "2c372cb779bdb992553b9f2e89a026a8",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 80814,
+      "id": "e086996720894287fd48938541797961",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 1120045,
+      "id": "adc4b777de9e2022835991a4292d37b0",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 3053,
+      "id": "fab23eed3d7877a55b2bb7c847e763dd",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859999/LRM_EXPORT_565336662691190_20190510_232351940_hllm6o.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "1695994/1000000",
+    "BrightnessValue": "-131/100",
+    "ColorSpace": "65535",
+    "DateTime": "2019:05:08 21:56:49",
+    "DateTimeOriginal": "2019:05:08 21:56:14",
+    "ExifOffset": "168",
+    "ExifVersion": "48, 50, 51, 48",
+    "ExposureBiasValue": "0/6",
+    "ExposureProgram": "2",
+    "ExposureTime": "1/17",
+    "Flash": "16",
+    "FNumber": "18/10",
+    "FocalLength": "4440/1000",
+    "FocalLengthIn35mmFilm": "27",
+    "Make": "Google",
+    "MaxApertureValue": "170/100",
+    "MeteringMode": "2",
+    "Model": "Pixel 3",
+    "PhotographicSensitivity": "430",
+    "ShutterSpeedValue": "4087463/1000000",
+    "Software": "Lightroom",
+    "SubjectDistance": "13463/1000",
+    "SubSecTime": "425",
+    "SubSecTimeOriginal": "425"
+  },
+  "colors": [
+    [
+      "#141311",
+      15.1
+    ],
+    [
+      "#83604E",
+      10.6
+    ],
+    [
+      "#271917",
+      10.3
+    ],
+    [
+      "#0F0302",
+      5.9
+    ],
+    [
+      "#C88D6F",
+      5.2
+    ],
+    [
+      "#02010B",
+      4.1
+    ],
+    [
+      "#292F19",
+      3.7
+    ],
+    [
+      "#776A62",
+      3.5
+    ],
+    [
+      "#2E291B",
+      3.5
+    ],
+    [
+      "#0C0B15",
+      3.1
+    ],
+    [
+      "#DF252D",
+      2.8
+    ],
+    [
+      "#7E6B4D",
+      2.4
+    ],
+    [
+      "#62773B",
+      2.3
+    ],
+    [
+      "#201D22",
+      2
+    ],
+    [
+      "#801215",
+      1.8
+    ],
+    [
+      "#DF6460",
+      1.7
+    ],
+    [
+      "#C2A275",
+      1.6
+    ],
+    [
+      "#7F4643",
+      1.5
+    ],
+    [
+      "#696B5C",
+      1.4
+    ],
+    [
+      "#150C13",
+      1.4
+    ],
+    [
+      "#130C15",
+      1.3
+    ],
+    [
+      "#161D03",
+      1.2
+    ],
+    [
+      "#040B01",
+      1.1
+    ],
+    [
+      "#070109",
+      1
+    ],
+    [
+      "#1D2A17",
+      1
+    ],
+    [
+      "#606960",
+      1
+    ],
+    [
+      "#110D02",
+      0.9
+    ],
+    [
+      "#5C8091",
+      0.9
+    ],
+    [
+      "#D8C7BD",
+      0.8
+    ],
+    [
+      "#64A8C7",
+      0.8
+    ],
+    [
+      "#55783D",
+      0.8
+    ],
+    [
+      "#090107",
+      0.7
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "black",
+        50.4
+      ],
+      [
+        "brown",
+        17.9
+      ],
+      [
+        "red",
+        7.8
+      ],
+      [
+        "orange",
+        6.8
+      ],
+      [
+        "gray",
+        6.7
+      ],
+      [
+        "green",
+        4.1
+      ],
+      [
+        "teal",
+        1.7
+      ]
+    ],
+    "cloudinary": [
+      [
+        "black",
+        50.4
+      ],
+      [
+        "brown",
+        13
+      ],
+      [
+        "red",
+        7.8
+      ],
+      [
+        "olive",
+        7.3
+      ],
+      [
+        "orange",
+        6.8
+      ],
+      [
+        "gray",
+        5.9
+      ],
+      [
+        "green",
+        1.8
+      ],
+      [
+        "teal",
+        0.9
+      ],
+      [
+        "white",
+        0.8
+      ],
+      [
+        "lightblue",
+        0.8
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "LRM_EXPORT_565336662691190_20190510_232351940",
+  "etag": "c99c0eeedb8d6d227d128c90839ff8e7",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "the-doors"
+}

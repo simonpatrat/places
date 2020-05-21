@@ -1,0 +1,202 @@
+{
+  "asset_id": "f823df0907844951974bb08e85241a00",
+  "public_id": "EFFECTS_esgkgz",
+  "format": "jpg",
+  "version": 1588122393,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-04-29T01:06:33Z",
+  "bytes": 1677155,
+  "width": 4032,
+  "height": 3024,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1588122393/EFFECTS_esgkgz.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1588122393/EFFECTS_esgkgz.jpg",
+  "next_cursor": "03d1b431ea68eb22e122af755ba3bfe43a64cf5fc64f994e99866b8c7baa0184",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 276254,
+      "id": "c94359cf81e426a4fe1429ac37fc6cfe",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1588122393/EFFECTS_esgkgz.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1588122393/EFFECTS_esgkgz.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 23669,
+      "id": "ab8f6a9212eaa5e430d64531a2b9087a",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1588122393/EFFECTS_esgkgz.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1588122393/EFFECTS_esgkgz.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 270562,
+      "id": "04ba793ee84480ef9fd1cf19878466af",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1588122393/EFFECTS_esgkgz.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1588122393/EFFECTS_esgkgz.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 2988,
+      "id": "7bae9058fbda19b360599456446332af",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1588122393/EFFECTS_esgkgz.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1588122393/EFFECTS_esgkgz.jpg"
+    }
+  ],
+  "exif": {
+    "ColorSpace": "1",
+    "DateTimeOriginal": "2019:07:22 19:34:56",
+    "ExifOffset": "120",
+    "ExifVersion": "48, 50, 50, 48",
+    "FocalLength": "9311355/2097152",
+    "GPSAltitude": "0/1",
+    "GPSAltitudeRef": "0",
+    "GPSInfo": "304",
+    "GPSLatitude": "50/1, 12/1, 1253/100",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "66/1, 23/1, 3706892542/220255053",
+    "GPSLongitudeRef": "W",
+    "GPSVersionID": "2, 2, 0, 0",
+    "ImageUniqueID": "3ba19cc475a1c11e0000000000000000",
+    "InteroperabilityOffset": "450",
+    "Make": "Google",
+    "Model": "Pixel 3",
+    "Orientation": "1",
+    "PixelXDimension": "4032",
+    "PixelYDimension": "3024",
+    "Software": "Picasa",
+    "SubjectDistance": "4294967295/1",
+    "Compression": "6",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48",
+    "JPEGInterchangeFormat": "574",
+    "JPEGInterchangeFormatLength": "4509",
+    "ResolutionUnit": "2",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "YCbCrSubSampling": "2, 2"
+  },
+  "colors": [
+    [
+      "#72A0F6",
+      47.3
+    ],
+    [
+      "#D7EEFC",
+      9.5
+    ],
+    [
+      "#0C4485",
+      7.6
+    ],
+    [
+      "#021129",
+      5.8
+    ],
+    [
+      "#0F4F8A",
+      5.3
+    ],
+    [
+      "#ADD8FC",
+      4.5
+    ],
+    [
+      "#D2DEF3",
+      2.8
+    ],
+    [
+      "#2867BF",
+      2.7
+    ],
+    [
+      "#030303",
+      2.4
+    ],
+    [
+      "#101521",
+      1.9
+    ],
+    [
+      "#032039",
+      1.8
+    ],
+    [
+      "#475D87",
+      1.1
+    ],
+    [
+      "#DDCFC2",
+      0.8
+    ],
+    [
+      "#787587",
+      0.7
+    ],
+    [
+      "#131F26",
+      0.6
+    ],
+    [
+      "#110501",
+      0.6
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "teal",
+        51.9
+      ],
+      [
+        "blue",
+        24.3
+      ],
+      [
+        "white",
+        13.2
+      ],
+      [
+        "black",
+        5.5
+      ],
+      [
+        "gray",
+        0.7
+      ]
+    ],
+    "cloudinary": [
+      [
+        "lightblue",
+        62.8
+      ],
+      [
+        "blue",
+        13.4
+      ],
+      [
+        "white",
+        13.2
+      ],
+      [
+        "black",
+        5.5
+      ],
+      [
+        "gray",
+        0.7
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "EFFECTS",
+  "etag": "5ca6e4a59fc67a30fe78794c640fce4a",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "sept-îles-la-marina"
+}

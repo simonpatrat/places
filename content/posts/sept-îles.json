@@ -1,0 +1,218 @@
+{
+  "asset_id": "7d170d1847986cb86a9af4772baa2fd6",
+  "public_id": "EFFECTS_2_lvkf0n",
+  "format": "jpg",
+  "version": 1589859040,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T03:30:40Z",
+  "bytes": 2625174,
+  "width": 4032,
+  "height": 3024,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589859040/EFFECTS_2_lvkf0n.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589859040/EFFECTS_2_lvkf0n.jpg",
+  "next_cursor": "4f94c271d255c231bb854f919c37b33397bb71bc88617d680fa13cbe2d3c5bc3",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 498127,
+      "id": "6a97752bad615442649ba60a66436d1e",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859040/EFFECTS_2_lvkf0n.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859040/EFFECTS_2_lvkf0n.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 38254,
+      "id": "3fe296199abeb793da7f528c25b3e844",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859040/EFFECTS_2_lvkf0n.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859040/EFFECTS_2_lvkf0n.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 491289,
+      "id": "8e6fead701914dfad704c5378937e87c",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859040/EFFECTS_2_lvkf0n.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859040/EFFECTS_2_lvkf0n.jpg"
+    },
+    {
+      "transformation": "c_scale,w_19",
+      "format": "jpg",
+      "bytes": 418,
+      "id": "b486b42b7c69eb11bed736fcdcbe7a6f",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_19/v1589859040/EFFECTS_2_lvkf0n.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_19/v1589859040/EFFECTS_2_lvkf0n.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 3705,
+      "id": "7b4aa3b9862d53b24c27c2175ed8a499",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859040/EFFECTS_2_lvkf0n.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859040/EFFECTS_2_lvkf0n.jpg"
+    }
+  ],
+  "exif": {
+    "ColorSpace": "1",
+    "DateTimeOriginal": "2019:07:24 13:21:13",
+    "ExifOffset": "120",
+    "ExifVersion": "48, 50, 50, 48",
+    "FocalLength": "9311355/2097152",
+    "GPSAltitude": "0/1",
+    "GPSAltitudeRef": "0",
+    "GPSInfo": "304",
+    "GPSLatitude": "50/1, 9/1, 5953/100",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "66/1, 22/1, 656/25",
+    "GPSLongitudeRef": "W",
+    "GPSVersionID": "2, 2, 0, 0",
+    "ImageUniqueID": "5ecd83f918601b990000000000000000",
+    "InteroperabilityOffset": "450",
+    "Make": "Google",
+    "Model": "Pixel 3",
+    "Orientation": "1",
+    "PixelXDimension": "4032",
+    "PixelYDimension": "3024",
+    "Software": "Picasa",
+    "SubjectDistance": "4294967295/1",
+    "Compression": "6",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48",
+    "JPEGInterchangeFormat": "574",
+    "JPEGInterchangeFormatLength": "5656",
+    "ResolutionUnit": "2",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "YCbCrSubSampling": "2, 2"
+  },
+  "colors": [
+    [
+      "#75A1EB",
+      40.6
+    ],
+    [
+      "#CFD3EE",
+      14
+    ],
+    [
+      "#041E2F",
+      5.2
+    ],
+    [
+      "#104976",
+      4.5
+    ],
+    [
+      "#020F2A",
+      4.5
+    ],
+    [
+      "#3E6297",
+      4
+    ],
+    [
+      "#103E7B",
+      3.3
+    ],
+    [
+      "#FAB691",
+      2.8
+    ],
+    [
+      "#317DF0",
+      2.6
+    ],
+    [
+      "#ECD0CD",
+      2.2
+    ],
+    [
+      "#30628B",
+      2
+    ],
+    [
+      "#030303",
+      1.7
+    ],
+    [
+      "#8CB8DF",
+      1.4
+    ],
+    [
+      "#0F2029",
+      1.4
+    ],
+    [
+      "#0C0201",
+      1.3
+    ],
+    [
+      "#DEC9DA",
+      1.3
+    ],
+    [
+      "#D0E5F8",
+      1.2
+    ],
+    [
+      "#0F1725",
+      0.9
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "teal",
+        56
+      ],
+      [
+        "blue",
+        26.1
+      ],
+      [
+        "black",
+        5.3
+      ],
+      [
+        "white",
+        4.6
+      ],
+      [
+        "orange",
+        2.8
+      ]
+    ],
+    "cloudinary": [
+      [
+        "lightblue",
+        74.4
+      ],
+      [
+        "blue",
+        7.7
+      ],
+      [
+        "black",
+        5.3
+      ],
+      [
+        "white",
+        4.6
+      ],
+      [
+        "orange",
+        2.8
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "EFFECTS (2)",
+  "etag": "bcb22007f5dd83be41453124d81beb62",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "sept-îles"
+}

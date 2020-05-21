@@ -1,0 +1,192 @@
+{
+  "asset_id": "e857b9350db350ed441dbed023310d86",
+  "public_id": "LRM_EXPORT_635710025004342_20190526_212717628_fasoz5",
+  "format": "jpg",
+  "version": 1589858987,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T03:29:47Z",
+  "bytes": 1854015,
+  "width": 2427,
+  "height": 1767,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+  "next_cursor": "32c689bb228be58eb5e91eb987123bd8750221688763ea78c0dd50777f4ed07e",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 508854,
+      "id": "7bd0ec10c82ed8391cfe57d6986e07f8",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 47415,
+      "id": "88fe0f30b2443de977b1ec0d329f7f02",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 505541,
+      "id": "bcbb4325d9952cd86d739176ad149147",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1",
+      "format": "jpg",
+      "bytes": 287,
+      "id": "6f711878e8d18abdd2def6b9f40e7ebf",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 5004,
+      "id": "10bc1437bd047d95b1ff50aee1cc5afc",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589858987/LRM_EXPORT_635710025004342_20190526_212717628_fasoz5.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "1695994/1000000",
+    "BrightnessValue": "776/100",
+    "ColorSpace": "65535",
+    "DateTime": "2019:05:26 14:10:31",
+    "DateTimeOriginal": "2019:05:26 13:33:06",
+    "ExifOffset": "168",
+    "ExifVersion": "48, 50, 51, 49",
+    "ExposureBiasValue": "0/6",
+    "ExposureProgram": "2",
+    "ExposureTime": "1/1150",
+    "Flash": "16",
+    "FNumber": "18/10",
+    "FocalLength": "4440/1000",
+    "FocalLengthIn35mmFilm": "27",
+    "LensModel": "Google Pixel 3 Rear Camera",
+    "Make": "Google",
+    "MaxApertureValue": "170/100",
+    "MeteringMode": "2",
+    "Model": "Pixel 3",
+    "PhotographicSensitivity": "55",
+    "ShutterSpeedValue": "10167418/1000000",
+    "Software": "Lightroom",
+    "SubjectDistance": "2147483647/1",
+    "SubSecTime": "388",
+    "SubSecTimeOriginal": "388"
+  },
+  "colors": [
+    [
+      "#E6DBC6",
+      50
+    ],
+    [
+      "#7C6843",
+      12.3
+    ],
+    [
+      "#C4AC86",
+      8.5
+    ],
+    [
+      "#4D3F1D",
+      7.8
+    ],
+    [
+      "#ECEBDD",
+      7.8
+    ],
+    [
+      "#F11B09",
+      2.2
+    ],
+    [
+      "#EA9272",
+      1.4
+    ],
+    [
+      "#736E45",
+      1.1
+    ],
+    [
+      "#8F8575",
+      1.1
+    ],
+    [
+      "#4A390F",
+      1
+    ],
+    [
+      "#F94B17",
+      1
+    ],
+    [
+      "#838570",
+      0.8
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "white",
+        57.8
+      ],
+      [
+        "brown",
+        23.1
+      ],
+      [
+        "orange",
+        9.9
+      ],
+      [
+        "red",
+        3.2
+      ],
+      [
+        "gray",
+        1.1
+      ]
+    ],
+    "cloudinary": [
+      [
+        "white",
+        57.8
+      ],
+      [
+        "brown",
+        21.2
+      ],
+      [
+        "orange",
+        9.9
+      ],
+      [
+        "red",
+        3.2
+      ],
+      [
+        "olive",
+        1.9
+      ],
+      [
+        "gray",
+        1.1
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "LRM_EXPORT_635710025004342_20190526_212717628",
+  "etag": "a5850b69b01d5325f2a8dfc406b95d46",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "golden-square-mile"
+}

@@ -1,0 +1,301 @@
+{
+  "asset_id": "b0ea7e781bf947ecb007fa19e32b4d10",
+  "public_id": "IMG_5137_gy8pzm",
+  "format": "jpg",
+  "version": 1589257479,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-12T04:24:39Z",
+  "bytes": 2719891,
+  "width": 3264,
+  "height": 2448,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589257479/IMG_5137_gy8pzm.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589257479/IMG_5137_gy8pzm.jpg",
+  "next_cursor": "ea2902dd748aed0ede7827762ec0660455d2fdaab46961b8e34ef394822aa47e",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 475851,
+      "id": "6a64697bca1bc2d170ca5ad2208a07c6",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589257479/IMG_5137_gy8pzm.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589257479/IMG_5137_gy8pzm.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 39183,
+      "id": "c47e58a5900b25ac2e345b8fb20427c8",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589257479/IMG_5137_gy8pzm.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589257479/IMG_5137_gy8pzm.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 459467,
+      "id": "5bf290a64874f3fc27131315b315e795",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589257479/IMG_5137_gy8pzm.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589257479/IMG_5137_gy8pzm.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 4250,
+      "id": "d0ec146103742db4c8a10cdc71900ce6",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589257479/IMG_5137_gy8pzm.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589257479/IMG_5137_gy8pzm.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "7983/3509",
+    "BrightnessValue": "13286/1507",
+    "ColorSpace": "1",
+    "ComponentsConfiguration": "1, 2, 3, 0",
+    "CustomRendered": "3",
+    "DateTime": "2018:07:14 18:07:24",
+    "DateTimeDigitized": "2018:07:14 18:07:24",
+    "DateTimeOriginal": "2018:07:14 18:07:24",
+    "ExifOffset": "204",
+    "ExifVersion": "48, 50, 50, 49",
+    "ExposureBiasValue": "0/1",
+    "ExposureMode": "0",
+    "ExposureProgram": "2",
+    "ExposureTime": "1/824",
+    "Flash": "16",
+    "FlashPixVersion": "48, 49, 48, 48",
+    "FNumber": "11/5",
+    "FocalLength": "83/20",
+    "FocalLengthIn35mmFilm": "29",
+    "GPSAltitude": "16022/197",
+    "GPSAltitudeRef": "0",
+    "GPSDateStamp": "2018:07:14",
+    "GPSDestBearing": "15004/371",
+    "GPSDestBearingRef": "T",
+    "GPSHPositioningError": "10/1",
+    "GPSImgDirection": "15004/371",
+    "GPSImgDirectionRef": "T",
+    "GPSInfo": "1706",
+    "GPSLatitude": "45/1, 29/1, 5729/100",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "73/1, 34/1, 4946/100",
+    "GPSLongitudeRef": "W",
+    "GPSSpeed": "0/1",
+    "GPSSpeedRef": "K",
+    "GPSTimeStamp": "22/1, 7/1, 2200/100",
+    "LensMake": "Apple",
+    "LensModel": "iPhone 6 back camera 4.15mm f/2.2",
+    "LensSpecification": "83/20, 83/20, 11/5, 11/5",
+    "Make": "Apple",
+    "MakerNote": "65, 112, 112, 108, 101, 32, 105, 79, 83, 0, 0, 1, 77, 77, 0, 15, 0, 1, 0, 9, 0, 0, 0, 1, 0, 0, 0, 9, 0, 2, 0, 7, 0, 0, 2, 46, 0, 0, 0, 200, 0, 3, 0, 7, 0, 0, 0, 104, 0, 0, 2, 246, 0, 4, 0, 9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 9, 0, 0, 0, 1, 0, 0, 0, 128, 0, 6, 0, 9, 0, 0, 0, 1, 0, 0, 0, 137, 0, 7, 0, 9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0, 10, 0, 0, 0, 3, 0, 0, 3, 94, 0, 10, 0, 9, 0, 0, 0, 1, 0, 0, 0, 3, 0, 14, 0, 9, 0, 0, 0, 1, 0, 0, 0, 4, 0, 20, 0, 9, 0, 0, 0, 1, 0, 0, 0, 3, 0, 21, 0, 2, 0, 0, 0, 37, 0, 0, 3, 118, 0, 23, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 25, 0, 9, 0, 0, 0, 1, 0, 0, 0, 2, 0, 31, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 98, 112, 108, 105, 115, 116, 48, 48, 79, 17, 2, 0, 39, 0, 37, 0, 32, 0, 35, 0, 124, 0, 195, 0, 156, 2, 38, 3, 73, 2, 220, 1, 197, 1, 211, 1, 82, 2, 44, 2, 65, 2, 207, 3, 30, 0, 92, 0, 65, 0, 24, 0, 56, 0, 236, 0, 241, 2, 41, 3, 96, 2, 110, 2, 88, 2, 133, 2, 198, 2, 123, 2, 150, 3, 38, 5, 41, 0, 48, 0, 58, 0, 51, 0, 39, 0, 245, 0, 174, 2, 253, 1, 226, 1, 180, 1, 146, 2, 238, 2, 181, 2, 143, 2, 1, 5, 89, 5, 69, 0, 58, 0, 57, 0, 55, 0, 38, 0, 204, 0, 120, 1, 5, 1, 224, 0, 182, 0, 5, 1, 173, 1, 218, 3, 223, 2, 57, 5, 65, 5, 107, 0, 87, 0, 46, 0, 36, 0, 17, 0, 18, 0, 140, 0, 255, 0, 11, 1, 163, 0, 214, 0, 224, 0, 2, 2, 141, 2, 90, 5, 85, 1, 106, 0, 69, 0, 50, 0, 29, 0, 13, 0, 68, 0, 192, 0, 196, 0, 189, 0, 185, 0, 168, 0, 150, 0, 148, 0, 91, 2, 238, 4, 215, 0, 93, 0, 62, 0, 77, 0, 33, 0, 29, 0, 116, 0, 8, 1, 211, 0, 137, 0, 104, 0, 142, 0, 108, 0, 127, 0, 138, 0, 193, 2, 101, 1, 91, 0, 54, 0, 75, 0, 39, 0, 56, 0, 129, 0, 17, 1, 207, 0, 124, 0, 95, 0, 107, 0, 73, 0, 84, 0, 87, 0, 32, 2, 91, 1, 65, 0, 42, 0, 33, 0, 44, 0, 78, 0, 95, 0, 161, 0, 107, 0, 117, 0, 79, 0, 41, 0, 54, 0, 64, 0, 65, 0, 188, 0, 153, 1, 27, 0, 23, 0, 27, 0, 66, 0, 114, 0, 173, 0, 130, 0, 169, 0, 100, 0, 94, 0, 41, 0, 47, 0, 62, 0, 59, 0, 48, 0, 142, 0, 60, 0, 18, 0, 16, 0, 27, 0, 25, 0, 40, 0, 43, 0, 149, 0, 79, 0, 94, 0, 67, 0, 46, 0, 30, 0, 24, 0, 20, 0, 42, 0, 39, 0, 18, 0, 19, 0, 32, 0, 17, 0, 28, 0, 36, 0, 59, 0, 46, 0, 60, 0, 39, 0, 17, 0, 17, 0, 19, 0, 15, 0, 25, 0, 214, 0, 224, 0, 91, 0, 42, 0, 20, 0, 10, 0, 10, 0, 13, 0, 19, 0, 23, 0, 23, 0, 16, 0, 15, 0, 19, 0, 16, 0, 19, 0, 138, 0, 128, 0, 10, 0, 5, 0, 7, 0, 8, 0, 9, 0, 11, 0, 15, 0, 14, 0, 14, 0, 14, 0, 14, 0, 20, 0, 20, 0, 20, 0, 43, 0, 38, 0, 6, 0, 5, 0, 7, 0, 8, 0, 9, 0, 9, 0, 12, 0, 14, 0, 14, 0, 14, 0, 14, 0, 15, 0, 15, 0, 16, 0, 9, 0, 9, 0, 6, 0, 5, 0, 6, 0, 8, 0, 9, 0, 10, 0, 12, 0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 0, 8, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 98, 112, 108, 105, 115, 116, 48, 48, 212, 1, 2, 3, 4, 5, 6, 7, 8, 85, 102, 108, 97, 103, 115, 85, 118, 97, 108, 117, 101, 89, 116, 105, 109, 101, 115, 99, 97, 108, 101, 85, 101, 112, 111, 99, 104, 16, 1, 19, 0, 0, 35, 54, 14, 87, 214, 207, 18, 59, 154, 202, 0, 16, 0, 8, 17, 23, 29, 39, 45, 47, 56, 61, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 255, 255, 239, 32, 0, 0, 17, 29, 0, 0, 0, 159, 0, 0, 120, 227, 0, 0, 3, 161, 0, 0, 37, 246, 65, 56, 67, 53, 52, 56, 65, 69, 45, 52, 57, 67, 66, 45, 52, 51, 48, 66, 45, 56, 67, 51, 70, 45, 67, 54, 53, 66, 56, 54, 56, 52, 49, 53, 68, 53, 0, 0",
+    "MeteringMode": "5",
+    "Model": "iPhone 6",
+    "Orientation": "1",
+    "PhotographicSensitivity": "32",
+    "PixelXDimension": "3264",
+    "PixelYDimension": "2448",
+    "ResolutionUnit": "2",
+    "SceneCaptureType": "0",
+    "SceneType": "1",
+    "SensingMethod": "2",
+    "ShutterSpeedValue": "3671/379",
+    "Software": "11.4",
+    "SubjectArea": "1631, 1223, 1795, 1077",
+    "SubSecTimeDigitized": "457",
+    "SubSecTimeOriginal": "457",
+    "Compression": "6",
+    "JPEGInterchangeFormat": "2110",
+    "JPEGInterchangeFormatLength": "11071",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "WhiteBalance": "0",
+    "YCbCrPositioning": "1"
+  },
+  "colors": [
+    [
+      "#191A17",
+      18.8
+    ],
+    [
+      "#1F2321",
+      12
+    ],
+    [
+      "#242B14",
+      11.6
+    ],
+    [
+      "#8AB3EA",
+      6.7
+    ],
+    [
+      "#E7C593",
+      5.5
+    ],
+    [
+      "#10160D",
+      4.8
+    ],
+    [
+      "#ECDEC0",
+      4.6
+    ],
+    [
+      "#1B2405",
+      4.3
+    ],
+    [
+      "#2C2619",
+      3.5
+    ],
+    [
+      "#F3F2D1",
+      3.1
+    ],
+    [
+      "#697741",
+      2.6
+    ],
+    [
+      "#E49566",
+      2.3
+    ],
+    [
+      "#816C4A",
+      2.2
+    ],
+    [
+      "#2F3135",
+      1.8
+    ],
+    [
+      "#D0DAEE",
+      1.4
+    ],
+    [
+      "#7E553E",
+      1.2
+    ],
+    [
+      "#312018",
+      1.2
+    ],
+    [
+      "#7A7E6A",
+      1.2
+    ],
+    [
+      "#747B42",
+      1.2
+    ],
+    [
+      "#81786C",
+      1.1
+    ],
+    [
+      "#050B01",
+      0.9
+    ],
+    [
+      "#5B6D86",
+      0.7
+    ],
+    [
+      "#58717E",
+      0.6
+    ],
+    [
+      "#B5C67C",
+      0.6
+    ],
+    [
+      "#090D0B",
+      0.6
+    ],
+    [
+      "#5E6D73",
+      0.6
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "black",
+        43.7
+      ],
+      [
+        "brown",
+        23.1
+      ],
+      [
+        "orange",
+        7.9
+      ],
+      [
+        "yellow",
+        7.7
+      ],
+      [
+        "teal",
+        6.7
+      ],
+      [
+        "gray",
+        3.5
+      ],
+      [
+        "white",
+        1.4
+      ],
+      [
+        "blue",
+        0.7
+      ],
+      [
+        "green",
+        0.6
+      ]
+    ],
+    "cloudinary": [
+      [
+        "black",
+        43.7
+      ],
+      [
+        "olive",
+        19.6
+      ],
+      [
+        "orange",
+        12.5
+      ],
+      [
+        "lightblue",
+        7.4
+      ],
+      [
+        "yellow",
+        3.6
+      ],
+      [
+        "gray",
+        3.5
+      ],
+      [
+        "brown",
+        3.4
+      ],
+      [
+        "white",
+        1.4
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "IMG_5137",
+  "etag": "c9851295da41223e1eef3d015e585dc9",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "where"
+}

@@ -1,0 +1,189 @@
+{
+  "asset_id": "c848836af215ad2cf68fdefab89f4c58",
+  "public_id": "rue_oat1uw",
+  "format": "jpg",
+  "version": 1587939358,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-04-26T22:15:58Z",
+  "bytes": 1073451,
+  "width": 2443,
+  "height": 1832,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1587939358/rue_oat1uw.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1587939358/rue_oat1uw.jpg",
+  "context": {
+    "custom": {
+      "caption": "La rue"
+    }
+  },
+  "next_cursor": "93595076abec486c2e932915433e87e7d9548b0f6e48c0bcd7986be81fdbea82",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 447716,
+      "id": "0cefb8ed35ebded3ff2676f754cb1b81",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1587939358/rue_oat1uw.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1587939358/rue_oat1uw.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 37310,
+      "id": "6e7fd5438bc909a19cf10c1426714a91",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1587939358/rue_oat1uw.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1587939358/rue_oat1uw.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 447672,
+      "id": "8ecb3caf04eaebb0042d332241ca4dc7",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1587939358/rue_oat1uw.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1587939358/rue_oat1uw.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 4701,
+      "id": "58b9b659d02fab37f6da268ae8d16ad2",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1587939358/rue_oat1uw.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1587939358/rue_oat1uw.jpg"
+    }
+  ],
+  "exif": {
+    "Software": "Google"
+  },
+  "colors": [
+    [
+      "#65A1E8",
+      20.5
+    ],
+    [
+      "#312D2B",
+      16.4
+    ],
+    [
+      "#2B2B30",
+      15.1
+    ],
+    [
+      "#212631",
+      8.9
+    ],
+    [
+      "#727680",
+      5.7
+    ],
+    [
+      "#756F69",
+      5.4
+    ],
+    [
+      "#343A3C",
+      4.8
+    ],
+    [
+      "#45566F",
+      4.2
+    ],
+    [
+      "#A8B0BE",
+      3.2
+    ],
+    [
+      "#251A18",
+      2.6
+    ],
+    [
+      "#1F2A32",
+      1.3
+    ],
+    [
+      "#838271",
+      1.2
+    ],
+    [
+      "#2E281C",
+      1.2
+    ],
+    [
+      "#4B6880",
+      1.2
+    ],
+    [
+      "#6A747B",
+      1.1
+    ],
+    [
+      "#7E6A49",
+      1
+    ],
+    [
+      "#CFB37F",
+      0.8
+    ],
+    [
+      "#4D89BE",
+      0.7
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "black",
+        50.2
+      ],
+      [
+        "teal",
+        22.4
+      ],
+      [
+        "gray",
+        16.6
+      ],
+      [
+        "blue",
+        4.2
+      ],
+      [
+        "brown",
+        1
+      ],
+      [
+        "orange",
+        0.8
+      ]
+    ],
+    "cloudinary": [
+      [
+        "black",
+        50.2
+      ],
+      [
+        "lightblue",
+        26.6
+      ],
+      [
+        "gray",
+        16.6
+      ],
+      [
+        "brown",
+        1
+      ],
+      [
+        "orange",
+        0.8
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "rue",
+  "etag": "df9e379c13ba996ef050c1be7c544fb6",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "la-rue-rachel"
+}

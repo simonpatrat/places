@@ -1,0 +1,168 @@
+{
+  "asset_id": "703d809526ec4fcd73e02b95b1f22e31",
+  "public_id": "LRM_EXPORT_260925828793519_20190518_094138907_injbky",
+  "format": "jpg",
+  "version": 1589860225,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T03:50:25Z",
+  "bytes": 1346409,
+  "width": 2048,
+  "height": 1536,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+  "next_cursor": "560de56e1884c39dd2255f79b8b21d5077a8555550d8cb2cc5c3352f7f8c347e",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 303548,
+      "id": "a328ad4bb6578080fdb148f7cedc84b9",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 24457,
+      "id": "68eff8610f071a0e92da0780edc28d58",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 300235,
+      "id": "e06140514c56a50e3435792a8a29dc0c",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 3282,
+      "id": "25cae26804d67cbe094778da4a709395",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589860225/LRM_EXPORT_260925828793519_20190518_094138907_injbky.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "1695994/1000000",
+    "BrightnessValue": "693/100",
+    "ColorSpace": "65535",
+    "DateTime": "2019:04:30 19:56:30",
+    "DateTimeOriginal": "2019:04:30 19:54:49",
+    "ExifOffset": "168",
+    "ExifVersion": "48, 50, 51, 49",
+    "ExposureBiasValue": "0/6",
+    "ExposureProgram": "2",
+    "ExposureTime": "1/750",
+    "Flash": "16",
+    "FNumber": "18/10",
+    "FocalLength": "4440/1000",
+    "FocalLengthIn35mmFilm": "27",
+    "LensModel": "Google Pixel 3 Rear Camera",
+    "Make": "Google",
+    "MaxApertureValue": "170/100",
+    "MeteringMode": "2",
+    "Model": "Pixel 3",
+    "PhotographicSensitivity": "63",
+    "ShutterSpeedValue": "9550747/1000000",
+    "Software": "Lightroom",
+    "SubjectDistance": "2147483647/1",
+    "SubSecTime": "471",
+    "SubSecTimeOriginal": "471"
+  },
+  "colors": [
+    [
+      "#172221",
+      29.6
+    ],
+    [
+      "#6B7B4A",
+      19.3
+    ],
+    [
+      "#101819",
+      12.5
+    ],
+    [
+      "#D1CE5D",
+      5.5
+    ],
+    [
+      "#56694B",
+      5.5
+    ],
+    [
+      "#4B5F4C",
+      5.4
+    ],
+    [
+      "#030303",
+      4.7
+    ],
+    [
+      "#90983A",
+      4.5
+    ],
+    [
+      "#3A4B41",
+      2.9
+    ],
+    [
+      "#B3B737",
+      2.7
+    ],
+    [
+      "#060709",
+      2.6
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "black",
+        52.2
+      ],
+      [
+        "green",
+        30.2
+      ],
+      [
+        "yellow",
+        12.7
+      ]
+    ],
+    "cloudinary": [
+      [
+        "black",
+        49.3
+      ],
+      [
+        "olive",
+        26.5
+      ],
+      [
+        "green",
+        10.9
+      ],
+      [
+        "yellow",
+        5.5
+      ],
+      [
+        "gray",
+        2.9
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "LRM_EXPORT_260925828793519_20190518_094138907",
+  "etag": "26a06707e833b92b308ca24204cb1a5e",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "ciel-démonté"
+}

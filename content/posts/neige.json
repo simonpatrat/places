@@ -1,0 +1,142 @@
+{
+  "asset_id": "ea46da1ac8985fa23e6b591ea91c6bca",
+  "public_id": "EFFECTS_1_j1uslt",
+  "format": "jpg",
+  "version": 1589859225,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-19T03:33:45Z",
+  "bytes": 2366817,
+  "width": 3024,
+  "height": 4032,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1589859225/EFFECTS_1_j1uslt.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1589859225/EFFECTS_1_j1uslt.jpg",
+  "next_cursor": "f2647245e11959c709155b7f6bc628d6a35afc5f5c14423952daeea04bb93b5f",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 742018,
+      "id": "d35e07b4240a27fc16693b3227b99e00",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859225/EFFECTS_1_j1uslt.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1589859225/EFFECTS_1_j1uslt.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 62889,
+      "id": "ff3845a7489c88e8585227222e15c378",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859225/EFFECTS_1_j1uslt.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1589859225/EFFECTS_1_j1uslt.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 732948,
+      "id": "b1afa9307a58c295a072e5361f358225",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859225/EFFECTS_1_j1uslt.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1589859225/EFFECTS_1_j1uslt.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 3491,
+      "id": "a555b957bb2df0465c072b288e6cffb8",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859225/EFFECTS_1_j1uslt.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1589859225/EFFECTS_1_j1uslt.jpg"
+    }
+  ],
+  "exif": {
+    "ColorSpace": "1",
+    "DateTimeOriginal": "2020:02:14 11:34:47",
+    "ExifOffset": "120",
+    "ExifVersion": "48, 50, 50, 48",
+    "FocalLength": "9311355/2097152",
+    "GPSAltitude": "0/1",
+    "GPSAltitudeRef": "0",
+    "GPSInfo": "304",
+    "GPSLatitude": "45/1, 31/1, 154/25",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "73/1, 33/1, 266/25",
+    "GPSLongitudeRef": "W",
+    "GPSVersionID": "2, 2, 0, 0",
+    "ImageUniqueID": "76bde98c1993691e0000000000000000",
+    "InteroperabilityOffset": "450",
+    "Make": "Google",
+    "Model": "Pixel 3",
+    "Orientation": "1",
+    "PixelXDimension": "3024",
+    "PixelYDimension": "4032",
+    "Software": "Picasa",
+    "SubjectDistance": "7327449/4194304",
+    "Compression": "6",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48",
+    "JPEGInterchangeFormat": "574",
+    "JPEGInterchangeFormatLength": "7887",
+    "ResolutionUnit": "2",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "YCbCrSubSampling": "2, 2"
+  },
+  "colors": [
+    [
+      "#92ADE5",
+      49.1
+    ],
+    [
+      "#415D95",
+      19.1
+    ],
+    [
+      "#CBDFFC",
+      13.7
+    ],
+    [
+      "#0E357A",
+      11.5
+    ],
+    [
+      "#E1F1FD",
+      4.8
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "teal",
+        62.9
+      ],
+      [
+        "blue",
+        30.6
+      ],
+      [
+        "white",
+        4.8
+      ]
+    ],
+    "cloudinary": [
+      [
+        "lightblue",
+        81.9
+      ],
+      [
+        "blue",
+        11.5
+      ],
+      [
+        "white",
+        4.8
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "EFFECTS (1)",
+  "etag": "5feb750c288b3816d97b0af98597b0a6",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "neige"
+}

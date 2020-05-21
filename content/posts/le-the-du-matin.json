@@ -1,0 +1,258 @@
+{
+  "asset_id": "24d038107fb3a99d494e640b034f064f",
+  "public_id": "tea_sg8pa1",
+  "format": "jpg",
+  "version": 1587939960,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-04-26T22:26:00Z",
+  "bytes": 1187600,
+  "width": 2443,
+  "height": 1832,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1587939960/tea_sg8pa1.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1587939960/tea_sg8pa1.jpg",
+  "next_cursor": "f381b5d5bc2e19adb3b774960bd021bd9d13929a6a0ad5b942bc7d47ceb965c2",
+  "derived": [
+    {
+      "transformation": "ar_16:10,c_fill,g_auto,w_1920",
+      "format": "jpg",
+      "bytes": 426167,
+      "id": "705df2c70f9ad7b25dd85406e8d649b0",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/ar_16:10,c_fill,g_auto,w_1920/v1587939960/tea_sg8pa1.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/ar_16:10,c_fill,g_auto,w_1920/v1587939960/tea_sg8pa1.jpg"
+    },
+    {
+      "transformation": "w_1000,ar_16:9,c_fill,g_auto,e_sharpen",
+      "format": "jpg",
+      "bytes": 167271,
+      "id": "1b029520a46f0b5057c1af10e1d5493d",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1587939960/tea_sg8pa1.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1587939960/tea_sg8pa1.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 5823,
+      "id": "b94ace5da4795cd1abe641944c0dc75d",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1587939960/tea_sg8pa1.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1587939960/tea_sg8pa1.jpg"
+    }
+  ],
+  "exif": {
+    "ColorSpace": "1",
+    "ExifOffset": "46",
+    "ExifVersion": "48, 50, 50, 48",
+    "InteroperabilityOffset": "88",
+    "Software": "Google",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48"
+  },
+  "colors": [
+    [
+      "#240602",
+      14.9
+    ],
+    [
+      "#9FBDF4",
+      9
+    ],
+    [
+      "#CBC9E7",
+      6.1
+    ],
+    [
+      "#895138",
+      5.8
+    ],
+    [
+      "#261311",
+      4.7
+    ],
+    [
+      "#7C300C",
+      4.1
+    ],
+    [
+      "#7D0603",
+      4.1
+    ],
+    [
+      "#CFAAC8",
+      3.8
+    ],
+    [
+      "#D54C18",
+      3.5
+    ],
+    [
+      "#CBD9CC",
+      3.5
+    ],
+    [
+      "#CA7755",
+      3.3
+    ],
+    [
+      "#D4B46F",
+      3.3
+    ],
+    [
+      "#D1B7B3",
+      3.2
+    ],
+    [
+      "#CD1205",
+      3.2
+    ],
+    [
+      "#895A0A",
+      3.2
+    ],
+    [
+      "#C8DBE5",
+      2.9
+    ],
+    [
+      "#826A41",
+      2.3
+    ],
+    [
+      "#CA8F13",
+      2.1
+    ],
+    [
+      "#D8DABF",
+      2.1
+    ],
+    [
+      "#855051",
+      1.9
+    ],
+    [
+      "#BF767D",
+      1.7
+    ],
+    [
+      "#0B0A0A",
+      1.3
+    ],
+    [
+      "#8C7D76",
+      1.1
+    ],
+    [
+      "#0C070A",
+      0.9
+    ],
+    [
+      "#040003",
+      0.8
+    ],
+    [
+      "#797B8A",
+      0.7
+    ],
+    [
+      "#7B8990",
+      0.6
+    ],
+    [
+      "#DBD185",
+      0.5
+    ],
+    [
+      "#3A2F1C",
+      0.5
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "red",
+        31
+      ],
+      [
+        "brown",
+        15.9
+      ],
+      [
+        "teal",
+        9
+      ],
+      [
+        "black",
+        7.6
+      ],
+      [
+        "white",
+        6.4
+      ],
+      [
+        "purple",
+        6.1
+      ],
+      [
+        "gray",
+        5.6
+      ],
+      [
+        "pink",
+        5.5
+      ],
+      [
+        "orange",
+        5.4
+      ],
+      [
+        "yellow",
+        2.6
+      ]
+    ],
+    "cloudinary": [
+      [
+        "red",
+        32.6
+      ],
+      [
+        "brown",
+        15.9
+      ],
+      [
+        "lightblue",
+        15.1
+      ],
+      [
+        "black",
+        7.6
+      ],
+      [
+        "white",
+        6.4
+      ],
+      [
+        "gray",
+        5.6
+      ],
+      [
+        "orange",
+        5.4
+      ],
+      [
+        "pink",
+        3.8
+      ],
+      [
+        "yellow",
+        2.6
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "tea",
+  "etag": "2e5b4fab335e425bec1969e1554b0870",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
+  "rate_limit_remaining": 171,
+  "postSlug": "le-the-du-matin"
+}

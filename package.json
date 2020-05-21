@@ -16,7 +16,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "cloudinary": "^1.21.0",
+    "cloudinary-core": "^2.8.2",
     "colorthief": "^2.3.0",
+    "dotenv": "^8.2.0",
     "exif-js": "^2.3.0",
     "frontmatter-markdown-loader": "^3.4.0",
     "glob": "^7.1.6",

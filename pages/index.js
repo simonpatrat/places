@@ -205,7 +205,7 @@ export async function getStaticProps() {
 async function loadPosts(nbOfPosts = 0) {
   const posts = {};
 
-  function importAll(r) {
+  function importAllPosts(r) {
     const postsToLoad = nbOfPosts > 0 ? r.keys().slice(0, nbOfPosts) : r.keys();
     // console.log('Loading ', nbOfPosts, ' posts... of ',r.keys(), ' Posts are: ', postsToLoad);
     postsToLoad.forEach((key) => {
@@ -215,8 +215,23 @@ async function loadPosts(nbOfPosts = 0) {
       posts[postSlug] = post;
     });
   }
+  function importAllPostAdditionalImageData(r) {
+    const dataFilesToLoad = nbOfPosts > 0 ? r.keys().slice(0, nbOfPosts) : r.keys();
+    dataFilesToLoad.forEach((key) => {
+      const jsonFile = r(key);
+      // console.log({jsonFile});
+      const postSlug = key.substring(2, key.length - 5);
+      // console.log({postSlug})
+       posts[postSlug] = {
+        ...posts[postSlug],
+        featuredImageData: jsonFile,
+      };
+    });
+  }
 
-  await importAll(require.context("../content/posts", true, /\.md$/));
+  await importAllPosts(require.context("../content/posts", true, /\.md$/));
+  await importAllPostAdditionalImageData(require.context("../content/posts", true, /\.json$/));
+
 
   return posts;
 }
@@ -224,7 +239,7 @@ async function loadPosts(nbOfPosts = 0) {
 async function loadCategories() {
   const categories = [];
 
-  function importAll(r) {
+  function importAllCategories(r) {
     const categoriesToLoad = r.keys();
 
     categoriesToLoad.forEach((key) => {
@@ -235,7 +250,7 @@ async function loadCategories() {
     });
   }
 
-  await importAll(require.context("../content/categories", true, /\.md$/));
+  await importAllCategories(require.context("../content/categories", true, /\.md$/));
 
   return categories;
 }
