@@ -153,6 +153,7 @@ class Grid extends React.Component {
                     {col.map((item, index) => {
                       const {
                         attributes: { slug, featuredImage, title },
+                        featuredImageData,
                       } = item;
                       const featuredImageThumbnail = featuredImage.replace(
                         /w_1920/gi,
@@ -171,6 +172,7 @@ class Grid extends React.Component {
                           debuggModeInCards={debuggModeInCards}
                           onMouseEnter={this.handleItemMouseEnter}
                           onImageLoadCallBack={this.handleImageLoad}
+                          featuredImageData={featuredImageData}
                         />
                       );
                     })}

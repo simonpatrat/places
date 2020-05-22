@@ -24,19 +24,22 @@ const GridItem = ({
   onMouseEnter,
   onImageLoadCallBack,
   url,
+  featuredImageData,
 }) => {
   const colorContext = useContext(ColorsContext);
   const { setColor, colors } = colorContext;
   const [imageLoaded, setImageLoaded] = useState(false);
   const imageEl = useRef(null);
-  const imageColors =
-    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
+  const imageColors = featuredImageData.imageColors || (
+    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null
+  );
 
   const onImageLoad = useCallback(async (event) => {
     const image = event.target;
     image.width = event.target.width == 0 ? 500 : event.target.width;
 
     if (!imageColors) {
+      console.log('Je m occupe de rajouter la couleur au load de l image pour ', slug);
       const imageColorsInfo = await getImageColorInfo(image);
       setColor({
         imageId: `image-${slug}`,
@@ -48,7 +51,7 @@ const GridItem = ({
       image,
       postSlug: slug,
     });
-  }, []);
+  }, [imageColors]);
 
   /*   useEffect(() => {
     if (imageEl.current.complete) {
@@ -57,7 +60,17 @@ const GridItem = ({
     }
   }, []); */
 
+  if (!imageColors) {
+    const { imageColors: imageColorsFromProps } = featuredImageData;
+    console.log('Je mets en place la couleur pour ', slug);
+    setColor({
+      imageId: `image-${slug}`,
+      colorInfo: imageColorsFromProps,
+    });
+  }
+
   useEffect(() => {
+
     const handleIntersectionObserver = (entries, imgObserver) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.getAttribute("src")) {
@@ -105,7 +118,7 @@ const GridItem = ({
               style={{
                 background: `${
                   !!imageColors && !!imageColors.color
-                    ? "rgb(" + imageColors.color.join(",") + ")"
+                    ? imageColors.color
                     : "#f7f8f9"
                 }`,
               }}

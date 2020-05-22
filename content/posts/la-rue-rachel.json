@@ -183,7 +183,7 @@
   "original_filename": "rue",
   "etag": "df9e379c13ba996ef050c1be7c544fb6",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "la-rue-rachel"
 }

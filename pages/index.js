@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Component } from "react";
 import orderBy from "lodash/orderBy";
 import classnames from "classnames";
-
 import Grid from "../components/Grid";
 import content from "../content/home.md";
 
@@ -219,12 +218,23 @@ async function loadPosts(nbOfPosts = 0) {
     const dataFilesToLoad = nbOfPosts > 0 ? r.keys().slice(0, nbOfPosts) : r.keys();
     dataFilesToLoad.forEach((key) => {
       const jsonFile = r(key);
+      const { colors } = jsonFile;
+      const palette = colors.map(c => c[0]).slice(0, 5);
+      const dominante = palette[0];
+      const imageColorsInfo = {
+        color: dominante,
+        palette,
+      };
+
       // console.log({jsonFile});
       const postSlug = key.substring(2, key.length - 5);
       // console.log({postSlug})
        posts[postSlug] = {
         ...posts[postSlug],
-        featuredImageData: jsonFile,
+        featuredImageData: {
+          ...jsonFile,
+          imageColors: imageColorsInfo,
+        },
       };
     });
   }

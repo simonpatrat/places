@@ -45,6 +45,8 @@ module.exports = {
       const imageInfoJSON = JSON.stringify({
         ...imageInfo,
         postSlug: blogPostSlug,
+        rate_limit_reset_at: null,
+        rate_limit_remaining: null,
       }, null, 2);
 
       await fs.writeFile(blogpost.replace(/.md$/gi, '.json'), imageInfoJSON);

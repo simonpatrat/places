@@ -325,7 +325,7 @@
   "original_filename": "IMG_20191229_183554",
   "etag": "5b7ef7af6effa81fff4ff558c55a8531",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "chez-les-copains"
 }

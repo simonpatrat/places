@@ -23,6 +23,7 @@ const Post = (props) => {
   const { post, nextPost, previousPost } = props;
   let PLACES_LEAFLET_MAP = null;
 
+
   if (!props.post) {
     return <div>Loading...</div>;
   }
@@ -37,14 +38,18 @@ const Post = (props) => {
       slug,
     },
     html,
+    featuredImageData,
   } = post;
+
 
   const postImageRef = useRef(null);
 
   const { theme } = useContext(ThemeContext);
   const { colors, setColor } = useContext(ColorsContext);
-  const imageColors =
-    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null;
+  // featuredImageData.imageColors ||
+  const imageColors = featuredImageData.imageColors || (
+    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null
+  );
 
   const [postImageLoaded, setPostImageLoaded] = useState(false);
   const [postImageGPSCoordinates, setPostImageGPSCoordinates] = useState(null);
@@ -176,7 +181,7 @@ const Post = (props) => {
 
   const postImageColor =
     imageColors && imageColors.color
-      ? `rgb(${imageColors.color.join(",")})`
+      ? imageColors.color //`rgb(${imageColors.color.join(",")})`
       : `rgba(0,0,0,0.2)`;
 
   const postImageColorPalette =
@@ -214,13 +219,11 @@ const Post = (props) => {
               Loading image...
             </div>
           )}
-          {postImageLoaded && (
-            <Link href="/">
-              <a className="button-close-image" title="Return to home page">
-                <span className="las la-times icon"></span>
-              </a>
-            </Link>
-          )}
+          <Link href="/">
+            <a className="button-close-image" title="Return to home page">
+              <span className="las la-times icon"></span>
+            </a>
+          </Link>
 
           <img
             key={featuredImage}
@@ -293,7 +296,7 @@ const Post = (props) => {
                     key={index}
                     className="color-palette__item"
                     style={{
-                      background: `rgb(${color.join(",")})`,
+                      background: color,
                     }}
                   ></div>
                 );
@@ -365,6 +368,7 @@ const Post = (props) => {
 };
 
 Post.getInitialProps = async (context) => {
+
   const {
     query: { slug },
   } = context;
@@ -380,11 +384,40 @@ Post.getInitialProps = async (context) => {
     });
   }
 
-  importAll(require.context("../../content/posts", true, /\.md$/));
+  function importAllPostAdditionalImageData(r) {
+    const dataFilesToLoad = r.keys();
+    dataFilesToLoad.forEach((key) => {
+      const jsonFile = r(key);
+      const { colors } = jsonFile;
+      const palette = colors.map(c => c[0]).slice(0, 5);
+      const dominante = palette[0];
+      const imageColorsInfo = {
+        color: dominante,
+        palette,
+      };
+
+      // console.log({jsonFile});
+      const postSlug = key.substring(2, key.length - 5);
+      // console.log({postSlug})
+       posts[postSlug] = {
+        ...posts[postSlug],
+        featuredImageData: {
+          ...jsonFile,
+          imageColors: imageColorsInfo,
+        },
+      };
+    });
+  }
+
+
+  await importAll(require.context("../../content/posts", true, /\.md$/));
+  await importAllPostAdditionalImageData(require.context("../../content/posts", true, /\.json$/));
 
   const orderedPostsByDate = orderPostsByDate(posts);
+
   if (slug) {
-    const post = await import(`../../content/posts/${slug}.md`);
+    const post = posts[slug];
+    //const post = await import(`../../content/posts/${slug}.md`);
 
     const currentPostIndex = orderedPostsByDate.findIndex(
       (p) => p.attributes.slug === slug
@@ -393,7 +426,7 @@ Post.getInitialProps = async (context) => {
     const previousPost = orderedPostsByDate[currentPostIndex - 1] || null;
 
     return {
-      post: post.default,
+      post,
       nextPost,
       previousPost,
       orderedPostsByDate,

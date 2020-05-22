@@ -186,7 +186,7 @@
   "original_filename": "LRM_EXPORT_635710025004342_20190526_212717628",
   "etag": "a5850b69b01d5325f2a8dfc406b95d46",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "golden-square-mile"
 }

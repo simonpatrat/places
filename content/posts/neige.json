@@ -136,7 +136,7 @@
   "original_filename": "EFFECTS (1)",
   "etag": "5feb750c288b3816d97b0af98597b0a6",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "neige"
 }

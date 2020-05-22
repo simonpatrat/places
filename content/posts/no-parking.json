@@ -262,7 +262,7 @@
   "original_filename": "IMG_20190525_180050",
   "etag": "9d7e487ad7ebaeddcf56bcda5c6f502e",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "no-parking"
 }

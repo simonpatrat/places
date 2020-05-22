@@ -212,7 +212,7 @@
   "original_filename": "EFFECTS (2)",
   "etag": "bcb22007f5dd83be41453124d81beb62",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "sept-îles"
 }

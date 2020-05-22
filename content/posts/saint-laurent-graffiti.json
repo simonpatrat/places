@@ -254,7 +254,7 @@
   "original_filename": "IMG_20190214_113232",
   "etag": "0617ac4925a5bdeb286a946cf26d5b06",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 168,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "saint-laurent-graffiti"
 }

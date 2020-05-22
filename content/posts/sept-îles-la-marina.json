@@ -196,7 +196,7 @@
   "original_filename": "EFFECTS",
   "etag": "5ca6e4a59fc67a30fe78794c640fce4a",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "sept-îles-la-marina"
 }

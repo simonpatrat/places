@@ -8,7 +8,7 @@ export const getImageColorInfo = (img, index) => {
       const palette = colorThief.getPalette(img, 5);
       resolve({
         // imageId: `image-${index}`,
-        color,
+        color: "rgb(" + color.join(",") + ")",
         palette,
       });
     }

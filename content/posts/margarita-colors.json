@@ -271,7 +271,7 @@
   "original_filename": "IMG_5375",
   "etag": "6403004c08b449077bb0a22e7a81e7c5",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "margarita-colors"
 }

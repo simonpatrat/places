@@ -261,7 +261,7 @@
   "original_filename": "IMG_20200517_161813",
   "etag": "b9ac06186db4212ae6361d0b8e82ab02",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "tricolore"
 }

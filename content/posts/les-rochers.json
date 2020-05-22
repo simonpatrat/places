@@ -266,7 +266,7 @@
   "original_filename": "IMG_20190724_205527 (1)",
   "etag": "87df11a025582f6201fa198412d49106",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "les-rochers"
 }

@@ -166,7 +166,7 @@
   "original_filename": "IMG_20190818_223350",
   "etag": "f73221904f609a863174b0d6a61cb0f6",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "concert"
 }

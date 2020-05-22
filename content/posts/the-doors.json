@@ -281,7 +281,7 @@
   "original_filename": "LRM_EXPORT_565336662691190_20190510_232351940",
   "etag": "c99c0eeedb8d6d227d128c90839ff8e7",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "the-doors"
 }

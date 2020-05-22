@@ -241,7 +241,7 @@
   "original_filename": "IMG_20191224_145237",
   "etag": "b88f719986ecac8c4909a3ded1355e06",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "petit-chat"
 }

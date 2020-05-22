@@ -249,7 +249,7 @@
   "original_filename": "00100lrPORTRAIT_00100_BURST20191126192813142_COVER",
   "etag": "2d288377859ec9a8f172a1a750161c57",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "royal-burger"
 }

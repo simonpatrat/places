@@ -162,7 +162,7 @@
   "original_filename": "LRM_EXPORT_260925828793519_20190518_094138907",
   "etag": "26a06707e833b92b308ca24204cb1a5e",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "ciel-démonté"
 }

@@ -245,7 +245,7 @@
   "original_filename": "IMG_20200518_162148",
   "etag": "b6c16d86dee6743287178d4f2dd279ab",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "terrasse-verte"
 }

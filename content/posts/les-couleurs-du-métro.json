@@ -288,7 +288,7 @@
   "original_filename": "EFFECTS",
   "etag": "63b6ce0c93a0d063f5650f8f8211e4a8",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "les-couleurs-du-métro"
 }

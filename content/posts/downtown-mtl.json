@@ -246,7 +246,7 @@
   "original_filename": "IMG_20190526_181538",
   "etag": "171c1a86a30d6ccac15b717eed1423c6",
   "rate_limit_allowed": 500,
-  "rate_limit_reset_at": "2020-05-21T21:00:00.000Z",
-  "rate_limit_remaining": 171,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
   "postSlug": "downtown-mtl"
 }
