@@ -7,5 +7,6 @@ featuredImage: >-
 rating: 4
 categories:
   - Graffiti
+  - Art
 ---
 ...
