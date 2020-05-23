@@ -14,6 +14,14 @@
   "next_cursor": "0db9a86b7894f22198b52e3056783ef5bec35be8dd78fcc3ecb7e8e7f8e4607b",
   "derived": [
     {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 814531,
+      "id": "1c90af09d611f683d9ec017d11eb0ef8",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590249967/IMG_4869_maj4c0.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590249967/IMG_4869_maj4c0.jpg"
+    },
+    {
       "transformation": "c_scale,w_480",
       "format": "jpg",
       "bytes": 64147,

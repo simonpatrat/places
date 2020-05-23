@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useContext,
   useRef,
-  useCallback,
+  useCallback
 } from "react";
 import classnames from "classnames";
 
@@ -16,13 +16,12 @@ import { lightOrDark } from "../../lib/color";
 import { getImageColorInfo } from "../../components/Grid/lib/helpers/imagesColors";
 import {
   getImageExifData,
-  getImageGPSCoordinatesFromExifData,
+  getImageGPSCoordinatesFromExifData
 } from "../../lib/imageExifData";
 
-const Post = (props) => {
+const Post = props => {
   const { post, nextPost, previousPost } = props;
   let PLACES_LEAFLET_MAP = null;
-
 
   if (!props.post) {
     return <div>Loading...</div>;
@@ -35,10 +34,11 @@ const Post = (props) => {
       date,
       resume,
       gpsCoordinates,
-      slug,
+      slug
     },
     html,
-    featuredImageData,
+    featuredImageData
+    // TODO: Add exif data at builde time to retreive GPS coordinates
   } = post;
 
   const postImageRef = useRef(null);
@@ -46,9 +46,9 @@ const Post = (props) => {
   const { theme } = useContext(ThemeContext);
   const { colors, setColor } = useContext(ColorsContext);
   // featuredImageData.imageColors ||
-  const imageColors = featuredImageData.imageColors || (
-    colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null
-  );
+  const imageColors =
+    featuredImageData.imageColors ||
+    (colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null);
 
   const [postImageLoaded, setPostImageLoaded] = useState(false);
   const [postImageGPSCoordinates, setPostImageGPSCoordinates] = useState(null);
@@ -62,10 +62,10 @@ const Post = (props) => {
     const makePostMap = () => {
       const coordinatesAsArray = [
         postImageGPSCoordinates.latitude,
-        postImageGPSCoordinates.longitude,
+        postImageGPSCoordinates.longitude
       ];
 
-      const coordinatesArray = coordinatesAsArray.map((coordinate) => {
+      const coordinatesArray = coordinatesAsArray.map(coordinate => {
         return parseFloat(coordinate);
       });
 
@@ -75,7 +75,7 @@ const Post = (props) => {
         zoom: 10,
         layers: new L.TileLayer(
           "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-        ),
+        )
       });
       let marker = new L.Marker(endPointLocation);
       marker.bindPopup(title);
@@ -104,12 +104,12 @@ const Post = (props) => {
 
     return () => {
       const classNamesToRemove = [...document.documentElement.classList].filter(
-        (c) => {
+        c => {
           return c.includes("with-photo-color-theme");
         }
       );
       if (classNamesToRemove.length > 0) {
-        classNamesToRemove.forEach((cn) => {
+        classNamesToRemove.forEach(cn => {
           document.documentElement.classList.remove(cn);
         });
       }
@@ -121,7 +121,7 @@ const Post = (props) => {
   }, [postImageGPSCoordinates, mapRef, title, imageColors]);
 
   const handleImageLoad = useCallback(
-    async (event) => {
+    async event => {
       const image = event.target;
 
       if (!imageColors) {
@@ -129,7 +129,7 @@ const Post = (props) => {
 
         setColor({
           imageId: `image-${slug}`,
-          colorInfo: imageColorsInfo,
+          colorInfo: imageColorsInfo
         });
       }
       const imageExifData = await getImageExifData(image);
@@ -161,9 +161,9 @@ const Post = (props) => {
   useEffect(() => {
     const theDate = new Date(date).toLocaleDateString();
     setPostDate(theDate);
-    return () =>   {
+    return () => {
       setPostImageLoaded(false);
-    }
+    };
   }, [date]);
 
   useEffect(() => {
@@ -171,10 +171,9 @@ const Post = (props) => {
       const fakeLoadEvent = { target: postImageRef.current };
       handleImageLoad(fakeLoadEvent);
     }
-
   }, []);
 
-  const handleEnlargeImageButtonClick = useCallback((event) => {
+  const handleEnlargeImageButtonClick = useCallback(event => {
     setDisplayLargeImage(!displayLargeImage);
   });
 
@@ -188,7 +187,7 @@ const Post = (props) => {
 
   const postClassnames = classnames("post", {
     "with-large-image": displayLargeImage,
-    "image-loaded": postImageLoaded,
+    "image-loaded": postImageLoaded
   });
   return (
     <>
@@ -202,17 +201,15 @@ const Post = (props) => {
             left: 0,
             width: "100%",
             zIndex: 0,
-            backgroundColor: postImageColor,
+            backgroundColor: postImageColor
           }}
         ></div>
-        <div
-            className="post__img-container"
-        >
+        <div className="post__img-container">
           {!postImageLoaded && (
             <div
               className="loading"
               style={{
-                color: "var(--navmenu-text-color)",
+                color: "var(--navmenu-text-color)"
               }}
             >
               Loading image...
@@ -223,24 +220,27 @@ const Post = (props) => {
               <span className="las la-times icon"></span>
             </a>
           </Link>
-
-          <img
-            key={featuredImage}
-            // TODO: change netlify CMS config to send only image name
-            // FIXME: construct images urls dynamically depending on context
-            // And remove the replace regexs
-            src={featuredImage.replace(/w_1920/gi, "w_1920,fl_keep_iptc,")}
-            alt={title}
-            style={{
-              opacity: postImageLoaded ? 1 : 0,
-            }}
-            ref={postImageRef}
-            onLoad={handleImageLoad}
-            crossOrigin="Anonymous"
-          />
+          <div className="container">
+            <div className="row">
+              <img
+                key={featuredImage}
+                // TODO: change netlify CMS config to send only image name
+                // FIXME: construct images urls dynamically depending on context
+                // And remove the replace regexs
+                src={featuredImage.replace(/w_1920/gi, "w_1920,fl_keep_iptc,")}
+                alt={title}
+                style={{
+                  opacity: postImageLoaded ? 1 : 0
+                }}
+                ref={postImageRef}
+                onLoad={handleImageLoad}
+                crossOrigin="Anonymous"
+              />
+            </div>
+          </div>
           <button
             style={{
-              display: "none",
+              display: "none"
             }}
             type="button"
             className="button-enlarge-post-image"
@@ -286,7 +286,7 @@ const Post = (props) => {
             <div
               className="palette"
               style={{
-                zIndex: 1,
+                zIndex: 1
               }}
             >
               {postImageColorPalette.map((color, index) => {
@@ -295,7 +295,7 @@ const Post = (props) => {
                     key={index}
                     className="color-palette__item"
                     style={{
-                      background: color,
+                      background: color
                     }}
                   ></div>
                 );
@@ -323,7 +323,7 @@ const Post = (props) => {
             <section
               className="post-map"
               style={{
-                background: !!postImageColor ? postImageColor : "transparent",
+                background: !!postImageColor ? postImageColor : "transparent"
               }}
             >
               <div className="post-map__inner" ref={mapRef}></div>
@@ -366,16 +366,15 @@ const Post = (props) => {
   );
 };
 
-Post.getInitialProps = async (context) => {
-
+Post.getInitialProps = async context => {
   const {
-    query: { slug },
+    query: { slug }
   } = context;
 
   const posts = {};
 
   async function importAll(r) {
-    r.keys().forEach((key) => {
+    r.keys().forEach(key => {
       const post = r(key);
       const postSlug = key.substring(2, key.length - 3);
       post.attributes.slug = postSlug;
@@ -385,40 +384,41 @@ Post.getInitialProps = async (context) => {
 
   async function importAllPostAdditionalImageData(r) {
     const dataFilesToLoad = r.keys();
-    dataFilesToLoad.forEach((key) => {
+    dataFilesToLoad.forEach(key => {
       const jsonFile = r(key);
       const { colors } = jsonFile;
       const palette = colors.map(c => c[0]).slice(0, 5);
       const dominante = palette[0];
       const imageColorsInfo = {
         color: dominante,
-        palette,
+        palette
       };
 
       // console.log({jsonFile});
       const postSlug = key.substring(2, key.length - 10);
       // console.log({postSlug})
-       posts[postSlug] = {
+      posts[postSlug] = {
         ...posts[postSlug],
         featuredImageData: {
           ...jsonFile,
-          imageColors: imageColorsInfo,
-        },
+          imageColors: imageColorsInfo
+        }
       };
     });
   }
 
   if (slug) {
-
     await importAll(require.context("../../content/posts", true, /\.md$/));
-    await importAllPostAdditionalImageData(require.context("../../content/posts", true, /\.json$/));
+    await importAllPostAdditionalImageData(
+      require.context("../../content/posts", true, /\.json$/)
+    );
 
     const orderedPostsByDate = orderPostsByDate(posts);
 
     const post = posts[slug];
 
     const currentPostIndex = orderedPostsByDate.findIndex(
-      (p) => p.attributes.slug === slug
+      p => p.attributes.slug === slug
     );
     const nextPost = orderedPostsByDate[currentPostIndex + 1] || null;
     const previousPost = orderedPostsByDate[currentPostIndex - 1] || null;
@@ -427,7 +427,7 @@ Post.getInitialProps = async (context) => {
       post,
       nextPost,
       previousPost,
-      orderedPostsByDate,
+      orderedPostsByDate
     };
   }
 
