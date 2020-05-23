@@ -1,0 +1,248 @@
+{
+  "asset_id": "aea58ec0779c813f1d3e9336abaec3c0",
+  "public_id": "LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif",
+  "format": "jpg",
+  "version": 1590250630,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-23T16:17:10Z",
+  "bytes": 1594644,
+  "width": 2889,
+  "height": 2093,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+  "next_cursor": "37b4d4731985dd72dce9fd21f2a6a1abd78a1f6b17fecfe245bdb21d932569fa",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 434992,
+      "id": "8c710a352af2ab384699a4a18dfc42f7",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 36678,
+      "id": "b143576032505489cac1f8824eec8ad6",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 430356,
+      "id": "a705bca8deab6c281b755937e66da7a6",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 4507,
+      "id": "8db140ed46182669db2ca087b58d7fa2",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1590250630/LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B_kclkif.jpg"
+    }
+  ],
+  "exif": {
+    "ApertureValue": "7892/3469",
+    "BrightnessValue": "2248/293",
+    "ComponentsConfiguration": "1, 2, 3, 0",
+    "CustomRendered": "3",
+    "DateTime": "2017:05:20 17:54:23",
+    "DateTimeDigitized": "2017:05:20 17:54:23",
+    "DateTimeOriginal": "2017:05:20 17:54:23",
+    "ExifOffset": "182",
+    "ExifVersion": "48, 50, 50, 49",
+    "ExposureBiasValue": "0/1",
+    "ExposureMode": "0",
+    "ExposureProgram": "2",
+    "ExposureTime": "1/412",
+    "Flash": "16",
+    "FlashPixVersion": "48, 49, 48, 48",
+    "FNumber": "11/5",
+    "FocalLength": "83/20",
+    "FocalLengthIn35mmFilm": "29",
+    "GPSAltitude": "64976/711",
+    "GPSAltitudeRef": "0",
+    "GPSDateStamp": "2017:05:20",
+    "GPSDestBearing": "16018/213",
+    "GPSDestBearingRef": "T",
+    "GPSHPositioningError": "30/1",
+    "GPSImgDirection": "16018/213",
+    "GPSImgDirectionRef": "T",
+    "GPSInfo": "1682",
+    "GPSLatitude": "45/1, 25/1, 4487/100",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "75/1, 41/1, 2873/100",
+    "GPSLongitudeRef": "W",
+    "GPSSpeed": "0/1",
+    "GPSSpeedRef": "K",
+    "GPSTimeStamp": "21/1, 54/1, 23/1",
+    "ImageUniqueID": "0F429BBAD5194F6FAD210C095457DD25",
+    "LensMake": "Apple",
+    "LensModel": "iPhone 6 back camera 4.15mm f/2.2",
+    "LensSpecification": "83/20, 83/20, 11/5, 11/5",
+    "Make": "Apple",
+    "MakerNote": "65, 112, 112, 108, 101, 32, 105, 79, 83, 0, 0, 1, 77, 77, 0, 12, 0, 1, 0, 9, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 7, 0, 0, 2, 46, 0, 0, 0, 164, 0, 3, 0, 7, 0, 0, 0, 104, 0, 0, 2, 210, 0, 4, 0, 9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0, 9, 0, 0, 0, 1, 0, 0, 0, 128, 0, 6, 0, 9, 0, 0, 0, 1, 0, 0, 0, 124, 0, 7, 0, 9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0, 10, 0, 0, 0, 3, 0, 0, 3, 58, 0, 10, 0, 9, 0, 0, 0, 1, 0, 0, 0, 3, 0, 14, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 20, 0, 9, 0, 0, 0, 1, 0, 0, 0, 3, 0, 21, 0, 2, 0, 0, 0, 37, 0, 0, 3, 82, 0, 0, 0, 0, 98, 112, 108, 105, 115, 116, 48, 48, 79, 17, 2, 0, 235, 3, 192, 3, 160, 2, 79, 0, 37, 2, 196, 2, 186, 2, 48, 2, 98, 2, 70, 2, 163, 0, 99, 0, 129, 0, 83, 0, 83, 0, 112, 0, 185, 3, 87, 3, 226, 2, 136, 0, 12, 1, 160, 1, 122, 1, 80, 1, 99, 1, 231, 0, 202, 0, 197, 0, 236, 0, 62, 0, 80, 0, 93, 0, 94, 3, 81, 3, 25, 3, 218, 0, 43, 1, 98, 1, 247, 0, 216, 0, 186, 0, 65, 0, 78, 0, 72, 0, 189, 1, 199, 0, 109, 0, 147, 1, 205, 3, 108, 2, 92, 3, 212, 0, 251, 0, 8, 1, 82, 0, 21, 1, 97, 0, 216, 0, 45, 1, 155, 0, 114, 0, 29, 1, 13, 1, 167, 0, 43, 1, 246, 0, 241, 0, 178, 0, 211, 0, 119, 0, 104, 0, 146, 0, 206, 0, 223, 0, 190, 0, 19, 1, 55, 1, 100, 2, 39, 1, 128, 2, 139, 0, 157, 0, 206, 0, 164, 0, 194, 0, 93, 0, 29, 0, 28, 0, 37, 0, 119, 0, 105, 0, 89, 0, 153, 0, 168, 0, 174, 0, 171, 0, 110, 0, 164, 0, 110, 0, 20, 0, 19, 0, 18, 0, 21, 0, 21, 0, 21, 0, 47, 0, 43, 0, 39, 0, 45, 0, 43, 0, 34, 0, 94, 0, 44, 0, 39, 0, 48, 0, 50, 0, 33, 0, 17, 0, 11, 0, 11, 0, 11, 0, 12, 0, 31, 0, 25, 0, 31, 0, 30, 0, 44, 0, 70, 0, 104, 0, 92, 0, 76, 0, 62, 0, 50, 0, 38, 0, 31, 0, 23, 0, 18, 0, 13, 0, 42, 0, 36, 0, 16, 0, 23, 0, 44, 0, 58, 0, 151, 0, 131, 0, 134, 0, 126, 0, 114, 0, 95, 0, 81, 0, 63, 0, 53, 0, 46, 0, 49, 0, 43, 0, 34, 0, 41, 0, 51, 0, 59, 0, 144, 0, 122, 0, 127, 0, 131, 0, 137, 0, 143, 0, 140, 0, 141, 0, 137, 0, 154, 0, 98, 0, 79, 0, 67, 0, 67, 0, 68, 0, 69, 0, 107, 0, 117, 0, 119, 0, 131, 0, 127, 0, 125, 0, 128, 0, 133, 0, 143, 0, 163, 0, 142, 0, 142, 0, 139, 0, 125, 0, 107, 0, 97, 0, 55, 0, 112, 0, 113, 0, 114, 0, 119, 0, 122, 0, 127, 0, 130, 0, 131, 0, 133, 0, 134, 0, 142, 0, 141, 0, 140, 0, 144, 0, 144, 0, 38, 0, 111, 0, 111, 0, 110, 0, 115, 0, 115, 0, 118, 0, 124, 0, 126, 0, 119, 0, 116, 0, 124, 0, 130, 0, 134, 0, 128, 0, 125, 0, 77, 0, 100, 0, 105, 0, 112, 0, 112, 0, 115, 0, 115, 0, 115, 0, 117, 0, 114, 0, 116, 0, 119, 0, 122, 0, 127, 0, 127, 0, 121, 0, 99, 0, 101, 0, 105, 0, 107, 0, 109, 0, 111, 0, 113, 0, 108, 0, 106, 0, 109, 0, 114, 0, 118, 0, 118, 0, 121, 0, 119, 0, 122, 0, 0, 8, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 98, 112, 108, 105, 115, 116, 48, 48, 212, 1, 2, 3, 4, 5, 6, 7, 8, 85, 102, 108, 97, 103, 115, 85, 118, 97, 108, 117, 101, 85, 101, 112, 111, 99, 104, 89, 116, 105, 109, 101, 115, 99, 97, 108, 101, 16, 1, 19, 0, 0, 66, 222, 47, 81, 133, 81, 16, 0, 18, 59, 154, 202, 0, 8, 17, 23, 29, 35, 45, 47, 56, 58, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 255, 255, 244, 104, 0, 0, 12, 21, 255, 255, 253, 20, 0, 0, 110, 191, 255, 255, 250, 43, 0, 0, 23, 145, 52, 49, 53, 55, 55, 70, 50, 66, 45, 49, 67, 57, 70, 45, 52, 57, 68, 69, 45, 56, 50, 52, 68, 45, 53, 48, 54, 53, 55, 54, 53, 55, 52, 49, 69, 55, 0, 0",
+    "MeteringMode": "5",
+    "Model": "iPhone 6",
+    "PhotographicSensitivity": "32",
+    "PixelXDimension": "2889",
+    "PixelYDimension": "2093",
+    "ResolutionUnit": "2",
+    "SceneCaptureType": "0",
+    "SceneType": "1",
+    "SensingMethod": "2",
+    "ShutterSpeedValue": "3292/379",
+    "Software": "10.3.1",
+    "SubjectArea": "1631, 1223, 1795, 1077",
+    "SubSecTimeDigitized": "843",
+    "SubSecTimeOriginal": "843",
+    "WhiteBalance": "0",
+    "XResolution": "72/1",
+    "YResolution": "72/1"
+  },
+  "colors": [
+    [
+      "#49626F",
+      20.5
+    ],
+    [
+      "#03252D",
+      18.2
+    ],
+    [
+      "#1D3B46",
+      13.7
+    ],
+    [
+      "#667A81",
+      12.7
+    ],
+    [
+      "#E5D7C3",
+      7.6
+    ],
+    [
+      "#D98F6D",
+      5.3
+    ],
+    [
+      "#E2C494",
+      3.6
+    ],
+    [
+      "#875F4A",
+      2.9
+    ],
+    [
+      "#C45F4F",
+      1.8
+    ],
+    [
+      "#203633",
+      1.7
+    ],
+    [
+      "#37413C",
+      1.3
+    ],
+    [
+      "#D7D6C0",
+      1.1
+    ],
+    [
+      "#6D7A71",
+      1
+    ],
+    [
+      "#C9D0DD",
+      1
+    ],
+    [
+      "#817053",
+      0.9
+    ],
+    [
+      "#7D7E6D",
+      0.8
+    ],
+    [
+      "#44433B",
+      0.8
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "gray",
+        35
+      ],
+      [
+        "teal",
+        32
+      ],
+      [
+        "white",
+        9.7
+      ],
+      [
+        "orange",
+        8.9
+      ],
+      [
+        "brown",
+        3.9
+      ],
+      [
+        "black",
+        3.8
+      ],
+      [
+        "red",
+        1.8
+      ]
+    ],
+    "cloudinary": [
+      [
+        "gray",
+        35
+      ],
+      [
+        "teal",
+        32
+      ],
+      [
+        "white",
+        9.7
+      ],
+      [
+        "orange",
+        8.9
+      ],
+      [
+        "brown",
+        3.9
+      ],
+      [
+        "black",
+        3.8
+      ],
+      [
+        "red",
+        1.8
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "LND_C685E42F-8E7A-4328-98E0-E6E0E339D28B",
+  "etag": "45bef6c5995c30f643688a33b9e7ccfe",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
+  "postSlug": "car-parade"
+}

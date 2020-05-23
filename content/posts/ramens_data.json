@@ -1,0 +1,234 @@
+{
+  "asset_id": "e472cb07b60ae9a9a6583e10fe756d88",
+  "public_id": "EFFECTS_1_2_qf4w9a",
+  "format": "jpg",
+  "version": 1590249867,
+  "resource_type": "image",
+  "type": "upload",
+  "created_at": "2020-05-23T16:04:27Z",
+  "bytes": 2054642,
+  "width": 4032,
+  "height": 3024,
+  "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+  "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+  "next_cursor": "fe5b68f119a965b291b1083922226c9780352f10d7db3c2ba0c67abf7c340a24",
+  "derived": [
+    {
+      "transformation": "c_scale,w_1920,fl_keep_iptc,",
+      "format": "jpg",
+      "bytes": 469362,
+      "id": "0126ec4a487e11b2e95e5f6f3430bf8b",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920,fl_keep_iptc,/v1590249867/EFFECTS_1_2_qf4w9a.jpg"
+    },
+    {
+      "transformation": "c_scale,w_480",
+      "format": "jpg",
+      "bytes": 48657,
+      "id": "99f8f727b9daaa69bed0b775adaae33c",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_480/v1590249867/EFFECTS_1_2_qf4w9a.jpg"
+    },
+    {
+      "transformation": "c_scale,w_1920",
+      "format": "jpg",
+      "bytes": 459484,
+      "id": "cb7d9f2017d1a859099ece1cd561981a",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/c_scale,w_1920/v1590249867/EFFECTS_1_2_qf4w9a.jpg"
+    },
+    {
+      "transformation": "t_media_lib_thumb",
+      "format": "jpg",
+      "bytes": 5703,
+      "id": "800bc98da8f20bd637165ee39eb70658",
+      "url": "http://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1590249867/EFFECTS_1_2_qf4w9a.jpg",
+      "secure_url": "https://res.cloudinary.com/dmcl9xqto/image/upload/t_media_lib_thumb/v1590249867/EFFECTS_1_2_qf4w9a.jpg"
+    }
+  ],
+  "exif": {
+    "ColorSpace": "1",
+    "DateTimeOriginal": "2019:08:04 13:08:27",
+    "ExifOffset": "120",
+    "ExifVersion": "48, 50, 50, 48",
+    "FocalLength": "9311355/2097152",
+    "GPSAltitude": "1679/100",
+    "GPSAltitudeRef": "0",
+    "GPSInfo": "304",
+    "GPSLatitude": "45/1, 29/1, 1841/50",
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": "73/1, 34/1, 4623/100",
+    "GPSLongitudeRef": "W",
+    "GPSVersionID": "2, 2, 0, 0",
+    "ImageUniqueID": "16aa4516b3c1a6120000000000000000",
+    "InteroperabilityOffset": "450",
+    "Make": "Google",
+    "Model": "Pixel 3",
+    "Orientation": "1",
+    "PixelXDimension": "4032",
+    "PixelYDimension": "3024",
+    "Software": "Picasa",
+    "SubjectDistance": "604679318/2711566389",
+    "Compression": "6",
+    "InteroperabilityIndex": "R98",
+    "InteroperabilityVersion": "48, 49, 48, 48",
+    "JPEGInterchangeFormat": "574",
+    "JPEGInterchangeFormatLength": "8695",
+    "ResolutionUnit": "2",
+    "XResolution": "72/1",
+    "YResolution": "72/1",
+    "YCbCrSubSampling": "2, 2"
+  },
+  "colors": [
+    [
+      "#814F34",
+      21.6
+    ],
+    [
+      "#DED2BF",
+      14.4
+    ],
+    [
+      "#312B20",
+      11
+    ],
+    [
+      "#C18355",
+      10.1
+    ],
+    [
+      "#E5E4D5",
+      8.4
+    ],
+    [
+      "#35322C",
+      4.1
+    ],
+    [
+      "#CFA776",
+      3.9
+    ],
+    [
+      "#453124",
+      3.6
+    ],
+    [
+      "#B1C5C9",
+      3.3
+    ],
+    [
+      "#837258",
+      3
+    ],
+    [
+      "#934A1E",
+      2.5
+    ],
+    [
+      "#D2DAD4",
+      2.3
+    ],
+    [
+      "#BF241B",
+      2
+    ],
+    [
+      "#B9591E",
+      1.5
+    ],
+    [
+      "#83786B",
+      1.4
+    ],
+    [
+      "#363B27",
+      0.8
+    ],
+    [
+      "#CD6763",
+      0.6
+    ],
+    [
+      "#7C4A45",
+      0.5
+    ],
+    [
+      "#4E6E46",
+      0.5
+    ]
+  ],
+  "predominant": {
+    "google": [
+      [
+        "brown",
+        32.9
+      ],
+      [
+        "white",
+        25
+      ],
+      [
+        "black",
+        15
+      ],
+      [
+        "orange",
+        14
+      ],
+      [
+        "gray",
+        4.7
+      ],
+      [
+        "red",
+        3.1
+      ],
+      [
+        "green",
+        0.5
+      ]
+    ],
+    "cloudinary": [
+      [
+        "brown",
+        42.3
+      ],
+      [
+        "white",
+        25
+      ],
+      [
+        "black",
+        15
+      ],
+      [
+        "gray",
+        4.7
+      ],
+      [
+        "orange",
+        3.9
+      ],
+      [
+        "red",
+        3.1
+      ],
+      [
+        "olive",
+        0.8
+      ],
+      [
+        "green",
+        0.5
+      ]
+    ]
+  },
+  "pages": 1,
+  "usage": {},
+  "original_filename": "EFFECTS (1) 2",
+  "etag": "c59e58e44248dec4c1191f3f866a4aeb",
+  "rate_limit_allowed": 500,
+  "rate_limit_reset_at": null,
+  "rate_limit_remaining": null,
+  "postSlug": "ramens"
+}

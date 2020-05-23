@@ -41,7 +41,6 @@ const Post = (props) => {
     featuredImageData,
   } = post;
 
-
   const postImageRef = useRef(null);
 
   const { theme } = useContext(ThemeContext);
@@ -375,7 +374,7 @@ Post.getInitialProps = async (context) => {
 
   const posts = {};
 
-  function importAll(r) {
+  async function importAll(r) {
     r.keys().forEach((key) => {
       const post = r(key);
       const postSlug = key.substring(2, key.length - 3);
@@ -384,7 +383,7 @@ Post.getInitialProps = async (context) => {
     });
   }
 
-  function importAllPostAdditionalImageData(r) {
+  async function importAllPostAdditionalImageData(r) {
     const dataFilesToLoad = r.keys();
     dataFilesToLoad.forEach((key) => {
       const jsonFile = r(key);
@@ -397,7 +396,7 @@ Post.getInitialProps = async (context) => {
       };
 
       // console.log({jsonFile});
-      const postSlug = key.substring(2, key.length - 5);
+      const postSlug = key.substring(2, key.length - 10);
       // console.log({postSlug})
        posts[postSlug] = {
         ...posts[postSlug],
@@ -409,15 +408,14 @@ Post.getInitialProps = async (context) => {
     });
   }
 
-
-  await importAll(require.context("../../content/posts", true, /\.md$/));
-  await importAllPostAdditionalImageData(require.context("../../content/posts", true, /\.json$/));
-
-  const orderedPostsByDate = orderPostsByDate(posts);
-
   if (slug) {
+
+    await importAll(require.context("../../content/posts", true, /\.md$/));
+    await importAllPostAdditionalImageData(require.context("../../content/posts", true, /\.json$/));
+
+    const orderedPostsByDate = orderPostsByDate(posts);
+
     const post = posts[slug];
-    //const post = await import(`../../content/posts/${slug}.md`);
 
     const currentPostIndex = orderedPostsByDate.findIndex(
       (p) => p.attributes.slug === slug
