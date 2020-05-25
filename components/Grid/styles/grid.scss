@@ -8,7 +8,6 @@ $gap: 50px;
 }
 
 .grid-wrapper {
-  // margin: auto auto auto -#{$gap};
   margin: 0 auto;
   min-height: 100vh;
   overflow: hidden;
@@ -18,7 +17,6 @@ $gap: 50px;
   }
 
   @media (min-width: 481px) {
-    // padding-right: calc(1.496584266497641%);
     padding-right: 3.5%;
     margin: auto -50px;
   }
@@ -29,13 +27,6 @@ $gap: 50px;
 
   @media (min-width: 481px) and (max-width: 768px) {
     margin: auto -#{$gap / 2};
-  }
-  /*   @media (min-width: 1025px) {
-    margin: auto -#{$gap / 2};
-  } */
-
-  @media (min-width: 1366px) {
-    // margin: auto -#{$gap};
   }
 }
 
@@ -84,7 +75,6 @@ $gap: 50px;
 
     @media (max-width: 480px) {
       display: block;
-      // padding: $gap 0;
     }
 
     @media (min-width: 481px) and (max-width: 768px) {

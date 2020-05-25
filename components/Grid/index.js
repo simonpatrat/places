@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ResizeObserver from "resize-observer-polyfill";
 
+import GridCol from "./GridCol";
 import GridItem from "./GridItem";
 
 class Grid extends React.Component {
@@ -130,7 +131,7 @@ class Grid extends React.Component {
   };
 
   render() {
-    const { list, debuggModeInCards, withColorPalette } = this.props;
+    const { debuggModeInCards, withColorPalette } = this.props;
     const { imagesLoaded, gridList, cols } = this.state;
 
     const gridClassnames = `grid ${imagesLoaded ? "images-loaded" : ""}`;
@@ -142,14 +143,10 @@ class Grid extends React.Component {
             {gridList.length > 0 &&
               gridList.map((col, colIndex) => {
                 return (
-                  <div
-                    role="presentation"
-                    className="grid__col"
+                  <GridCol
                     key={`col-${colIndex}`}
-                    style={{
-                      width: `calc(100% / ${cols})`,
-                      flexBasis: `calc(100% / ${cols})`,
-                    }}
+                    role="presentation"
+                    cols={cols}
                   >
                     {col.map((item, index) => {
                       const {
@@ -178,7 +175,7 @@ class Grid extends React.Component {
                         />
                       );
                     })}
-                  </div>
+                  </GridCol>
                 );
               })}
           </ul>

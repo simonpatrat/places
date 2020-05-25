@@ -4,22 +4,29 @@ import React, {
   useEffect,
   useContext,
   useRef,
-  useCallback
+  useCallback,
 } from "react";
 import classnames from "classnames";
 
 import ThemeContext from "../../components/ThemeContext";
 import ColorsContext from "../../components/ColorsContext";
 
+import PostHeaderBg from "../../components/PostHeaderBg";
+import PostNavigation from "../../components/PostNavigation";
+import PostImageInformation from "../../components/PostImageInformations";
+import PostMap from "../../components/PostMap";
+import PostImageContainer from "../../components/PostImageContainer";
+import PostBody from "../../components/PostBody";
+
 import { orderPostsByDate } from "../../lib/orderPostsByDate";
 import { lightOrDark } from "../../lib/color";
 import { getImageColorInfo } from "../../components/Grid/lib/helpers/imagesColors";
 import {
   getImageExifData,
-  getImageGPSCoordinatesFromExifData
+  getImageGPSCoordinatesFromExifData,
 } from "../../lib/imageExifData";
 
-const Post = props => {
+const Post = (props) => {
   const { post, nextPost, previousPost } = props;
   let PLACES_LEAFLET_MAP = null;
 
@@ -34,10 +41,10 @@ const Post = props => {
       date,
       resume,
       gpsCoordinates,
-      slug
+      slug,
     },
     html,
-    featuredImageData
+    featuredImageData,
     // TODO: Add exif data at builde time to retreive GPS coordinates
   } = post;
 
@@ -62,10 +69,10 @@ const Post = props => {
     const makePostMap = () => {
       const coordinatesAsArray = [
         postImageGPSCoordinates.latitude,
-        postImageGPSCoordinates.longitude
+        postImageGPSCoordinates.longitude,
       ];
 
-      const coordinatesArray = coordinatesAsArray.map(coordinate => {
+      const coordinatesArray = coordinatesAsArray.map((coordinate) => {
         return parseFloat(coordinate);
       });
 
@@ -75,7 +82,7 @@ const Post = props => {
         zoom: 10,
         layers: new L.TileLayer(
           "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-        )
+        ),
       });
       let marker = new L.Marker(endPointLocation);
       marker.bindPopup(title);
@@ -104,12 +111,12 @@ const Post = props => {
 
     return () => {
       const classNamesToRemove = [...document.documentElement.classList].filter(
-        c => {
+        (c) => {
           return c.includes("with-photo-color-theme");
         }
       );
       if (classNamesToRemove.length > 0) {
-        classNamesToRemove.forEach(cn => {
+        classNamesToRemove.forEach((cn) => {
           document.documentElement.classList.remove(cn);
         });
       }
@@ -121,7 +128,7 @@ const Post = props => {
   }, [postImageGPSCoordinates, mapRef, title, imageColors]);
 
   const handleImageLoad = useCallback(
-    async event => {
+    async (event) => {
       const image = event.target;
 
       if (!imageColors) {
@@ -129,7 +136,7 @@ const Post = props => {
 
         setColor({
           imageId: `image-${slug}`,
-          colorInfo: imageColorsInfo
+          colorInfo: imageColorsInfo,
         });
       }
       const imageExifData = await getImageExifData(image);
@@ -173,7 +180,7 @@ const Post = props => {
     }
   }, []);
 
-  const handleEnlargeImageButtonClick = useCallback(event => {
+  const handleEnlargeImageButtonClick = useCallback((event) => {
     setDisplayLargeImage(!displayLargeImage);
   });
 
@@ -187,194 +194,65 @@ const Post = props => {
 
   const postClassnames = classnames("post", {
     "with-large-image": displayLargeImage,
-    "image-loaded": postImageLoaded
+    "image-loaded": postImageLoaded,
   });
   return (
     <>
       <article className={postClassnames}>
-        <div
-          className="post__header-bg"
-          style={{
-            backgroundRepeat: "no-repeat",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            zIndex: 0,
-            backgroundColor: postImageColor
-          }}
-        ></div>
-        <div className="post__img-container">
-          {!postImageLoaded && (
-            <div
-              className="loading"
-              style={{
-                color: "var(--navmenu-text-color)"
-              }}
-            >
-              Loading image...
-            </div>
-          )}
-          <Link href="/">
-            <a className="button-close-image" title="Return to home page">
-              <span className="las la-times icon"></span>
-            </a>
-          </Link>
-          <div className="container">
-            <div className="row">
-              <img
-                key={featuredImage}
-                // TODO: change netlify CMS config to send only image name
-                // FIXME: construct images urls dynamically depending on context
-                // And remove the replace regexs
-                src={featuredImage.replace(/w_1920/gi, "w_1920,fl_keep_iptc,")}
-                alt={title}
-                style={{
-                  opacity: postImageLoaded ? 1 : 0
-                }}
-                ref={postImageRef}
-                onLoad={handleImageLoad}
-                crossOrigin="Anonymous"
-              />
-            </div>
-          </div>
-          <button
-            style={{
-              display: "none"
-            }}
-            type="button"
-            className="button-enlarge-post-image"
-            onClick={handleEnlargeImageButtonClick}
-            aria-label="Enlarge image"
-          >
-            <span className="icon las la-expand-arrows-alt"></span>
-          </button>
-
-          <div className="post-navigation post-navigation--over-image">
-            {nextPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${nextPost.attributes.slug}`}
-              >
-                <a
-                  className="post-navigation__link post-navigation__link--next"
-                  title={nextPost.attributes.title}
-                >
-                  <span className="icon las la-arrow-left"></span>
-                </a>
-              </Link>
-            )}
-            {!nextPost && <div></div>}
-            {previousPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${previousPost.attributes.slug}`}
-              >
-                <a
-                  className="post-navigation__link post-navigation__link--previous"
-                  title={previousPost.attributes.title}
-                >
-                  <span className="icon las la-arrow-right"></span>
-                </a>
-              </Link>
-            )}
-            {!previousPost && <div></div>}
-          </div>
-        </div>
-        <div className="post__img-information-container">
-          {!!postImageColorPalette && (
-            <div
-              className="palette"
-              style={{
-                zIndex: 1
-              }}
-            >
-              {postImageColorPalette.map((color, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="color-palette__item"
-                    style={{
-                      background: color
-                    }}
-                  ></div>
-                );
-              })}
-            </div>
-          )}
-        </div>
+        <PostHeaderBg postImageColor={postImageColor} />
+        <PostImageContainer
+          postImageLoaded={postImageLoaded}
+          postImageRef={postImageRef}
+          title={title}
+          handleImageLoad={handleImageLoad}
+          featuredImage={featuredImage}
+        >
+          <PostNavigation
+            previousPost={previousPost}
+            nextPost={nextPost}
+            isOverImage
+          />
+        </PostImageContainer>
+        <PostImageInformation postImageColorPalette={postImageColorPalette} />
         <div className="container">
           <div className="row">
-            <div className="post__body">
-              <h2 className="post__title">{title}</h2>
-              <div
-                className="post__content-html"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-              <div className="post__date">{postDate}</div>
-              <div className="post__resume">{resume}</div>
-              {/*         <div className="post__rating">{rating}</div>
-          <div className="post__gps-coordinates">{gpsCoordinates}</div> */}
-            </div>
+            <PostBody
+              title={title}
+              postDate={postDate}
+              html={html}
+              resume={resume}
+            />
           </div>
         </div>
         <div className="container">
           <div className="row">
-            <section
-              className="post-map"
-              style={{
-                background: !!postImageColor ? postImageColor : "transparent"
-              }}
-            >
-              <div className="post-map__inner" ref={mapRef}></div>
-            </section>
+            <PostMap mapRef={mapRef} postImageColor={postImageColor} />
           </div>
         </div>
       </article>
 
       <div className="container">
         <div className="row">
-          <div className="post-navigation">
-            {nextPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${nextPost.attributes.slug}`}
-              >
-                <a className="post-navigation__link post-navigation__link--next">
-                  {nextPost.attributes.title}
-                  &nbsp;
-                  <span className="icon las la-arrow-left"></span>
-                </a>
-              </Link>
-            )}
-            {previousPost && (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${previousPost.attributes.slug}`}
-              >
-                <a className="post-navigation__link post-navigation__link--previous">
-                  <span className="icon las la-arrow-right"></span>
-                  &nbsp;
-                  {previousPost.attributes.title}
-                </a>
-              </Link>
-            )}
-          </div>
+          <PostNavigation
+            previousPost={previousPost}
+            nextPost={nextPost}
+            displayTitles
+          />
         </div>
       </div>
     </>
   );
 };
 
-Post.getInitialProps = async context => {
+Post.getInitialProps = async (context) => {
   const {
-    query: { slug }
+    query: { slug },
   } = context;
 
   const posts = {};
 
   async function importAll(r) {
-    r.keys().forEach(key => {
+    r.keys().forEach((key) => {
       const post = r(key);
       const postSlug = key.substring(2, key.length - 3);
       post.attributes.slug = postSlug;
@@ -384,14 +262,14 @@ Post.getInitialProps = async context => {
 
   async function importAllPostAdditionalImageData(r) {
     const dataFilesToLoad = r.keys();
-    dataFilesToLoad.forEach(key => {
+    dataFilesToLoad.forEach((key) => {
       const jsonFile = r(key);
       const { colors } = jsonFile;
-      const palette = colors.map(c => c[0]).slice(0, 5);
+      const palette = colors.map((c) => c[0]).slice(0, 5);
       const dominante = palette[0];
       const imageColorsInfo = {
         color: dominante,
-        palette
+        palette,
       };
 
       // console.log({jsonFile});
@@ -401,8 +279,8 @@ Post.getInitialProps = async context => {
         ...posts[postSlug],
         featuredImageData: {
           ...jsonFile,
-          imageColors: imageColorsInfo
-        }
+          imageColors: imageColorsInfo,
+        },
       };
     });
   }
@@ -418,7 +296,7 @@ Post.getInitialProps = async context => {
     const post = posts[slug];
 
     const currentPostIndex = orderedPostsByDate.findIndex(
-      p => p.attributes.slug === slug
+      (p) => p.attributes.slug === slug
     );
     const nextPost = orderedPostsByDate[currentPostIndex + 1] || null;
     const previousPost = orderedPostsByDate[currentPostIndex - 1] || null;
@@ -427,7 +305,7 @@ Post.getInitialProps = async context => {
       post,
       nextPost,
       previousPost,
-      orderedPostsByDate
+      orderedPostsByDate,
     };
   }
 
