@@ -143,6 +143,7 @@ class Grid extends React.Component {
               gridList.map((col, colIndex) => {
                 return (
                   <div
+                    role="presentation"
                     className="grid__col"
                     key={`col-${colIndex}`}
                     style={{
@@ -164,15 +165,16 @@ class Grid extends React.Component {
                         <GridItem
                           key={key}
                           index={index}
+                          debuggModeInCards={debuggModeInCards}
+                          imagesLoaded={imagesLoaded}
+                          // TODO: separate item props from wrapped element to handle futire props.children mapping version
+                          onMouseEnter={this.handleItemMouseEnter}
                           slug={slug}
                           featuredImage={featuredImageThumbnail}
                           title={title}
-                          withColorPalette={withColorPalette}
-                          imagesLoaded={imagesLoaded}
-                          debuggModeInCards={debuggModeInCards}
-                          onMouseEnter={this.handleItemMouseEnter}
                           onImageLoadCallBack={this.handleImageLoad}
                           featuredImageData={featuredImageData}
+                          withColorPalette={withColorPalette}
                         />
                       );
                     })}
