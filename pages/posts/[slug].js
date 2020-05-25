@@ -272,9 +272,7 @@ Post.getInitialProps = async (context) => {
         palette,
       };
 
-      // console.log({jsonFile});
       const postSlug = key.substring(2, key.length - 10);
-      // console.log({postSlug})
       posts[postSlug] = {
         ...posts[postSlug],
         featuredImageData: {
