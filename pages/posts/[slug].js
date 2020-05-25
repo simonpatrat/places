@@ -51,7 +51,7 @@ const Post = (props) => {
 
   const { theme } = useContext(ThemeContext);
   const { colors, setColor } = useContext(ColorsContext);
-  // featuredImageData.imageColors ||
+
   const imageColors =
     featuredImageData.imageColors ||
     (colors && colors[`image-${slug}`] ? colors[`image-${slug}`] : null);
@@ -184,9 +184,7 @@ const Post = (props) => {
   });
 
   const postImageColor =
-    imageColors && imageColors.color
-      ? imageColors.color //`rgb(${imageColors.color.join(",")})`
-      : `rgba(0,0,0,0.2)`;
+    imageColors && imageColors.color ? imageColors.color : `rgba(0,0,0,0.2)`;
 
   const postImageColorPalette =
     imageColors && imageColors.palette ? imageColors.palette : null;
