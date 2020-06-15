@@ -43,15 +43,18 @@ const MyApp = (props) => {
             <link
               rel="stylesheet"
               href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+
+/*
+              // TODO: find a better solution for non-blocking icon font loading
               media="none"
-              onload="if(media!='all')media='all'"
+              onLoad="if(media!='all')media='all'" */
             ></link>
 
             <link
               rel="stylesheet"
               href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"
               media="none"
-              onload="if(media!='all')media='all'"
+              onLoad="if(media!='all')media='all'"
             />
           </Head>
           <ThemeContext.Consumer>

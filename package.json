@@ -33,6 +33,7 @@
     "react-dom": "^16.13.1",
     "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.26.5",
+    "slugify": "^1.4.0",
     "yaml-loader": "^0.6.0"
   },
   "devDependencies": {

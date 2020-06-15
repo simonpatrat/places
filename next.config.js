@@ -39,9 +39,27 @@ module.exports = {
     };
     const blogPostsPathMap = blogPostSlugs.reduce(createPathObject, {});
 
+    const categoriesFiles = glob.sync("content/categories/**/*.md");
+
+    // remove path and extension to leave filename only
+    const categoriesSlugs = categoriesFiles.map((file) =>
+      file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim()
+    );
+    const createPathObjectForCategories = (pathObject, slug) => {
+      return {
+        ...pathObject,
+        [`/categories/${slug}`]: {
+          page: "/categories/[slug]",
+          query: { slug: slug },
+        },
+      };
+    };
+    const categoriesPathMap = categoriesSlugs.reduce(createPathObjectForCategories, {});
+
     return {
       ...defaultPathMap,
-      ...blogPostsPathMap
+      ...blogPostsPathMap,
+      ...categoriesPathMap,
     };
   }
 };

@@ -1,7 +1,10 @@
 import Head from "next/head";
+import Link from 'next/link';
 import { Component } from "react";
 import orderBy from "lodash/orderBy";
 import classnames from "classnames";
+import slugify from 'slugify';
+
 import Grid from "../components/Grid";
 import content from "../content/home.md";
 
@@ -120,6 +123,9 @@ export default class Home extends Component {
                 className={categoriesMenuItemClassNames}
                 key={`category-filters-menu__item#${index}#${slug}`}
               >
+{/*                 <Link href={`/categories/${slugify(slug, { lower: true })}`}>
+                  <a>{name}</a>
+                </Link> */}
                 <button
                   type="button"
                   className="categories-filters-button"
